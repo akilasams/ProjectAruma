@@ -20,8 +20,9 @@
                 <img src="./assets/img/Logo.png" alt="logo">
             </div>
             <div class="box-3">
-                <a href="login.jsp">Your Name</a>
+                <h4>Your Name</h4>
                 <a href="signup.jsp">Go to Profile</a>
+                <a href="signup.jsp">Sign Out</a>
             </div>
         </div>
 
