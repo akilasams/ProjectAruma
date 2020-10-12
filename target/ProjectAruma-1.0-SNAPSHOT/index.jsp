@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +14,8 @@
 <div class="move2">
     <ul>
         <li><a class="login" href="login.jsp">Login</a></li>
-        <li><a class="signup"href="signup.jsp">Sign Up</a></li>
-        <li><a class="enter_as_guest"href="home-main.jsp">Enter as a Guest</a></li>
+        <li><a class="signup" href="signup.jsp">Sign Up</a></li>
+        <li><a class="enter_as_guest" href="home-main.jsp">Enter as a Guest</a></li>
     </ul>
 </div>
 

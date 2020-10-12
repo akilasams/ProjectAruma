@@ -1,10 +1,5 @@
 <%@include file="header-bar.jsp"%>
 
-    <%
-        if(session.getAttribute("username")==null){
-            response.sendRedirect("index.jsp");
-        }
-    %>
 
     <div class="cover-image"></div>
     <div class="title-bar">

@@ -14,8 +14,8 @@
 <div class="move2">
     <ul>
         <li><a class="login" href="login.jsp">Login</a></li>
-        <li><a class="signup"href="signup.jsp">Sign Up</a></li>
-        <li><a class="enter_as_guest"href="home-main.jsp">Enter as a Guest</a></li>
+        <li><a class="signup" href="signup.jsp">Sign Up</a></li>
+        <li><a class="enter_as_guest" href="home-main.jsp">Enter as a Guest</a></li>
     </ul>
 </div>
 
