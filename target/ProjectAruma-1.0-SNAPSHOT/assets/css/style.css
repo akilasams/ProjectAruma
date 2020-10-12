@@ -54,6 +54,7 @@ body{
 .wrapper{
     display: flex;
     flex-flow: row;
+    flex-shrink: 1;
     justify-content: space-around;
     margin: 0px auto;
     width: 1300px;
@@ -88,14 +89,48 @@ ul li a:hover{
 }
 
 .header{
-    display: block;
+    display: flex;
     background: var(--primary-gradient);
     width: 100%;
     height: 100px;
     overflow: hidden;
 }
 
-.logo{
+.box-1{
+    flex: 1;
+}
+
+.box-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.box-2 img{
+    width: 30%;
+    min-width: 30%;
+}
+
+.box-3{
+    flex: 1;
+    padding-right: 50px;
+    padding-top: 30px;
+    text-align: right;
+    display: flex;
+    flex-flow: column;
+}
+
+.box-3 a{
+    color: white;
+    transition: color 0.5s ease;
+}
+
+.box-3 a:hover{
+    color: var(--main-orange);
+}
+
+/*.logo{
     background-image: url("../img/Logo.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -105,8 +140,15 @@ ul li a:hover{
     display: block;
     width: 150px;
     height: 150px;
-}
+}*/
 
+.header .sign-in{
+    display: inline-block;
+    float: right;
+    color: white;
+    position: relative;
+    margin-top: 100px;
+}
 
 nav input[type=text]{
     display: flex;
@@ -156,7 +198,7 @@ nav input[type=text]{
 
 .showcase{
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
     overflow: hidden;
     height: 150px;
     justify-content: space-around;
@@ -174,18 +216,17 @@ nav input[type=text]{
 .footer{
     display: block;
     width: 100%;
-    height: 50px;
+    height: 100px;
     background: var(--primary-gradient);
 }
 
-.social-media{
-    display: flex;
-    width: 10%;
-    justify-content: space-around;
-    margin-top: 15px;
+.footer .social-media{
+    padding-left: 700px;
 }
 
-.social-media a{
+.footer .social-media a{
+    margin: 35px 15px;
+    display: inline-block;
     color: yellow;
     transition: color 1s ease;
 }

@@ -15,19 +15,27 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo"></div>
+        <div class="box-1"></div>
+        <div class="box-2">
+            <img src="./assets/img/Logo.png" alt="logo">
+        </div>
+        <div class="box-3">
+            <a href="login.jsp">Login</a>
+            <a href="signup.jsp">Register</a>
+        </div>
     </div>
 
     <nav>
         <div class="wrapper">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Store</a></li>
-                <li><a href="#">Design School</a></li>
+                <li><a href="home-main.jsp">Home</a></li>
+                <li><a href="store-home.jsp">Store</a></li>
+                <li><a href="dschool-home.jsp">Design School</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
             <input type="text" placeholder="Find Your Freelancer..." id="search">
         </div>
     </nav>
+
 

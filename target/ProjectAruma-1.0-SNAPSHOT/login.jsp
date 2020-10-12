@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,18 +18,18 @@
 
         <div class="form-container">
             <div class="form-inner">
-                <form action="#" class="login">
+                <form action="Login" method="post">
                     <div class="field">
-                        <input type="text" placeholder="Email Address" required>
+                        <input type="text" name="uname" placeholder="Email Address" required><br>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" name="pass" placeholder="Password" required><br>
                     </div>
                     <div class="pass-link"><a href="#">Forgot Password?</a></div>
                     <div class="field">
                         <input type="submit" value="Login">
                     </div>
-                    <div class="signup-link">Not a member? <a href="signup.html">Sign Up Now</a></div>
+                    <div class="signup-link">Not a member? <a href="signup.jsp">Sign Up Now</a></div>
                 </form>
             </div>
         </div>
