@@ -1,4 +1,4 @@
-<%@include file="header-bar-logged.jsp"%>
+<%@include file="header-bar.jsp"%>
 
     <%
         if(session.getAttribute("username")==null){

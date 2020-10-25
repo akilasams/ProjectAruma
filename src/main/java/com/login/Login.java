@@ -11,13 +11,21 @@ import java.io.IOException;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String uname=request.getParameter("uname");
-        String pass=request.getParameter("pass");
+        String uname=request.getParameter("username");
+        String pass=request.getParameter("password");
 
-        if(uname.equals("user") && pass.equals("password")){
+        LoginDao dao=new LoginDao();
+
+        /*if(uname.equals("user") && pass.equals("password")){
             HttpSession session=request.getSession();
             session.setAttribute("username",uname);
             response.sendRedirect("home-main-logged.jsp");
+        }*/
+
+        if(dao.checkCredentials(uname,pass)){
+            HttpSession session=request.getSession();
+            session.setAttribute("username",uname);
+            response.sendRedirect("home-main.jsp");
         }
         else{
             response.sendRedirect("login.jsp");

@@ -20,10 +20,10 @@
             <div class="form-inner">
                 <form action="Login" method="post">
                     <div class="field">
-                        <input type="text" name="uname" placeholder="Email Address" required><br>
+                        <input type="text" name="username" placeholder="Username" required><br>
                     </div>
                     <div class="field">
-                        <input type="password" name="pass" placeholder="Password" required><br>
+                        <input type="password" name="password" placeholder="Password" required><br>
                     </div>
                     <div class="pass-link"><a href="#">Forgot Password?</a></div>
                     <div class="field">

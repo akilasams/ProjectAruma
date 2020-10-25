@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="header">
+    <%--<div class="header">
         <div class="box-1"></div>
         <div class="box-2">
             <img src="./assets/img/Logo.png" alt="logo">
@@ -23,8 +23,27 @@
             <a href="login.jsp">Login</a>
             <a href="signup.jsp">Register</a>
         </div>
-    </div>
+    </div>--%>
+    <div class="header">
+        <div class="box-1"></div>
+        <div class="box-2">
+            <img src="./assets/img/Logo.png" alt="logo">
+        </div>
 
+        <% if(session.getAttribute("username")!=null){ %>
+            <div class="box-3">
+                <h4>Hi! <%=session.getAttribute("username")%></h4>
+                <a href="designer-profile.jsp">Go to Profile</a>
+                <a href="/Logout">Sign Out</a>
+            </div>
+        <%}else{%>
+            <div class="box-3">
+                <a href="login.jsp">Login</a>
+                <a href="signup.jsp">Register</a>
+            </div>
+        <%}%>
+
+    </div>
     <nav>
         <div class="wrapper">
             <ul>
