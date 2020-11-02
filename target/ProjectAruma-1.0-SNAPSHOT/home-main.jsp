@@ -1,6 +1,5 @@
 <%@include file="header-bar.jsp"%>
 
-
     <div class="cover-image"></div>
     <div class="title-bar">
             <h1><a href="#">WHAT'S NEW IN STORE</a></h1>

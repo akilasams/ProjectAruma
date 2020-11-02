@@ -17,43 +17,39 @@
 
         <div class="form-container">
             <div class="form-inner">
-                <form action="#" class="login">
+                <form action="DesignerRegister" class="login" method="post">
 
-
                     <div class="field">
-                        <input type="text" placeholder="First Name" required>
+                        <input type="text" name="firstName" placeholder="First Name" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Last Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Email" required>
+                        <input type="text" name="email" placeholder="Email" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Address" required>
+                        <input type="text" name="address" placeholder="Address" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Mobile" required>
+                        <input type="text" name="mobileNo" placeholder="Mobile" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" required>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Retype Password" required>
+                        <input type="password" name="password" placeholder="Retype Password" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Skills" required>
+                        <input type="text" name="skills "placeholder="Skills" required>
                     </div>
-                    <div class="field">
+                    <%--<div class="field">
                         <input type="text" placeholder="Certifications" required>
-                    </div>
-
-
-
-                    <div class="pass-link">Submit Certificates <a href="#">Click Here!</a></div>
+                        <div class="pass-link">Submit Certificates <a href="#">Click Here!</a></div>
+                    </div>--%>
                     <div class="field">
                         <input type="submit" value="Register">
                     </div>
