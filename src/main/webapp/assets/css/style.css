@@ -5,6 +5,7 @@
     padding: 0;
     font-family: var(--quicksand);
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 /*Variables*/
@@ -119,6 +120,7 @@ ul li a:hover{
     text-align: right;
     display: flex;
     flex-flow: column;
+    align-items: flex-end;
 }
 
 .box-3 h4{
@@ -127,6 +129,8 @@ ul li a:hover{
 }
 
 .box-3 a{
+    display: block;
+    width: fit-content;
     color: white;
     transition: color 0.5s ease;
 }
@@ -147,13 +151,6 @@ ul li a:hover{
     height: 150px;
 }*/
 
-.header .sign-in{
-    display: inline-block;
-    float: right;
-    color: white;
-    position: relative;
-    margin-top: 100px;
-}
 
 nav input[type=text]{
     display: flex;

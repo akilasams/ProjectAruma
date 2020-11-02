@@ -24,12 +24,14 @@
                 <li><a href="">My Courses</a></li>
                 <li><a href="">Settings</a></li>
             </ul>
+            <div id="buttons">
+                <div class="btn-prof">All Designs</div>
+                <div class="btn-prof">Add More</div>
+            </div>
         </div>
     </div>
     <div id="gallery">
-        <div class="place-holder">
-            <img src="" alt=""><br>
-        </div>
+        <div class="place-holder"></div>
         <div class="place-holder"></div>
         <div class="place-holder"></div>
         <div class="place-holder"></div>
@@ -37,7 +39,5 @@
         <div class="place-holder"></div>
     </div>
 </div>
-
-
 
 <%@ include file="footer-bar.jsp"%>

@@ -20,6 +20,8 @@ body{
 
 #links{
     background: #FFB96D;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
 }
 
 #side-bar-links{
@@ -44,6 +46,32 @@ body{
     padding-left: 70px;
 }
 
+#buttons{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+.btn-prof{
+    display: block;
+    background-color: #FF7A00;
+    width: 30%;
+    height: 30px;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-top: 4px;
+    color: #f7f9f9;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+.btn-prof:hover{
+    background-color: #FF4D00;
+}
+
 #prof-pic{
     width: 100px;
     height: 100px;
@@ -59,10 +87,10 @@ body{
 
 #gallery{
     background: #FFE484;
-    padding: 50px;
+    padding: 30px 50px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-gap: 50px;
+    grid-gap: 30px 50px;
 }
 
 .place-holder{

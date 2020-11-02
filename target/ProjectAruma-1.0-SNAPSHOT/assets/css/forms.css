@@ -1,0 +1,75 @@
+body{
+    background-color: #FFE484;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-container{
+    display: block;
+    width: 50%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+form{
+    margin: 25px auto;
+    width: 100%;
+    background-color: #FFB96D;
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+}
+
+textarea{
+    resize: none;
+    /*max-height: 100px;
+    min-height: 100px;*/
+}
+
+button{
+    display: block;
+    width: 40%;
+    height: 50px;
+    border: 3px solid rgba(255,122,0,0.5);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: #FFA543;
+    transition: background-color 0.5s ease-in;
+}
+
+button:hover{
+    background-color: #FF7A00;
+}
+
+input, textarea, select{
+    padding-left: 5px;
+    border-radius: 5px;
+    margin: 15px;
+    width: 80%;
+    outline: none;
+    border: 1px solid #ddd;
+}
+
+input:focus, textarea:focus, select:focus{
+    box-shadow: 0 0 4px coral;
+    border: 1px solid #FF7A00;
+}
+
+label{
+    display: block;
+    margin-left: 70px;
+    float: left;
+}
+
+input[type=file]{
+    border: 0;
+    width: fit-content;
+    float: left;
+    margin-top: 5px;
+    margin-left: 65px;
+    margin-bottom: 10px;
+}
+
