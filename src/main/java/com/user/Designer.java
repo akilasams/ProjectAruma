@@ -1,4 +1,4 @@
-package com.register;
+package com.user;
 
 public class Designer extends User{
     private String skills;

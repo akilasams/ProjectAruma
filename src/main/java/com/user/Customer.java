@@ -1,4 +1,4 @@
-package com.register;
+package com.user;
 
 public class Customer extends User{
     public Customer(String firstName, String lastName, int user_role_id, String email, String address, String mobileNo, String username, String password) {

@@ -1,5 +1,8 @@
 package com.register;
 
+import com.user.Customer;
+import com.user.Designer;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -38,7 +41,7 @@ public class RegisterDao {
     //Create or Insert User
     public boolean insertCustomer(Customer customer) {
         Connection connection = getConnection();
-        String sql = "INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,NULL)";
+        String sql = "INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, customer.getFirstName());

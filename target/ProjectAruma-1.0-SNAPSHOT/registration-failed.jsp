@@ -21,7 +21,7 @@
             <a href="home-main.jsp">Visit as a Guest</a>
         </div>
         <div class="home-button">
-            <a href="home-main.jsp">Go Back</a>
+            <a href="index.jsp">Go Back</a>
         </div>
     </div>
 </body>
