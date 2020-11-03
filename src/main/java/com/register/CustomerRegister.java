@@ -1,5 +1,7 @@
 package com.register;
 
+import com.user.Customer;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

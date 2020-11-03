@@ -1,4 +1,4 @@
-package com.register;
+package com.user;
 
 public class User {
     private int id;
