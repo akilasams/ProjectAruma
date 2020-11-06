@@ -29,8 +29,8 @@
             </select><br>
             <label id="filename" for="filename">Upload an Image</label><br>
             <input type="file" name="filename"><br>
+            <button type="submit" name="submit">Add to My Designs</button>
         </form>
-        <button type="submit" name="submit">Add to My Designs</button>
     </div>
 </body>
 </html>

@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/CustomerRegister")
-public class CustomerRegister extends HttpServlet {
+@WebServlet("/CustomerRegisterServlet")
+public class CustomerRegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String firstName=request.getParameter("firstName");
         String lastName=request.getParameter("lastName");

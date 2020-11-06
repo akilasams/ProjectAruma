@@ -18,7 +18,7 @@
 
         <div class="form-container">
             <div class="form-inner">
-                <form action="DesignerRegister" class="login" method="post">
+                <form action="DesignerRegisterServlet" class="login" method="post">
 
                     <div class="field">
                         <input type="text" name="firstName" placeholder="First Name" required>

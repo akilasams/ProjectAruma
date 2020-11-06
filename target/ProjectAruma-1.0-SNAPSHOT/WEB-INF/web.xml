@@ -10,7 +10,7 @@
 
     <!--<servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>com.login.Login</servlet-class>
+        <servlet-class>com.login.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

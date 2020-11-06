@@ -18,7 +18,7 @@
 
         <div class="form-container">
             <div class="form-inner">
-                <form action="Login" method="post">
+                <form action="LoginServlet" method="post">
                     <div class="field">
                         <input type="text" name="username" placeholder="Username" required><br>
                     </div>

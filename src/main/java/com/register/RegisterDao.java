@@ -19,7 +19,7 @@ public class RegisterDao {
     String SELECT_USER_BY_ID="SELECT id,first_name,last_name,password,username,address,email,mobile_no FROM user WHERE id=?";
     String DELETE_USER="DELETE FROM users WHERE id=?";*/
 
-    public void loadDriver(String dbDriver){
+    private void loadDriver(String dbDriver){
         try {
             Class.forName(dbDriver);
         } catch (ClassNotFoundException e) {
@@ -63,7 +63,6 @@ public class RegisterDao {
     public boolean insertDesigner(Designer designer) {
         Connection connection=getConnection();
         String sql="INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?)";
-        String sqlSkill="INSERT INTO SKILL (?,?)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1,designer.getFirstName());
@@ -81,9 +80,4 @@ public class RegisterDao {
             return false;
         }
     }
-
-
-
-
-
 }
