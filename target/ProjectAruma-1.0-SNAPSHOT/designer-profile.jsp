@@ -10,8 +10,8 @@
             <div id="profile">
                 <div id="prof-pic"></div>
                 <div id="name">
-                    <h3>First Name</h3>
-                    <h4>Last Name</h4>
+                    <h3><%=session.getAttribute("firstName")%></h3>
+                    <h4><%=session.getAttribute("lastName")%></h4>
                 </div>
             </div>
         </div>
@@ -25,8 +25,8 @@
                 <li><a href="">Settings</a></li>
             </ul>
             <div id="buttons">
-                <div class="btn-prof">All Designs</div>
-                <div class="btn-prof">Add More</div>
+                <div class="btn-prof"><a href="add-design.jsp">Add New Design</a></div>
+                <div class="btn-prof"><a href="add-course.jsp">Add New Course</a></div>
             </div>
         </div>
     </div>

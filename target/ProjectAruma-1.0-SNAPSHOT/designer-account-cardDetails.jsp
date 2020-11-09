@@ -26,7 +26,7 @@
                         <input type="text" name="nameOnCard" placeholder="Name On Card" required>
                     </div>
                     <div class="field">
-                        <input type="text" name="email" placeholder="Email" required>
+                        <input type="text" name="email" placeholder="CVV" required>
                     </div>
                     <div class="field">
                         <input type="submit" value="Register">

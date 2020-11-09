@@ -11,6 +11,15 @@ html,body{
     width: 100%;
 
 }
+
+body{
+    background-color: #FFE484;
+    background-image: url("../img/reg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .move2{
     display: grid;
     height: 100%;
@@ -30,7 +39,7 @@ html,body{
 
 a.designer_acc{
  
-    background-color: #e22807;
+    background-color: #FF7A00;
     color: white;
     padding: 15px 60px;
     text-decoration: none;
@@ -40,7 +49,7 @@ a.designer_acc{
     cursor: pointer;  
 }
 a.buyer_acc{
-    background-color: #e22807;
+    background-color: #FF7A00;
     color: white;
     padding: 15px 70px;
     text-decoration: none;

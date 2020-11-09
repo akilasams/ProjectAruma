@@ -4,19 +4,36 @@ public class Course {
     private int courseId;
     private String courseName;
     private String courseDescription;
-    private boolean isFree;
+    private int isFree;
     private String courseFee;
     private int userId;
-    private String courseContentPath;
+    //private String courseContentPath;
 
-    public Course(String courseName, String courseDescription, boolean isFree, String courseFee, int userId, String courseContentPath) {
+    public Course(int courseId, String courseName, String courseDescription, int isFree, String courseFee, int userId) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.courseDescription = courseDescription;
+        this.isFree = isFree;
+        this.courseFee = courseFee;
+        this.userId = userId;
+    }
+
+    public Course(String courseName, String courseDescription, int isFree, String courseFee, int userId) {
+        this.courseName = courseName;
+        this.courseDescription = courseDescription;
+        this.isFree = isFree;
+        this.courseFee = courseFee;
+        this.userId = userId;
+    }
+
+    /*public Course(String courseName, String courseDescription, boolean isFree, String courseFee, int userId, String courseContentPath) {
         this.courseName = courseName;
         this.courseDescription = courseDescription;
         this.isFree = isFree;
         this.courseFee = courseFee;
         this.userId = userId;
         this.courseContentPath = courseContentPath;
-    }
+    }*/
 
     public int getCourseId() {
         return courseId;
@@ -42,11 +59,11 @@ public class Course {
         this.courseDescription = courseDescription;
     }
 
-    public boolean isFree() {
+    public int getIsFree() {
         return isFree;
     }
 
-    public void setFree(boolean free) {
+    public void setFree(int free) {
         isFree = free;
     }
 
@@ -66,11 +83,11 @@ public class Course {
         this.userId = userId;
     }
 
-    public String getCourseContentPath() {
+    /*public String getCourseContentPath() {
         return courseContentPath;
     }
 
     public void setCourseContentPath(String courseContentPath) {
         this.courseContentPath = courseContentPath;
-    }
+    }*/
 }

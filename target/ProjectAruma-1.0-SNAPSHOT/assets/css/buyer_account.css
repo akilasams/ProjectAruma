@@ -76,7 +76,7 @@ html,body{
 }
 
 .form-inner form .field input:focus{
-    border-color: #e22807;
+    border-color: #FF7A00;
 }
 
 .form-inner form .pass-link{
@@ -107,7 +107,7 @@ form .field input[type="submit"]{
     padding-left: 0px;
     border: none;
     cursor: pointer;
-    background: #e22807
+    background: #FF7A00;
 
 }
 

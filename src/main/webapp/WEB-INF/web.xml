@@ -20,7 +20,7 @@
 
     <!--<servlet>
         <servlet-name>Logout</servlet-name>
-        <servlet-class>com.login.Logout</servlet-class>
+        <servlet-class>com.login.LogoutServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

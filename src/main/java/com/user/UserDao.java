@@ -30,11 +30,32 @@ public class UserDao{
         return connection;
     }
 
+    //Get User's Name
+    /*public String getUsersName(String username){
+        String firstName="";
+        String lastName=""
+        Connection connection=getConnection();
+        String getName_SQL="SELECT first_name,last_name FROM USER where username=?";
+
+        try {
+            PreparedStatement st=connection.prepareStatement(getName_SQL);
+            st.setString(1, username);
+            ResultSet rs=st.executeQuery();
+            if (rs.next()){
+                firstName=rs.getString(1);
+                lastName=rs.getString(2);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return firstName;
+    }*/
+
     //Select User by Username
     public User selectUser(String username){
         User user=null;
         Connection connection=getConnection();
-        String selectByUsername_SQL="SELECT FROM USER WHERE username=?";
+        String selectByUsername_SQL="SELECT * FROM USER WHERE username=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             st.setString(1,username);

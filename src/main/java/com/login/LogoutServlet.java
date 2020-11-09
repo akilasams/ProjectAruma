@@ -9,20 +9,20 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/Logout")
-public class Logout extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session=request.getSession();
-        session.removeAttribute("username");
-        session.invalidate(); //Remove Data
+        /*session.removeAttribute("username");*/
+        session.invalidate(); //All objects bound to the session are removed
 
         response.sendRedirect("index.jsp");
     }
-
-    /*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session=request.getSession();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /*HttpSession session=request.getSession();
         session.removeAttribute("username");
         session.invalidate(); //Remove Data
 
-        response.sendRedirect("index.jsp");
-    }*/
+        response.sendRedirect("index.jsp");*/
+        doPost(request,response);
+    }
 }

@@ -9,7 +9,6 @@ html,body{
     display: grid;
     height: 100%;
     width: 100%;
-    background:  #f1f1f1;
 
 }
 
@@ -70,7 +69,7 @@ html,body{
     transition: all 0.4s ease;
 }
 .form-inner form .field input:focus{
-    border-color: #e22807;
+    border-color: #FF7A00;
 }
 
 .form-inner form .pass-link{
@@ -97,7 +96,7 @@ form .field input[type="submit"]{
     padding-left: 0px;
     border: none;
     cursor: pointer;
-    background: #e22807
+    background: #FF7A00;
 
 }
 
