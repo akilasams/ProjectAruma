@@ -22,30 +22,39 @@
 
                     <div class="field">
                         <input type="text" name="firstName" placeholder="First Name" required>
+                        <small>Error Message</small>
                     </div>
                     <div class="field">
                         <input type="text" name="lastName" placeholder="Last Name" required>
+                        <small>Error Message</small>
                     </div>
                     <div class="field">
                         <input type="text" name="email" placeholder="Email" required>
+                        <small>Error Message</small>
                     </div>
                     <div class="field">
                         <input type="text" name="address" placeholder="Address" required>
+                        <small>Error Message</small>
                     </div>
                     <div class="field">
                         <input type="text" name="mobileNo" placeholder="Mobile" required>
+                        <small>Error Message</small>
                     </div>
                     <div class="field">
                         <input type="text" name="username" placeholder="Username" required>
+                        <small>Error Message</small>
                     </div>
                     <div class="field">
                         <input type="password" name="password" placeholder="Password" required>
+                        <small>Error Message</small>
                     </div>
                     <div class="field">
                         <input type="password" name="password" placeholder="Retype Password" required>
+                        <small>Error Message</small>
                     </div>
                     <div class="field">
-                        <input type="text" name="skills "placeholder="Skills" required>
+                        <input type="text" name="skills "placeholder="Skills">
+                        <small>Error Message</small>
                     </div>
                     <%--<div class="field">
                         <input type="text" placeholder="Certifications" required>

@@ -6,7 +6,8 @@ body{
 }
 
 #form-container{
-    display: block;
+    display: flex;
+    flex-flow: column;
     width: 50%;
     height: auto;
     justify-content: center;
@@ -14,6 +15,10 @@ body{
 }
 
 form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     margin: 25px auto;
     width: 100%;
     background-color: #FFB96D;
@@ -34,6 +39,7 @@ button{
     height: 50px;
     border: 3px solid rgba(255,122,0,0.5);
     border-radius: 10px;
+    margin-left: 335px;
     color: white;
     cursor: pointer;
     background-color: #FFA543;
@@ -47,7 +53,6 @@ button:hover{
 input, textarea, select{
     padding-left: 5px;
     border-radius: 5px;
-    margin: 15px;
     width: 80%;
     outline: none;
     border: 1px solid #ddd;
@@ -56,12 +61,6 @@ input, textarea, select{
 input:focus, textarea:focus, select:focus{
     box-shadow: 0 0 4px coral;
     border: 1px solid #FF7A00;
-}
-
-label{
-    display: block;
-    margin-left: 70px;
-    float: left;
 }
 
 input[type=file]{
@@ -73,7 +72,48 @@ input[type=file]{
     margin-bottom: 10px;
 }
 
-#radio{
+#prof-pic{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    background: #cccccc;
+    border-radius: 50%;
+}
+
+#check{
     display: flex;
-    flex-flow: row;
+    justify-content: left;
+    align-items: center;
+    margin-left: -272px;
+    margin-bottom: 15px;
+}
+
+#isFree{
+    margin-left: 10px;
+}
+
+#check input{
+    width: auto;
+}
+
+#fee-box{
+    display: none;
+}
+
+#settings{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form label{
+    font-size: 1em;
+    margin-bottom: 2px;
+}
+
+#prof-name{
+    margin-bottom: 25px;
+    font-weight: bolder;
+    font-size: 25px;
 }

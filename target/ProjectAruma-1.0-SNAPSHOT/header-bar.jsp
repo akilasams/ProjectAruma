@@ -33,14 +33,19 @@
 
     <% if(session.getAttribute("username")!=null){ %>
     <div class="box-3">
-        <h4>Logged in as <%=session.getAttribute("firstName")%></h4>
-        <a href="designer-profile.jsp">Go to Profile</a>
-        <a href="<%=request.getContextPath()%>/Logout">Sign Out</a>
+        <img src="./assets/img/prof-pic.jpg" id="navbar-prof" alt="">
+        <div class="prof-info">
+            <h4>Logged in as <%=session.getAttribute("firstName")%></h4>
+            <a href="designer-profile.jsp">Go to Profile</a>
+            <a href="<%=request.getContextPath()%>/Logout">Sign Out</a>
+        </div>
     </div>
     <%}else{%>
     <div class="box-3">
-        <a href="login.jsp">Login</a>
-        <a href="signup.jsp">Register</a>
+        <div class="prof-info">
+            <a href="login.jsp">Login</a>
+            <a href="signup.jsp">Register</a>
+        </div>
     </div>
     <%}%>
 
@@ -50,12 +55,13 @@
         <ul>
             <li><a href="home-main.jsp">Home</a></li>
             <%--<li><a href="store-home.jsp">Store</a></li>--%>
+            <li><a href="<%=request.getContextPath()%>/GetAllDesignersServlet">Freelancers</a></li>
             <li><a href="store-home.jsp">Store</a></li>
             <li><a href="<%=request.getContextPath()%>/ViewCourses">Design School</a></li>
             <li><a href="about.jsp">About</a></li>
             <li><a href="contact-us.jsp">Contact Us</a></li>
         </ul>
-        <input type="text" placeholder="Find Your Freelancer..." id="search">
+        <input type="text" placeholder="What Do You Want?" id="search">
     </div>
 </nav>
 

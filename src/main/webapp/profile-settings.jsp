@@ -1,7 +1,12 @@
 <%@include file="header-bar.jsp"%>
 
+<%
+    if(session.getAttribute("username")==null){
+        response.sendRedirect("login.jsp");
+    }
+%>
+
 <head>
-    <link rel="stylesheet" href="./assets/css/profile.css">
     <link rel="stylesheet" href="./assets/css/forms.css">
 </head>
 
@@ -9,20 +14,23 @@
     body{
         display: block;
     }
+
+    button{
+        margin-left: 0px;
+    }
 </style>
 
-<div id="form-container">
-    <h2>Profile Settings</h2>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div id="prof-pic"></div>
-        <input type="text" name="firstName" value=""><br>
-        <input type="text" name="lastName" value=""><br>
-        <input type="text" name="address" value=""><br>
-        <input type="text" name="email" value=""><br>
-        <input type="text" name="mobileNo" value=""><br>
-        <input type="text" name="username" value=""><br>
-        <input type="text" name="password" value=""><br>
-        <button type="submit" name="submit">Save</button>
-    </form>
+<div id="settings">
+    <div id="form-container">
+        <h2>Profile Settings</h2>
+        <form action="UpdateUser" method="post" enctype="multipart/form-data">
+            <div id="prof-pic"></div>
+            <h4 id="prof-name"><%=session.getAttribute("firstName")+" "+session.getAttribute("lastName")%></h4>
+            <label for="address">Address</label><input type="text" name="address" id="address" value=""><br>
+            <label for="email">Email</label><input type="text" name="email" id="email" value=""><br>
+            <label for="mobileNo">Mobile Number</label><input type="text" name="mobileNo" id="mobileNo" value=""><br>
+            <button type="submit" name="submit">Save</button>
+        </form>
+    </div>
 </div>
 <%@include file="footer-bar.jsp"%>

@@ -119,8 +119,8 @@ ul li a:hover{
     padding-top: 16px;
     text-align: right;
     display: flex;
-    flex-flow: column;
-    align-items: flex-end;
+    /*flex-flow: column;*/
+    justify-content: flex-end;
 }
 
 .box-3 h4{
@@ -137,6 +137,37 @@ ul li a:hover{
 
 .box-3 a:hover{
     color: var(--main-orange);
+}
+
+.box-3 .prof-info{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    order: 1;
+
+}
+
+.box-3 #navbar-prof{
+    order: 2;
+    margin-left: 10px;
+    margin-top: 2px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #FFA543;
+    border-radius: 50px;
+    object-fit: cover;
+    transition: width 0.5s ease,height 0.5s ease;
+}
+
+.box-3 #navbar-prof:hover{
+    order: 2;
+    margin-left: 10px;
+    margin-top: 2px;
+    width: 70px;
+    height: 70px;
+    border: 2px solid #FFA543;
+    border-radius: 50px;
+    object-fit: cover;
 }
 
 /*.logo{
@@ -207,12 +238,67 @@ nav input[type=text]{
 }
 
 .item-box{
-    display: block;
+    position: relative;
     width: 230px;
     height:100px;
-    background-color: grey;
+    /*background-color: grey;*/
     border-radius: 15px;
     margin: 15px 0px 0px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: width 0.5s ease,height 0.5s ease;
+}
+
+.item-img{
+    display: block;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.img-overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.img-overlay:hover{
+    opacity: 1;
+}
+
+/*Target Every Direct Child of the Overlay*/
+.img-overlay > *{
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.img-overlay:hover > *{
+    transform: translateY(0);
+}
+
+
+.img-name{
+    color: #FF7A00;
+}
+
+.img-desc{
+    font-size: 0.75em;
+    margin-top: 0.25em;
+}
+
+.item-box:hover{
+    width: 235px;
+    height:105px;
 }
 
 .footer{
@@ -250,13 +336,6 @@ nav input[type=text]{
     transition: background 0.5s ease;
     transition: color 0.8s ease;
 }
-
-
-
-
-
-
-
 
 
 

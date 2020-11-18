@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
             /*String firstName=userDao.getUsersName(uname);*/
             User user=userDao.selectUser(uname);
             HttpSession session=request.getSession();
+            /*session.setAttribute("user",user); // CHECK LATER*/
             session.setAttribute("userId",user.getId());
             session.setAttribute("firstName",user.getFirstName());
             session.setAttribute("lastName",user.getLastName());

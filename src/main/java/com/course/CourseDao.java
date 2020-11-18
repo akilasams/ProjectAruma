@@ -50,6 +50,61 @@ public class CourseDao {
 
     }
 
+    //Get Course Array List
+    public List<Course> getCourseList(ResultSet rs){
+        List<Course> courseList=new ArrayList<>();
+        try {
+            if(rs.next()==false){
+                return null;
+            }else{
+                do{
+                    int courseId=rs.getInt("course_id");
+                    String courseName=rs.getString("course_name");
+                    String courseDescription=rs.getString("course_desc");
+                    int isFree=rs.getInt("free_or_not");
+                    String courseFee=rs.getString("course_fee");
+                    int userId=rs.getInt("user_id");
+                    courseList.add(new Course(courseId,courseName,courseDescription,isFree,courseFee,userId));
+                }while(rs.next());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courseList;
+    }
+
+    //Select My Courses
+    public List<Course> selectMyCourses(int user_id){
+        List<Course> myCourses=new ArrayList<>();
+        Connection connection=getConnection();
+        String selectMyCourses_SQL="SELECT * FROM COURSE WHERE user_id=?";
+
+        try {
+            PreparedStatement st=connection.prepareStatement(selectMyCourses_SQL);
+            st.setInt(1,user_id);
+            ResultSet rs=st.executeQuery();
+
+            myCourses=getCourseList(rs);
+
+            /*if(rs.next()==false){
+                return null;
+            }else{
+                do{
+                    int courseId=rs.getInt("course_id");
+                    String courseName=rs.getString("course_name");
+                    String courseDescription=rs.getString("course_desc");
+                    int isFree=rs.getInt("free_or_not");
+                    String courseFee=rs.getString("course_fee");
+                    int userId=rs.getInt("user_id");
+                    myCourses.add(new Course(courseId,courseName,courseDescription,isFree,courseFee,userId));
+                }while(rs.next());
+            }*/
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return myCourses;
+    }
+
     //Select All Courses
     public List<Course> selectAllCourses(){
         List<Course> courses=new ArrayList<>();
@@ -60,7 +115,9 @@ public class CourseDao {
             PreparedStatement st=connection.prepareStatement(selectAllCourses_SQL);
             ResultSet rs=st.executeQuery();
 
-            if(rs.next()==false){
+            courses=getCourseList(rs);
+
+            /*if(rs.next()==false){
                 return null;
             }else{
                 do{
@@ -72,7 +129,7 @@ public class CourseDao {
                     int userId=rs.getInt("user_id");
                     courses.add(new Course(courseId,courseName,courseDescription,isFree,courseFee,userId));
                 }while(rs.next());
-            }
+            }*/
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

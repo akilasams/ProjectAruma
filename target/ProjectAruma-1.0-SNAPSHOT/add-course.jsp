@@ -6,32 +6,31 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    if(session.getAttribute("username")==null){
+        response.sendRedirect("login.jsp");
+    }
+%>
+
 <html>
 <head>
     <title>Add Course</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/forms.css">
+    <script src="assets/js/forms.js"></script>
 </head>
 <body>
     <div id="form-container">
         <h2>Add New Course</h2>
-        <form action="InsertCourse" method="post" enctype="multipart/form-data">
+        <form action="InsertCourse" method="post">
             <input type="text" name="courseName" placeholder="Enter Course Name"><br>
             <textarea name="courseDesc" id="" cols="30" rows="10" placeholder="Write Something About the Course"></textarea><br>
-            <input type="text" name="isFree" placeholder="Enter 1 if Free">
-            <input type="text" name="courseFee" placeholder="Enter Course Fee"><br>
-            <%--<select name="cat" id="" name="category">
-            <option value="none">Select a Category</option>
-            <option value="graphicDesign">Graphic Design</option>
-            <option value="handiCraft">Handi-Craft</option>
-            <option value="fashion">Fashion</option>
-            <option value="video_audio">Video/Audio</option>
-            <option value="art">Art</option>
-            <option value="other">Other</option>
-            </select><br>
-            <label id="filename" for="filename">Upload an Image</label><br>
-            <input type="file" name="filename"><br>--%>
-            <button type="submit" name="submit">Add to My Designs</button>
+            <div id="check">
+            Make this Course Available for Free : <input type="checkbox" id="isFree" name="isFree" value="1"><br>
+            </div>
+            <input type="text" id="courseFee" name="courseFee" placeholder="Enter Course Fee"><br>
+            <button type="submit" name="submit">Add to My Courses</button>
         </form>
     </div>
 </body>

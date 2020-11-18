@@ -21,14 +21,22 @@ public class InsertCourseServlet extends HttpServlet {
         int userId= (Integer) session.getAttribute("userId");
         String courseName=request.getParameter("courseName");
         String courseDescription=request.getParameter("courseDesc");
-        int isFree=Integer.parseInt(request.getParameter("isFree"));
-        String courseFee=request.getParameter("courseFee");
+        int isFree;
+        String courseFee;
+        if(request.getParameter("isFree")!=null){
+            isFree=Integer.parseInt(request.getParameter("isFree"));
+            courseFee=null;
+        }else{
+            isFree=0;
+            courseFee=request.getParameter("courseFee");
+        }
 
         Course course=new Course(courseName,courseDescription,isFree,courseFee,userId);
         CourseDao dao=new CourseDao();
 
         if(dao.insertCourse(course)){
-            response.sendRedirect("all-course.jsp");
+            RequestDispatcher rd=request.getRequestDispatcher("/ViewCourses");
+            rd.forward(request,response);
         }else{
             response.getWriter().print("Failed");
         }

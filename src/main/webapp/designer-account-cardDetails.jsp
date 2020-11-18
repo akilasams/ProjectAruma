@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+
+<%
+    if(session.getAttribute("username")==null){
+        response.sendRedirect("login.jsp");
+    }
+%>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -1,5 +1,7 @@
 package com.user;
 
+import com.course.Course;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,28 @@ public class UserDao{
         return connection;
     }
 
+    /*public List<Course> getCourseList(ResultSet rs){
+        List<Course> courseList=new ArrayList<>();
+        try {
+            if(rs.next()==false){
+                return null;
+            }else{
+                do{
+                    int courseId=rs.getInt("course_id");
+                    String courseName=rs.getString("course_name");
+                    String courseDescription=rs.getString("course_desc");
+                    int isFree=rs.getInt("free_or_not");
+                    String courseFee=rs.getString("course_fee");
+                    int userId=rs.getInt("user_id");
+                    courseList.add(new Course(courseId,courseName,courseDescription,isFree,courseFee,userId));
+                }while(rs.next());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courseList;
+    }
+*/
     //Get User's Name
     /*public String getUsersName(String username){
         String firstName="";
@@ -112,6 +136,37 @@ public class UserDao{
         return users;
     }
 
+    //Select All Designer
+    public List<User> selectAllDesigners(){
+        List<User> users=new ArrayList<>();
+        Connection connection=getConnection();
+        String selectByUsername_SQL="SELECT * FROM USER WHERE user_role_id=2";
+        try {
+            PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
+            ResultSet rs=st.executeQuery();
+
+            if(rs.next()==false){
+                return null;
+            }else {
+                do {
+                    int user_id = rs.getInt("user_id");
+                    String firstName = rs.getString("first_name");
+                    String lastName = rs.getString("last_name");
+                    int roleId = rs.getInt("user_role_id");
+                    String address = rs.getString("address");
+                    String email = rs.getString("email");
+                    String mobNo = rs.getString("mobile_no");
+                    String password = rs.getString("password");
+                    users.add(new User(user_id, firstName, lastName, roleId, address, email, mobNo, username, password));
+                } while (rs.next());
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return users;
+    }
+
+
     //Delete User
     public boolean deleteUser(String username){
         boolean rowDeleted=false;
@@ -127,8 +182,4 @@ public class UserDao{
         }
         return rowDeleted;
     }
-
-    //
-
-
 }

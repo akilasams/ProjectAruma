@@ -1,4 +1,11 @@
+<%--<%@ page import="com.course.ViewMyCoursesServlet" %>--%>
 <%@ include file="header-bar.jsp"%>
+
+<%
+    if(session.getAttribute("username")==null){
+        response.sendRedirect("login.jsp");
+    }
+%>
 
 <head>
     <link rel="stylesheet" href="./assets/css/profile.css">
@@ -21,8 +28,8 @@
                 <li><a href="">Job Requests</a></li>
                 <li><a href="">Messages</a></li>
                 <li><a href="">My Designs</a></li>
-                <li><a href="">My Courses</a></li>
-                <li><a href="">Settings</a></li>
+                <li><a href="<%=request.getContextPath()%>/ViewMyCoursesServlet">My Courses</a></li>
+                <li><a href=profile-settings.jsp">Settings</a></li>
             </ul>
             <div id="buttons">
                 <div class="btn-prof"><a href="add-design.jsp">Add New Design</a></div>
