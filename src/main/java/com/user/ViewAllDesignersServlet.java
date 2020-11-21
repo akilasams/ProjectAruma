@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/GetAllDesignersServlet")
-public class GetAllDesignersServlet extends HttpServlet {
+public class ViewAllDesignersServlet extends HttpServlet {
     private UserDao dao=new UserDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

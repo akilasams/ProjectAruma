@@ -5,6 +5,12 @@
     if(session.getAttribute("username")==null){
         response.sendRedirect("login.jsp");
     }
+
+    if((int)session.getAttribute("user_role_Id")==1){
+        response.sendRedirect("admin-profile.jsp");
+    }else if((int)session.getAttribute("user_role_Id")==3) {
+        response.sendRedirect("customer-profile.jsp");
+    }
 %>
 
 <head>
@@ -15,7 +21,9 @@
     <div id="side-bar">
         <div id="prof">
             <div id="profile">
-                <div id="prof-pic"></div>
+                <div id="prof-pic">
+                    <img src="./assets/img/prof-pic.jpg" alt="">
+                </div>
                 <div id="name">
                     <h3><%=session.getAttribute("firstName")%></h3>
                     <h4><%=session.getAttribute("lastName")%></h4>
@@ -29,7 +37,7 @@
                 <li><a href="">Messages</a></li>
                 <li><a href="">My Designs</a></li>
                 <li><a href="<%=request.getContextPath()%>/ViewMyCoursesServlet">My Courses</a></li>
-                <li><a href=profile-settings.jsp">Settings</a></li>
+                <li><a href="profile-settings.jsp">Settings</a></li>
             </ul>
             <div id="buttons">
                 <div class="btn-prof"><a href="add-design.jsp">Add New Design</a></div>

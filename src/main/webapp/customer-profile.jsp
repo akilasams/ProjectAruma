@@ -15,7 +15,9 @@
     <div id="side-bar">
         <div id="prof">
             <div id="profile">
-                <div id="prof-pic"></div>
+                <div id="prof-pic">
+                    <img src="./assets/img/prof-pic.jpg" alt="">
+                </div>
                 <div id="name">
                     <h3>First Name</h3>
                     <h4>Last Name</h4>
@@ -28,7 +30,7 @@
                 <li><a href="">Messages</a></li>
                 <li><a href="">My Cart</a></li>
                 <li><a href="">My Courses</a></li>
-                <li><a href="">Settings</a></li>
+                <li><a href="profile-settings.jsp">Settings</a></li>
             </ul>
         </div>
     </div>

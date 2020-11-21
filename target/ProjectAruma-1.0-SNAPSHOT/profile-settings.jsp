@@ -24,7 +24,10 @@
     <div id="form-container">
         <h2>Profile Settings</h2>
         <form action="UpdateUser" method="post" enctype="multipart/form-data">
-            <div id="prof-pic"></div>
+            <div id="prof-pic">
+                <img src="./assets/img/prof-pic.jpg" alt="">
+            </div>
+            <a href="#">Change Profile Picture</a>
             <h4 id="prof-name"><%=session.getAttribute("firstName")+" "+session.getAttribute("lastName")%></h4>
             <label for="address">Address</label><input type="text" name="address" id="address" value=""><br>
             <label for="email">Email</label><input type="text" name="email" id="email" value=""><br>

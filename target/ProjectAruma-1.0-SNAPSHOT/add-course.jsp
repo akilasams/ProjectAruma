@@ -18,7 +18,7 @@
     <title>Add Course</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/forms.css">
-    <script src="assets/js/forms.js"></script>
+    <script src="assets/js/form-validation.js"></script>
 </head>
 <body>
     <div id="form-container">

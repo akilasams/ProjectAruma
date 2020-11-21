@@ -18,6 +18,7 @@ public class LoginServlet extends HttpServlet {
         String pass=request.getParameter("password");
 
         LoginDao dao=new LoginDao();
+        User user=new User();
         UserDao userDao=new UserDao();
 
         /*if(uname.equals("user") && pass.equals("password")){
@@ -28,19 +29,24 @@ public class LoginServlet extends HttpServlet {
 
         if(dao.checkCredentials(uname,pass)){
             /*String firstName=userDao.getUsersName(uname);*/
-            User user=userDao.selectUser(uname);
-            HttpSession session=request.getSession();
+            user=userDao.selectUser(uname);
             /*session.setAttribute("user",user); // CHECK LATER*/
-            session.setAttribute("userId",user.getId());
-            session.setAttribute("firstName",user.getFirstName());
-            session.setAttribute("lastName",user.getLastName());
-            session.setAttribute("username",uname);
-            response.sendRedirect("home-main.jsp");
-        }
-        else{
+        } else{
             response.sendRedirect("login.jsp");
         }
 
+        HttpSession session=request.getSession();
+        session.setAttribute("userId",user.getId());
+        session.setAttribute("firstName",user.getFirstName());
+        session.setAttribute("lastName",user.getLastName());
+        session.setAttribute("user_role_Id",user.getUser_role_id());
+        session.setAttribute("username",uname);
+
+        if(user.getUser_role_id()==1){
+            response.sendRedirect("admin-profile.jsp");
+        }else{
+            response.sendRedirect("home-main.jsp");
+        }
     }
 
 

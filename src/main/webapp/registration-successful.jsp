@@ -21,7 +21,7 @@
             <h2>You have been Successfully Registered as a <%=session.getAttribute("type")%></h2>
         </div>
         <div class="home-button">
-            <a href="home-main.jsp">Go to Home Page</a>
+            <a href="login.jsp">Login</a>
         </div>
     </div>
 </body>

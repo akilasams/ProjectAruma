@@ -16,9 +16,10 @@ mini-nav{
     margin-bottom: 20px;
 }
 
-#mini-nav li{
+#mini-nav>li{
     display: block;
     border-right: 6px solid transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     color: white;
     line-height: 60px;
     transition: background-color 0.5s ease,color 0.5s ease;
@@ -28,6 +29,43 @@ mini-nav{
     background: #FF7A00;
     border-right: 6px solid #FFC700;
     color: #FFE2AB;
+}
+
+#mini-nav ul{
+    display: flex;
+    flex-flow: column;
+    display: none;
+}
+
+#mini-nav .cat-show.show {
+    display: block;
+}
+
+#mini-nav ul li{
+    line-height: 42px;
+    font-size: 13px;
+    border-right: none;
+    border-bottom: none;
+    transition: background-color 0.5s ease;
+}
+
+#mini-nav ul li:hover{
+    background-color: #FFA543;
+}
+
+#mini-nav ul li a{
+    font-size: 12px;
+    color: #fff;
+    padding-left: 10px;
+}
+
+#mini-nav li a span{
+    margin-left: 20px;
+    transform: translateY(-50%);
+}
+
+#mini-nav li a span:hover{
+    transform: translateY(-50%) rotate(-180deg);
 }
 
 #prof-info{
@@ -55,4 +93,18 @@ mini-nav{
 
 #rating{
     margin: 20px;
+}
+
+.slider-container {
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.slider-container label{
+    margin-top: 20px;
+    margin-bottom: 10px;
 }

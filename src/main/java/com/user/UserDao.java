@@ -1,7 +1,5 @@
 package com.user;
 
-import com.course.Course;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -164,6 +162,37 @@ public class UserDao{
             throwables.printStackTrace();
         }
         return users;
+    }
+
+    //Select Designer
+    public User selectDesigner(int userId){
+        User user=null;
+        Connection connection=getConnection();
+        String selectByUsername_SQL="SELECT * FROM USER WHERE userId=?";
+        try {
+            PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
+            st.setInt(1, userId);
+            ResultSet rs=st.executeQuery();
+
+            if(rs.next()==false){
+                return null;
+            }else {
+                do {
+                    int user_id = rs.getInt("user_id");
+                    String firstName = rs.getString("first_name");
+                    String lastName = rs.getString("last_name");
+                    int roleId = rs.getInt("user_role_id");
+                    String address = rs.getString("address");
+                    String email = rs.getString("email");
+                    String mobNo = rs.getString("mobile_no");
+                    String password = rs.getString("password");
+                    user = new User(user_id, firstName, lastName, roleId, address, email, mobNo, username, password);
+                } while (rs.next());
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return user;
     }
 
 
