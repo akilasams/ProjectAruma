@@ -1,36 +1,35 @@
 <%@include file="header-bar.jsp"%>
 
-    <%
-        if(session.getAttribute("username")==null){
-            response.sendRedirect("login.jsp");
-        }
-    %>
+<%
+    if(session.getAttribute("username")==null){
+        response.sendRedirect("login.jsp");
+    }
+%>
 
-    <div class="cover-image"></div>
-    <div class="title-bar">
-        <h1><a href="#">WHAT'S NEW IN STORE</a></h1>
+<head>
+    <link rel="stylesheet" href="./assets/css/tables.css">
+    <link rel="stylesheet" href="./assets/css/side-nav.css">
+    <link rel="stylesheet" href="assets/css/course-cards.css">
+    <script src="assets/js/sidebar.js"></script>
+</head>
+
+<div class="table-wrapper">
+    <%@include file="side-nav.jsp"%>
+
+    <div class="card-holder">
+        <c:forEach var="course" items="${courseList}">
+            <div class="card">
+                <div class="img-holder">
+                    <img src="./assets/img/img5.jpg" alt="" class="card-img">
+                </div>
+                <div class="details-holder">
+                    <h4><c:out value="${course.courseName}"/></h4>
+                    <p><c:out value="${course.courseDescription}"/></p>
+                    <p><c:out value="${course.courseFee}"/></p>
+                </div>
+            </div>
+        </c:forEach>
     </div>
-
-    <div class="showcase">
-        <div class="wrapper">
-            <div class="item-box"></div>
-            <div class="item-box"></div>
-            <div class="item-box"></div>
-            <div class="item-box"></div>
-            <div class="item-box"></div>
-        </div>
-    </div>
-
-    <div class="showcase">
-        <div class="wrapper">
-            <div class="item-box"></div>
-            <div class="item-box"></div>
-            <div class="item-box"></div>
-            <div class="item-box"></div>
-            <div class="item-box"></div>
-        </div>
-    </div>
-
-
+</div>
 
 <%@include file="footer-bar.jsp"%>

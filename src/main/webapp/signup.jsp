@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Aruma | A Platform for Designers</title>
-    <link rel="stylesheet" href="./assets/css/signup-new.css">
+    <link rel="stylesheet" href="assets/css/signup.css">
 </head>
 <body>
     <div class="container">

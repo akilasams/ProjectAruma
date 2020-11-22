@@ -17,9 +17,9 @@ public class ViewCoursesServlet extends HttpServlet {
         //listAllCourses(request,response);
         List<Course> courseList=dao.selectAllCourses();
         request.setAttribute("courseList",courseList);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("all-courses.jsp");
+        RequestDispatcher dispatcher=request.getRequestDispatcher("dschool-home.jsp");
         dispatcher.forward(request,response);
-        /*response.sendRedirect("all-courses.jsp"); //Doesnt Pass Data with sendRidirect()*/
+        /*response.sendRedirect("store-home.jsp"); //Doesnt Pass Data with sendRidirect()*/
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,6 +29,6 @@ public class ViewCoursesServlet extends HttpServlet {
     /*private void listAllCourses(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
         List<Course> courseList=dao.selectAllCourses();
         request.setAttribute("courseList",courseList);
-        response.sendRedirect("all-courses.jsp");
+        response.sendRedirect("store-home.jsp");
     }*/
 }
