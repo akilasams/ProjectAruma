@@ -90,6 +90,7 @@ body{
 }
 
 .form a{
+    color: #A9A9A9;
     text-decoration: none;
     transition: color 0.3s ease;
 }

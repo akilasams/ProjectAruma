@@ -15,7 +15,7 @@ table{
     overflow-x: hidden;
 }
 
-#display-list-table{
+.display-list-table{
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -77,3 +77,11 @@ tr:nth-child(odd){
     margin-left: 10px;
     color: #e22807;
 }
+.item-title img{
+    display: block;
+    border-radius: 10px;
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+

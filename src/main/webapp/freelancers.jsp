@@ -6,14 +6,7 @@
     <link rel="stylesheet" href="./assets/css/cards.css">
 </head>
 <div class="table-wrapper">
-    <mini-nav>
-        <ul id="mini-nav">
-            <li><a href="">Advanced Search</a></li>
-            <li><a href="">Categories</a></li>
-            <li><a href="">Sort</a></li>
-            <li><a href="">Price Range</a></li>
-        </ul>
-    </mini-nav>
+    <%@include file="side-nav.jsp"%>
 
     <div class="card-holder">
         <c:forEach var="designer" items="${designersList}">
@@ -24,7 +17,7 @@
                     <img src="./assets/img/people/p2.jpg" alt="" class="card-img">
                 </div>
                 <div class="details-holder">
-                    <h4><b><c:out value="${designer.firstName}"/> <c:out value="${designer.lastName}"/></b></h4>
+                    <h4 style="background: none"><b><c:out value="${designer.firstName}"/> <c:out value="${designer.lastName}"/></b></h4>
                     <p>Small Bio</p>
                 </div>
             </div>

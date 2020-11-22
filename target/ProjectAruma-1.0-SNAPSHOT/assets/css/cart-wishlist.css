@@ -1,0 +1,24 @@
+.car-wishlist{
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    align-items: center;
+    padding: 10px;
+    top: 200px;
+    right: 0;
+    border-radius: 5px 0 0 5px;
+    width: 40px;
+    height: 85px;
+    font-size: 1.2em;
+    background-color: #FF7A00;
+}
+
+.car-wishlist i{
+    color: white;
+    margin: 8px;
+    transition: color 0.3s ease;
+}
+
+.car-wishlist i:hover{
+    color: #FFD2A1;
+}
