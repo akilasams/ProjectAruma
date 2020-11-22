@@ -1,0 +1,59 @@
+
+.A{
+	
+	width: 20cm;
+	height: 12cm;
+	background-color: grey;
+	margin-left: 5cm;
+	border-radius: 12px;
+}
+
+input[type=text1] {
+  width: 50%;
+  margin-bottom: 5px;
+ padding: 8px;
+ border: 1px solid #ccc;
+  border-radius: 10px;
+ background-color: #FFFFF0;
+ marging-left:5cm;
+}
+
+.C{
+	
+	width: 16cm;
+	height: 8cm;
+	background-color: orange;
+	margin-left: 2cm;
+	border-radius: 12px;
+	
+}
+
+.btn2 {
+  
+  background-color:grey;
+   color: black;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 4.5cm;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 7cm;
+
+}
+
+
+
+body{
+	
+	background-color:orange ;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+  margin-left:0cm;
+}
+
+

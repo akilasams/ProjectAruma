@@ -1,0 +1,62 @@
+@charset "ISO-8859-1";
+body{
+	
+	background-color:rgb(255, 128, 64) ;
+}
+
+table{
+    width: 75%;
+  
+}
+
+th{
+    background-color: #FFD2A1;
+}
+
+th, caption{
+    text-align: left;
+}
+
+/*table, th, td{
+    border: 1px solid rgba(255,122,0,0.3);
+    border-collapse: collapse;
+}*/
+
+th, td, caption{
+    padding: 10px;
+}
+
+tr:nth-child(even){
+    background-color: #FFB96D;
+}
+
+tr:nth-child(odd){
+    background-color: #FFA543;
+}
+
+.btn1 {
+  background-color:grey;
+   color: black;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 4.5cm;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  margin-left: 2cm;
+}
+
+.btn2 {
+  background-color:grey;
+   color: black;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 4.5cm;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  margin-left: 4cm;
+}
+

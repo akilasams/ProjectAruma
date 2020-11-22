@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+
+.imp{
+	
+	width: 24cm;
+	height: 13cm;
+	background-color: darkgrey;
+	margin-left: 5cm;
+	 border-radius: 12px;
+	
+}
+
+.first{
+	
+	
+	width: 20cm;
+	height: 10cm;
+	background-color: orange;
+	margin-left: 2cm;
+	 border-radius: 12px;
+	
+	
+}
+
+.A{
+	
+	width: 14cm;
+	height: 6cm;
+	background-color: darkgrey;
+	margin-left: 3cm;
+	border-radius: 12px;
+}

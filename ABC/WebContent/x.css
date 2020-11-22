@@ -1,0 +1,34 @@
+@charset "ISO-8859-1";
+
+.box{
+
+   background-color:grey;
+  height: 180px;
+  width: 350px;
+  border-radius: 12px;
+  margin: 10px 10px 0px 10px;
+  margin-left: 13cm;
+  text-align: center;
+  
+
+}
+
+body{
+	
+	background-color:orange ;
+}
+
+.btn2 {
+  
+  background-color:grey;
+   color: black;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 4.5cm;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 15cm;
+
+}
