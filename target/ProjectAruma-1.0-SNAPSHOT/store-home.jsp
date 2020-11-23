@@ -37,6 +37,10 @@
             </div>
             <div class="item-price">
                 <h5>200.00</h5>
+                <div class="item-price-icons">
+                    <a href="#"><i class="fas fa-star"></i></a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                </div>
             </div>
         </div>
 
@@ -50,7 +54,13 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, quod.</p>
             </div>
             <div class="item-price">
-                <h5>300.00</h5>
+                <div class="item-price">
+                    <h5>400.00</h5>
+                    <div class="item-price-icons">
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

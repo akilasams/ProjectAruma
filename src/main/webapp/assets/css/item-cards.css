@@ -50,10 +50,13 @@
 }
 
 .item-price{
-    display: block;
+    padding-left: 70px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
     width: 100%;
     background-color: tomato;
-    text-align: right;
+    text-align: center;
     padding-right: 20px;
     height: 30px;
     float: end;
@@ -64,8 +67,31 @@
     right: 0;
 }
 
-.item-price h5{
+.item-price-icons{
+    width: 200px;
+    text-align: end;
+    font-size: 0.8em;
+}
+
+.item-price-icons a{
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.item-price-icons a:hover{
+    color: mediumspringgreen;
+}
+
+.item-price-icons a > i{
     line-height: 30px;
+    margin-left: 10px;
+}
+
+.item-price h5{
+    position: absolute;
+    line-height: 30px;
+    left: 100px;
 }
 
 /*.details-holder .item-price{
@@ -120,12 +146,6 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.card-holder a{
-    position: absolute;
-    width: 100%;
-    height: 100%;
 }
 
 .card .details-holder > h4{

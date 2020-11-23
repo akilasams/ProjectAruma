@@ -23,7 +23,7 @@
                     <img src="./assets/img/img5.jpg" alt="" class="card-img">
                 </div>
                 <div class="details-holder">
-                    <h4><c:out value="${course.courseName}"/></h4>
+                    <h4 style="background: none"><c:out value="${course.courseName}"/></h4>
                     <p><c:out value="${course.courseDescription}"/></p>
                     <p><c:out value="${course.courseFee}"/></p>
                 </div>
