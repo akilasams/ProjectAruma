@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="./assets/css/side-nav.css">
     <link rel="stylesheet" href="assets/css/course-cards.css">
     <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/design-school.js"></script>
+
 </head>
+
+<%@include file="view-course.jsp"%>
 
 <div class="table-wrapper">
     <%@include file="side-nav.jsp"%>

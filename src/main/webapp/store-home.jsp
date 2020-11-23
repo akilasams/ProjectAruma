@@ -18,14 +18,16 @@
     <link rel="stylesheet" href="./assets/css/side-nav.css">
     <link rel="stylesheet" href="./assets/css/item-cards.css">
     <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/store-home.js"></script>
 </head>
 
-
+<%@include file="view-item.jsp"%>
 
 <div class="table-wrapper">
     <%@include file="side-nav.jsp"%>
 
     <div class="card-holder">
+
         <div class="card">
             <div class="img-holder">
                 <img src="./assets/img/img5.jpg" alt="" class="card-img">
