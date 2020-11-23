@@ -33,8 +33,7 @@
         <div id="links">
             <ul id="side-bar-links">
                 <li><a href="">Reviews & Comments</a></li>
-                <li><a href="">Job Requests</a></li>
-                <li><a href="">Messages</a></li>
+                <li><a href="reqs-and-msgs.jsp">Job Requests & Messages</a></li>
                 <li><a href="">My Designs</a></li>
                 <li><a href="<%=request.getContextPath()%>/ViewMyCoursesServlet">My Courses</a></li>
                 <li><a href="profile-settings.jsp">Settings</a></li>

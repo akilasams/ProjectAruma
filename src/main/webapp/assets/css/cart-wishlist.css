@@ -20,7 +20,7 @@ a{
     width: 1300px;
 }
 
-.car-wishlist{
+.cart-wishlist{
     display: flex;
     flex-flow: column;
     position: fixed;
@@ -35,13 +35,13 @@ a{
     background-color: #FF7A00;
 }
 
-.car-wishlist i{
+.cart-wishlist i{
     color: white;
     margin: 8px;
     transition: color 0.3s ease;
 }
 
-.car-wishlist i:hover{
+.cart-wishlist i:hover{
     color: #FF4D00;
 }
 

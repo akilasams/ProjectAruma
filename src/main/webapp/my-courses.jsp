@@ -18,14 +18,6 @@
             <h4><%=session.getAttribute("lastName")%></h4>
             <h3 id="rating">6.5/10</h3>
         </div>
-
-        <ul id="mini-nav">
-            <li><a href="">Advanced Search</a></li>
-            <li><a href="">Categories</a></li>
-            <li><a href="">Sort</a></li>
-            <li><a href="">Price Range</a></li>
-            <li><a href="">Categories</a></li>
-        </ul>
     </mini-nav>
 
     <table>
