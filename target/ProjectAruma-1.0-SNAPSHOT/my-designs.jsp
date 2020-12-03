@@ -27,7 +27,7 @@
         </ul>
     </mini-nav>
 
-    <table>
+    <table class="my-table">
         <caption>My Design Library</caption>
 
         <tr>

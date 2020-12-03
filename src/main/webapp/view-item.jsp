@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="view-bottom">
-            <button class="buy-now">Buy Now</button>
+            <button class="buy-now"><a href="shipping-payment.jsp">Buy Now</a></button>
         </div>
     </div>
 </div>
