@@ -1,13 +1,9 @@
-<%@include file="header-bar.jsp"%>
-
 <link rel="stylesheet" href="./assets/css/cart-wishlist.css">
-<%@include file="cart-wishlist.jsp"%>
 
-<div class="cart-wrapper">
-<%--<div class="cart-container">--%>
+<div class="cart-container">
     <div class="cart">
-        <h4>Your Cart</h4>
-        <i class="fas fa-times"></i>
+        <h4 style="color: black">Your Cart</h4>
+        <a href="#" class="close-cart"><i class="fas fa-times"></i></a>
         <div class="cart-item-holder">
             <div class="cart-item">
                 <div class="item-img">
@@ -42,10 +38,8 @@
         </div>
         <div class="cart-bottom">
             <h4>Total : XXXXXX</h4>
-            <button class="place-order">Place Order</button>
+            <button class="place-order"><a href="shipping-payment.jsp">Place Order</a></button>
         </div>
     </div>
-<%--</div>--%>
 </div>
 
-<%@include file="footer-bar.jsp"%>

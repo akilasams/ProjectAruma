@@ -1,13 +1,9 @@
-<%@include file="header-bar.jsp"%>
-
 <link rel="stylesheet" href="./assets/css/cart-wishlist.css">
-<%@include file="cart-wishlist.jsp"%>
 
-<div class="cart-wrapper">
-<%--<div class="cart-container">--%>
+<div class="wishlist-container">
     <div class="cart">
-        <h4>Your Wishlist</h4>
-        <i class="fas fa-times"></i>
+        <h4 style="color: black">Your Wishlist</h4>
+        <a href="#" class="close-wishlist"><i class="fas fa-times"></i></a>
         <div class="cart-item-holder">
             <div class="cart-item">
                 <div class="item-img">
@@ -27,7 +23,6 @@
 
         </div>
     </div>
-<%--</div>--%>
 </div>
 
-<%@include file="footer-bar.jsp"%>
+

@@ -12,30 +12,9 @@
     <link rel="stylesheet" href="./assets/css/admin-profile.css">
 </head>
 
-<div id="msgs-reqs-container">
-    <div id="side-bar">
-        <div id="prof">
-            <div id="profile">
-                <div id="prof-pic">
-                    <img src="./assets/img/prof-pic.jpg" alt="">
-                </div>
-                <div id="name">
-                    <h3><%=session.getAttribute("firstName")%></h3>
-                    <h4><%=session.getAttribute("lastName")%></h4>
-                    <h5>Admin</h5>
-                </div>
-            </div>
-        </div>
-        <div id="links">
-            <ul id="side-bar-links">
-                <li><a href="">All Users</a></li>
-                <li><a href="">Request & Messages</a></li>
-                <li><a href="">Reviews</a></li>
-                <li><a href="">Reports</a></li>
-                <li><a href="profile-settings.jsp">Settings</a></li>
-            </ul>
-        </div>
-    </div>
+<div class="prof-container">
+    <%@include file="admin-sidebar.jsp"%>
+
     <div id="admin-gallery" class="prof-tab">
         <div id="messages-box">
             <caption>Messages</caption>
@@ -104,3 +83,4 @@
 </div>
 
 <%@ include file="footer-bar.jsp"%>
+
