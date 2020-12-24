@@ -68,6 +68,22 @@ html,body{
     display: block;
 }
 
+.field.success input{
+    border-color: #2ecc71;
+}
+
+.field.error input{
+    border-color: #e74c3c;
+}
+
+.field small{
+    visibility: hidden;
+}
+
+.field.error small{
+    visibility: visible;
+    color: #e74c3c;
+}
 
 .form-inner form .field input{
     height: 50px;

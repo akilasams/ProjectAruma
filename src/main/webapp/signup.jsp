@@ -1,27 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: Akila Samarawickrama
+  Date: 11/20/2020
+  Time: 12:15 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-
-    <style>
-        body  {
-            background-color: #cccccc;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-        }
-    </style>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/signup.css" >
+    <title>Aruma | A Platform for Designers</title>
+    <link rel="stylesheet" href="assets/css/signup.css">
 </head>
 <body>
-<div class="move2">
-    <ul>
-        <li><a class="designer_acc" href="designer-account.jsp">Designer Account</a></li>
-        <li><a class="buyer_acc"href="customer-account.jsp">Customer Account</a></li>
-    </ul>
-</div>
+    <div class="container">
+        <div class="hero-box">
+            <label for=""><h2>Select Account Type</h2></label>
+            <div class="btn-container">
+                <button onclick="document.location='designer-register.jsp'">Designer Account</button>
+                <button onclick="document.location='customer-register.jsp'">Customer Account</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

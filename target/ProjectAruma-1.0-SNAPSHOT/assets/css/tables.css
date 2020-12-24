@@ -8,10 +8,17 @@
 }
 
 table{
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.display-list-table{
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 th{
@@ -25,6 +32,7 @@ th{
 caption{
     text-align: center;
 }
+
 
 /*
 table, th, td{
@@ -69,3 +77,11 @@ tr:nth-child(odd){
     margin-left: 10px;
     color: #e22807;
 }
+.item-title img{
+    display: block;
+    border-radius: 10px;
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+

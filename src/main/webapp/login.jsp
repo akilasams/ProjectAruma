@@ -1,39 +1,38 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Akila Samarawickrama
+  Date: 11/19/2020
+  Time: 10:50 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login form</title>
-    <link rel="stylesheet" href="./assets/css/login.css">
-
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/login-forms.css">
 </head>
 <body>
-
-<div class="move">
-    <div class="wrapper">
-        <div class="title-text">
-            <div class="title login">Login</div>
+    <div class="form-container">
+        <div class="form-header">
+            <img src="./assets/img/Logo.png" alt="">
         </div>
-
-        <div class="form-container">
-            <div class="form-inner">
-                <form action="LoginServlet" method="post">
-                    <div class="field">
-                        <input type="text" name="username" placeholder="Username" required><br>
-                    </div>
-                    <div class="field">
-                        <input type="password" name="password" placeholder="Password" required><br>
-                    </div>
-                    <div class="pass-link"><a href="#">Forgot Password?</a></div>
-                    <div class="field">
-                        <input type="submit" value="Login">
-                    </div>
-                    <div class="signup-link">Not a member? <a href="signup.jsp">Sign Up Now</a></div>
-                </form>
+        <form class="form" id="login-form">
+            <div class="form-control">
+                <input type="text" name="username" placeholder="Username" required>
+                <%--<i class="fas fa-check"></i>
+                <i class="fas fa-times"></i>--%>
+                <small>Error Message</small>
             </div>
-        </div>
+            <div class="form-control">
+                <input type="password" name="password" placeholder="Password" required>
+                <%--<i class="fas fa-check"></i>
+                <i class="fas fa-times"></i>--%>
+                <small>Error Message</small>
+            </div>
+
+            <button form="login-form" formaction="LoginServlet" formmethod="post">Login</button>
+            <label for=""><a href="forgot-password.jsp">Forgot Password?</a> | <a href="signup.jsp">Sign Up</a></label>
+        </form>
     </div>
-</div>
 </body>
 </html>

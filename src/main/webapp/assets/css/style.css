@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: var(--quicksand);
+    font-family: var(--quicksand),sans-serif;
     text-decoration: none;
     box-sizing: border-box;
 }
@@ -145,6 +145,10 @@ ul li a:hover{
     align-items: flex-end;
     order: 1;
 
+}
+
+.box-3 .prof-info > h4{
+    background: none;
 }
 
 .box-3 #navbar-prof{
