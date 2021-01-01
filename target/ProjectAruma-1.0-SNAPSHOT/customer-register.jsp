@@ -18,62 +18,62 @@
         <h2>Register | Customer</h2>
     </div>
 
-    <form action="CustomerRegisterServlet" class="form" method="post" id="customer-form">
+    <form action="CustomerRegisterServlet" class="form" method="post" id="form">
 
         <div class="form-control">
             <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
-<%--            <i class="fas fa-check"></i>--%>
-<%--            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
         </div>
 
         <div class="form-control">
             <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
-<%--            <i class="fas fa-check"></i>--%>
-<%--            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
         </div>
 
         <div class="form-control">
             <input type="text" name="email" id="email" placeholder="Email" required>
-<%--            <i class="fas fa-check"></i>--%>
-<%--            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
         </div>
 
         <div class="form-control">
             <input type="text" name="address" id="address" placeholder="Address" required>
-<%--            <i class="fas fa-check"></i>--%>
-<%--            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
         </div>
 
         <div class="form-control">
             <input type="text" name="mobileNo" id="mobileNo" placeholder="Mobile Number" required>
-<%--            <i class="fas fa-check"></i>--%>
-<%--            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
         </div>
 
         <div class="form-control">
             <input type="text" name="username" id="username" placeholder="New Username" required>
-<%--            <i class="fas fa-check"></i>--%>
-<%--            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
         </div>
 
         <div class="form-control">
             <input type="password" name="password" id="password" placeholder="New Password" required>
-<%--            <i class="fas fa-check"></i>--%>
-<%--            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
         </div>
 
         <div class="form-control">
             <input type="password" name="retypePassword" id="retypePassword" placeholder="Retype Password" required>
-<%--            <i class="fas fa-check"></i>--%>
-<%--            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
         </div>
 
         <div class="form-control">

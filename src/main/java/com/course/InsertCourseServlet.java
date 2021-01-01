@@ -83,7 +83,7 @@ public class InsertCourseServlet extends HttpServlet {
     /*private void listAllCourses(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
         List<Course> courseList=dao.selectAllCourses();
         request.setAttribute("courseList",courseList);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("all-courses.jsp");
+        RequestDispatcher dispatcher=request.getRequestDispatcher("store-home.jsp");
         dispatcher.forward(request,response);
     }*/
 }

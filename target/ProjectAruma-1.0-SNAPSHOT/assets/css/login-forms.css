@@ -28,6 +28,7 @@ body{
     background-color: #f7f7f7;
     border-bottom: 1px solid #f0f0f0;
     text-align: center;
+    padding: 5px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
 }
 
@@ -90,10 +91,16 @@ body{
 }
 
 .form a{
+    color: #A9A9A9;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .form a:hover{
     color: #FF7A00;
+}
+
+#pay > a{
+    text-decoration: none;
+    color: #fff;
 }

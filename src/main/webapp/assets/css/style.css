@@ -147,6 +147,10 @@ ul li a:hover{
 
 }
 
+.box-3 .prof-info > h4{
+    background: none;
+}
+
 .box-3 #navbar-prof{
     order: 2;
     margin-left: 10px;

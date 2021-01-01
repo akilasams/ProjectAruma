@@ -66,11 +66,41 @@ body{
     font-size: 14px;
 }
 
+.form-control.success input{
+    border: 2px solid #2ecc71;
+}
+
+.form-control.error input{
+    border: 2px solid #e74c3c;
+}
+
+.form-control i{
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    visibility: hidden;
+}
+
+.form-control.success i.fa-check{
+    visibility: visible;
+    color: #2ecc71;
+}
+
+.form-control.success i.fa-times{
+    visibility: visible;
+    color: #e74c3c;
+}
+
 .form-control small{
     visibility: hidden;
     position: absolute;
     left: 0;
     bottom: 0;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: #e74c3c;
 }
 
 .form input[type="submit"]{
@@ -92,7 +122,7 @@ body{
     box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-.form label{
+.form > label{
     display: block;
     color: #A9A9A9;
     font-size: 10px;
@@ -100,8 +130,9 @@ body{
     text-align: center;
 }
 
-.form a{
+.form > label > a{
     text-decoration: none;
+    color: #A9A9A9;
     transition: color 0.3s ease;
 }
 

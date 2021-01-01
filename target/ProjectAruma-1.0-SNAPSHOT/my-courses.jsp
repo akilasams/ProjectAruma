@@ -24,11 +24,11 @@
             <li><a href="">Categories</a></li>
             <li><a href="">Sort</a></li>
             <li><a href="">Price Range</a></li>
-            <li><a href="">Categories</a></li>
         </ul>
+
     </mini-nav>
 
-    <table>
+    <table class="my-table">
         <caption>My Courses</caption>
 
         <tr>

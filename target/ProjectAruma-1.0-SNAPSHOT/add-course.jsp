@@ -30,6 +30,8 @@
             Make this Course Available for Free : <input type="checkbox" id="isFree" name="isFree" value="1"><br>
             </div>
             <input type="text" id="courseFee" name="courseFee" placeholder="Enter Course Fee"><br>
+            <label id="filename" for="filename">Upload Content</label><br>
+            <input type="file" name="filename"><br>
             <button type="submit" name="submit">Add to My Courses</button>
         </form>
     </div>

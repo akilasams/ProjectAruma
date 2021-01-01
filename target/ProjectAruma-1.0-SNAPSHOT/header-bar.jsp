@@ -56,7 +56,7 @@
             <li><a href="home-main.jsp">Home</a></li>
             <%--<li><a href="store-home.jsp">Store</a></li>--%>
             <li><a href="<%=request.getContextPath()%>/GetAllDesignersServlet">Freelancers</a></li>
-            <li><a href="all-items.jsp">Store</a></li>
+            <li><a href="store-home.jsp">Store</a></li>
             <li><a href="<%=request.getContextPath()%>/ViewCourses">Design School</a></li>
             <li><a href="about.jsp">About</a></li>
             <li><a href="contact-us.jsp">Contact Us</a></li>

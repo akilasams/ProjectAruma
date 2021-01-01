@@ -24,7 +24,8 @@ th{
 }
 
 caption{
-    text-align: center;
+    padding: 10px;
+    text-align: left;
 }
 
 
@@ -35,16 +36,18 @@ table, th, td{
 }
 */
 
-th, td, caption{
+th, td{
     padding: 10px;
+    font-size: 13px;
+    color: rgba(0,0,0,0.8);
 }
 
 tr:nth-child(even){
-    background-color: #FFB96D;
+    background-color: #f1f1f1;
 }
 
 tr:nth-child(odd){
-    background-color: #FFA543;
+    background-color: #fff;
 }
 
 .table-prof{

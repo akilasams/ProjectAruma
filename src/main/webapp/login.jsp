@@ -31,7 +31,7 @@
             </div>
 
             <button form="login-form" formaction="LoginServlet" formmethod="post">Login</button>
-            <label for=""><a href="">Forgot Password?</a> | <a href="signup.jsp">Sign Up</a></label>
+            <label for=""><a href="forgot-password.jsp">Forgot Password?</a> | <a href="signup.jsp">Sign Up</a></label>
         </form>
     </div>
 </body>
