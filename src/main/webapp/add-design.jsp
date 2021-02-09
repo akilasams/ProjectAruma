@@ -20,12 +20,13 @@
     <link rel="stylesheet" href="assets/css/forms.css">
 </head>
 <body>
-    <div id="form-container">
-        <h2>Add New Item</h2>
-        <form action="" method="post" enctype="multipart/form-data">
-            <input type="text" name="designName" placeholder="Enter Item Name"><br>
-            <textarea name="desc" id="" cols="30" rows="10" placeholder="Item Description"></textarea><br>
-            <select name="cat" id="" name="category">
+<div id="form-container">
+    <h2>Add New Item</h2>
+    <form action="StoreRegServlet" method="post"z>
+        <input type="text" name="design_name" placeholder="Enter Item Name"><br>
+        <%--            <input type="text" name="design_type" placeholder="design_type"><br>--%>
+        <textarea name="design_description" id="design_description" cols="30" rows="10" placeholder="Item Description"></textarea><br>
+        <select name="design_type" id="" name="category">
             <option value="none">Select a Category</option>
             <option value="graphicDesign">Graphic Design</option>
             <option value="handiCraft">Handi-Craft</option>
@@ -33,11 +34,11 @@
             <option value="video_audio">Video/Audio</option>
             <option value="art">Art</option>
             <option value="other">Other</option>
-            </select><br>
-            <label id="filename" for="filename">Upload an Image</label><br>
-            <input type="file" name="filename"><br>
-            <button type="submit" name="submit">Add to My Designs</button>
-        </form>
-    </div>
+        </select><br>
+        <label id="filename" for="filename">Upload an Image</label><br>
+        <input type="file" name="filename"><br>
+        <button type="submit" name="submit">Add to My Designs</button>
+    </form>
+</div>
 </body>
 </html>

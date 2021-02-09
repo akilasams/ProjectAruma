@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DesignDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db";
+    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
     String username="root";
-    String password="ais@123321";
+    String password="";
     String dbDriver="com.mysql.jdbc.Driver";
 
     private void loadDriver(String dbDriver){

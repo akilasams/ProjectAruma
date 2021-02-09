@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db";
+    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
     String username="root";
-    String password="ais@123321";
+    String password="";
     String dbDriver="com.mysql.jdbc.Driver";
 
     private void loadDriver(String dbDriver){
@@ -32,7 +32,7 @@ public class CourseDao {
     //Insert New Course
     public boolean insertCourse(Course course){
         Connection connection=getConnection();
-        String insertCourse_SQL="INSERT INTO COURSE VALUES (NULL,?,?,?,?,?)";
+        String insertCourse_SQL="INSERT INTO aruma_db.course VALUES (NULL,?,?,?,?,?)";
 
         try {
             PreparedStatement st=connection.prepareStatement(insertCourse_SQL);
@@ -77,7 +77,7 @@ public class CourseDao {
     public List<Course> selectMyCourses(int user_id){
         List<Course> myCourses=new ArrayList<>();
         Connection connection=getConnection();
-        String selectMyCourses_SQL="SELECT * FROM COURSE WHERE user_id=?";
+        String selectMyCourses_SQL="SELECT * FROM aruma_db.course WHERE user_id=?";
 
         try {
             PreparedStatement st=connection.prepareStatement(selectMyCourses_SQL);
@@ -109,7 +109,7 @@ public class CourseDao {
     public List<Course> selectAllCourses(){
         List<Course> courses=new ArrayList<>();
         Connection connection=getConnection();
-        String selectAllCourses_SQL="SELECT * FROM COURSE";
+        String selectAllCourses_SQL="SELECT * FROM aruma_db.course";
 
         try {
             PreparedStatement st=connection.prepareStatement(selectAllCourses_SQL);
@@ -141,7 +141,7 @@ public class CourseDao {
     public Course selectCourse(int courseId){
         Course course=null;
         Connection connection=getConnection();
-        String selectBycourseId_SQL="SELECT FROM COURSE WHERE course_id=?";
+        String selectBycourseId_SQL="SELECT * FROM aruma_db.course WHERE course_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectBycourseId_SQL);
             st.setInt(1,courseId);
