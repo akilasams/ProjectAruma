@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://kit.fontawesome.com/007dc48e77.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%--    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>--%>
 </head>
 <body>
 <%--<div class="header">
