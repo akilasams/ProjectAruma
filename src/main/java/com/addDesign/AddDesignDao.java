@@ -42,7 +42,7 @@ public class AddDesignDao {
         String result = "data entered successfully";
 
 
-        String sql = "insert into aruma_db.design values(NULL,?,?,NULL,?,(select user_id from aruma_db.user where username = 'kasun'))";
+        String sql = "insert into aruma_db.design values(NULL,?,?,NULL,?,(select user_id from aruma_db.user where user.user_id=1))";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
 
