@@ -11,6 +11,7 @@
     <title>Customer | Sign Up</title>
     <link rel="stylesheet" href="./assets/css/register-forms.css">
     <script src="https://kit.fontawesome.com/007dc48e77.js" crossorigin="anonymous"></script>
+    <script src="assets/js/form-validation.js"></script>
 </head>
 <body>
 <div class="form-container">

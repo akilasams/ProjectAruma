@@ -86,7 +86,7 @@ body{
     color: #2ecc71;
 }
 
-.form-control.success i.fa-times{
+.form-control.error i.fa-times{
     visibility: visible;
     color: #e74c3c;
 }

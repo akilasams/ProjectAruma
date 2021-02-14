@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./assets/css/register-forms.css">
     <script src="https://kit.fontawesome.com/007dc48e77.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<%--    <script src="assets/js/form-validation.js"></script>--%>
+    <script src="assets/js/form-validation.js"></script>
 </head>
 <body>
     <div class="form-container">
@@ -22,14 +22,14 @@
 
         <form action="DesignerRegisterServlet" class="form" method="post" id="form">
 
-            <div class="form-control">
+            <div class="form-control success">
                 <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
                 <i class="fas fa-check"></i>
                 <i class="fas fa-times"></i>
                 <small>Error Message</small>
             </div>
 
-            <div class="form-control">
+            <div class="form-control error">
                 <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
                 <i class="fas fa-check"></i>
                 <i class="fas fa-times"></i>

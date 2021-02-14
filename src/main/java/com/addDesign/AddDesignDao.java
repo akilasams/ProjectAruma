@@ -24,7 +24,7 @@ public class AddDesignDao {
         try {
             String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
             String dbuname = "root";
-            String dbpassword = "";
+            String dbpassword = "ais@123321";
             con = DriverManager.getConnection(dburl, dbuname, dbpassword);
         } catch (SQLException throwables) {
             throwables.printStackTrace();

@@ -31,23 +31,25 @@
         <img src="./assets/img/Logo.png" alt="logo">
     </div>
 
-    <% if(session.getAttribute("username")!=null){ %>
+    <c:if test="${username != null}">
     <div class="box-3">
         <img src="./assets/img/prof-pic.jpg" id="navbar-prof" alt="">
         <div class="prof-info">
-            <h4>Logged in as <%=session.getAttribute("firstName")%></h4>
+            <h4>Logged in as ${firstName}</h4>
             <a href="designer-profile.jsp">Go to Profile</a>
             <a href="<%=request.getContextPath()%>/Logout">Sign Out</a>
         </div>
     </div>
-    <%}else{%>
+    </c:if>
+
+    <c:if test="${username == null}">
     <div class="box-3">
         <div class="prof-info">
             <a href="login.jsp">Login</a>
             <a href="signup.jsp">Register</a>
         </div>
     </div>
-    <%}%>
+    </c:if>
 
 </div>
 <nav>
