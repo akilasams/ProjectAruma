@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/ViewCourses")
+@WebServlet("/ViewCoursesServlet")
 public class ViewCoursesServlet extends HttpServlet {
     private CourseDao dao=new CourseDao();
 

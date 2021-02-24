@@ -29,6 +29,8 @@
 .modal{
     position: relative;
     width: 50%;
+    min-width: 50%;
+    max-width: 50%;
     height: 60%;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
@@ -132,6 +134,11 @@
     right: 24px;
 }
 
+/*h2 > i{*/
+/*    color : #A9A9A9;*/
+/*    font-size: 0.5em;*/
+/*}*/
+
 .item-img{
     width: 50%;
     min-width: 40%;
@@ -182,7 +189,6 @@
 .view-bottom{
     display: flex;
     position: absolute;
-    justify-content: flex-end;
     right: 0;
     bottom: 0;
     padding: 15px;
@@ -191,9 +197,18 @@
     background-color: whitesmoke;
 }
 
+.rating-stars{
+    display: block;
+    float: left;
+    width: fit-content;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
 .buy-now{
     width: 20%;
     height: 40px;
+    margin-left: 48%;
     border-radius: 10px;
     background-color: #FF7A00;
     text-align: center;

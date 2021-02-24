@@ -3,19 +3,36 @@ package com.design;
 public class Design {
     private int designId;
     private String designName;
-    private String designType;
-    private boolean isInStore;
+    private int designTypeId;
+    private int isInStore;
     private String designDescription;
     private int userId;
-    private String designLocationPath;
+    //private String designLocationPath;
 
-    public Design(String designName, String designType, boolean isInStore, String designDescription, int userId, String designLocationPath) {
+
+    public Design(int designId, String designName, int designTypeId, int isInStore, String designDescription, int userId) {
+        this.designId = designId;
         this.designName = designName;
-        this.designType = designType;
+        this.designTypeId = designTypeId;
         this.isInStore = isInStore;
         this.designDescription = designDescription;
         this.userId = userId;
-        this.designLocationPath = designLocationPath;
+    }
+
+    public Design(int designId, String designName, String designDescription, int userId) {
+        this.designId = designId;
+        this.designName = designName;
+        this.designDescription = designDescription;
+        this.userId = userId;
+    }
+
+    public Design(String designName, int designTypeId, int isInStore, String designDescription, int userId) {
+        this.designName = designName;
+        this.designTypeId = designTypeId;
+        this.isInStore = isInStore;
+        this.designDescription = designDescription;
+        this.userId = userId;
+        //this.designLocationPath = designLocationPath;
     }
 
     public int getDesignId() {
@@ -34,19 +51,19 @@ public class Design {
         this.designName = designName;
     }
 
-    public String getDesignType() {
-        return designType;
+    public int getDesignTypeId() {
+        return designTypeId;
     }
 
-    public void setDesignType(String designType) {
-        this.designType = designType;
+    public void setDesignTypeId(int designTypeId) {
+        this.designTypeId = designTypeId;
     }
 
-    public boolean isInStore() {
+    public int isInStore() {
         return isInStore;
     }
 
-    public void setInStore(boolean inStore) {
+    public void setInStore(int inStore) {
         isInStore = inStore;
     }
 
@@ -66,11 +83,11 @@ public class Design {
         this.userId = userId;
     }
 
-    public String getDesignLocationPath() {
-        return designLocationPath;
-    }
-
-    public void setDesignLocationPath(String designLocationPath) {
-        this.designLocationPath = designLocationPath;
-    }
+//    public String getDesignLocationPath() {
+//        return designLocationPath;
+//    }
+//
+//    public void setDesignLocationPath(String designLocationPath) {
+//        this.designLocationPath = designLocationPath;
+//    }
 }

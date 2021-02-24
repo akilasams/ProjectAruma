@@ -7,7 +7,7 @@ import java.util.List;
 public class CourseDao {
     String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
     String username="root";
-    String password="";
+    String password="ais@123321";
     String dbDriver="com.mysql.jdbc.Driver";
 
     private void loadDriver(String dbDriver){

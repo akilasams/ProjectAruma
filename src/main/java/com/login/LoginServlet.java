@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
             user=userDao.selectUser(uname);
             /*session.setAttribute("user",user); // CHECK LATER*/
         } else{
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login-failed.jsp");
         }
 
         HttpSession session=request.getSession();

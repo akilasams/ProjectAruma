@@ -1,12 +1,12 @@
-package com.design;
+package com.storeItem;
 
-import com.user.User;
+import com.design.Design;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DesignDao {
+public class StoreItemDao {
     String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
     String username="root";
     String password="ais@123321";
@@ -31,12 +31,12 @@ public class DesignDao {
         return connection;
     }
 
-    public List<Design> selectMyDesigns(int UserId){
-        List<Design> myDesigns=new ArrayList<>();
+    public List<StoreItem> selectAllItems(){
+        List<StoreItem> allItems=new ArrayList<>();
         Connection connection=getConnection();
-        String sql="SELECT * FROM design WHERE userId=?";
+        String sql="call GetAllStoreItems";
         try {
-            PreparedStatement st=connection.prepareStatement(sql);
+            CallableStatement st= connection.prepareCall(sql);
             ResultSet rs=st.executeQuery();
 
             if(rs.next()==false){
@@ -45,16 +45,22 @@ public class DesignDao {
                 do {
                     int designId=rs.getInt("design_id");
                     String designName=rs.getString("design_name");
-                    int designTypeId=rs.getInt("designtype_id");
-                    int isInStore=rs.getInt("in_store");
                     String designDescription=rs.getString("design_description");
                     int userId=rs.getInt("user_id");
-                    myDesigns.add(new Design(designId, designName, designTypeId, isInStore,designDescription, userId));
+                    String firstName=rs.getString("first_name");
+                    String lastName=rs.getString("last_name");
+                    int stock=rs.getInt("stock");
+                    String designType=rs.getString("type_name");
+                    double unitPrice=rs.getDouble("unit_price");
+                    String additionalDetails=rs.getString("additional_details");
+                    String publishedDate=rs.getString("published_date");
+                    allItems.add(new StoreItem(designId, designName,designDescription,userId,firstName,lastName,stock,designType, unitPrice, additionalDetails,publishedDate));
                 } while (rs.next());
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return myDesigns;
+        return allItems;
     }
+
 }

@@ -17,13 +17,15 @@ public class DesignerRegisterServlet extends HttpServlet {
         String lastName=request.getParameter("lastName");
         int user_role_id=2;
         String email=request.getParameter("email");
-        String address=request.getParameter("address");
         String mobileNo=request.getParameter("mobileNo");
+        String address=request.getParameter("address");
+        String city=request.getParameter("city");
         String username=request.getParameter("username");
         String password=request.getParameter("password");
-        String skills=request.getParameter("skills");
+        int serviceType= Integer.parseInt(request.getParameter("serviceType"));
+        String bio=request.getParameter("bio");
 
-        Designer designer=new Designer(firstName,lastName,user_role_id,email,address,mobileNo,username,password,skills);
+        Designer designer=new Designer(firstName,lastName,user_role_id,email,mobileNo,address,city,username,password,serviceType,bio);
         RegisterDao dao=new RegisterDao();
 
         if(dao.insertDesigner(designer)){

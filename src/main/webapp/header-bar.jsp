@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://kit.fontawesome.com/007dc48e77.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<%--    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>--%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 </head>
 <body>
 <%--<div class="header">
@@ -57,9 +57,9 @@
         <ul>
             <li><a href="home-main.jsp">Home</a></li>
             <%--<li><a href="store-home.jsp">Store</a></li>--%>
-            <li><a href="<%=request.getContextPath()%>/GetAllDesignersServlet">Freelancers</a></li>
-            <li><a href="store-home.jsp">Store</a></li>
-            <li><a href="<%=request.getContextPath()%>/ViewCourses">Design School</a></li>
+            <li><a href="<%=request.getContextPath()%>/ViewAllDesignersServlet">Freelancers</a></li>
+            <li><a href="<%=request.getContextPath()%>/ViewAllItemsServlet">Store</a></li>
+            <li><a href="<%=request.getContextPath()%>/ViewCoursesServlet">Design School</a></li>
             <li><a href="about.jsp">About</a></li>
             <li><a href="contact-us.jsp">Contact Us</a></li>
         </ul>

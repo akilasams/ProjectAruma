@@ -50,6 +50,13 @@
         </div>
 
         <div class="form-control">
+            <input type="text" name="city" id="city" placeholder="City" required>
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+            <small>Error Message</small>
+        </div>
+
+        <div class="form-control">
             <input type="text" name="mobileNo" id="mobileNo" placeholder="Mobile Number" required>
             <i class="fas fa-check"></i>
             <i class="fas fa-times"></i>

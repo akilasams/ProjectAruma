@@ -5,6 +5,7 @@
   Time: 10:50 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -30,7 +31,7 @@
                 <small>Error Message</small>
             </div>
 
-            <button form="login-form" formaction="LoginServlet" formmethod="post">Login</button>
+            <button form="login-form" formaction="LoginServlet" formmethod="POST">Login</button>
             <label for=""><a href="forgot-password.jsp">Forgot Password?</a> | <a href="signup.jsp">Sign Up</a></label>
         </form>
     </div>

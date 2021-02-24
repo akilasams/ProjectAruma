@@ -24,7 +24,8 @@
 }
 
 .img-holder{
-    width: 100%;
+    width: 30%;
+    max-width: 30%;
     height: 100%;
     min-height: 100%;
     z-index: 1;
