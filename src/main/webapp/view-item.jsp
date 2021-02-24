@@ -3,7 +3,7 @@
 
 <div class="view-container">
     <div class="modal">
-        <a href="#" id="close"><i class="fas fa-times"></i></a>
+        <a href="#" id="close"><i class="fas fa-times"></i></a></a>
         <div class="desc-holder">
             <div class="item-img">
                 <div class="hero-img">
@@ -23,9 +23,9 @@
             </div>
 
             <div class="item-details">
-                <h2>Item Name <span>6/10</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda autem blanditiis consectetur ex hic, necessitatibus omnis perferendis placeat qui repellendus tempore voluptas? Ducimus eius excepturi ipsam laboriosam laborum nemo nulla possimus voluptatibus! Asperiores, eaque ipsum iusto labore libero numquam odio optio perferendis perspiciatis quam quasi quidem saepe sint ut.</p>
-                <h3>In Stock</h3>
+                <h2>${item.designName}</h2>
+                <p>${item.designDescription}</p>
+                <h3>In Stock : ${item.stock}</h3>
                 <h4>Quantity <span><input type="text"></span></h4>
 
                 <div class="cart-wishlist-icons">
@@ -34,7 +34,11 @@
                 </div>
             </div>
         </div>
+
         <div class="view-bottom">
+            <div class="rating-stars">
+            <span>Rate this Item : </span><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+            </div>
             <button class="buy-now"><a href="shipping-payment.jsp">Buy Now</a></button>
         </div>
     </div>

@@ -1,5 +1,8 @@
-package com.user;
+package com.storeItem;
 
+import com.user.User;
+
+import javax.mail.Store;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/ViewAllDesignersServlet")
-public class ViewAllDesignersServlet extends HttpServlet {
-    private UserDao dao=new UserDao();
+@WebServlet("/ViewAllItemsServlet")
+public class ViewAlltemsServlet extends HttpServlet {
+    private StoreItemDao dao=new StoreItemDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> designersList=dao.selectAllDesigners();
-        request.setAttribute("designersList",designersList);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("freelancers.jsp");
+        List<StoreItem> storeItemList=dao.selectAllItems();
+        request.setAttribute("storeItemList",storeItemList);
+        RequestDispatcher dispatcher=request.getRequestDispatcher("store-home.jsp");
         dispatcher.forward(request,response);
     }
 

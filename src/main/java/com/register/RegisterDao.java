@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class RegisterDao {
     String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
     String username="root";
-    String password="";
+    String password="ais@123321";
     String dbDriver="com.mysql.jdbc.Driver";
 
     /*String INSERT_USER="INSERT INTO USER (first_name,last_name,password,username,address,email,mobile_no) VALUES (?,?,?,?,?,?,?)";
@@ -41,17 +41,18 @@ public class RegisterDao {
     //Create or Insert User
     public boolean insertCustomer(Customer customer) {
         Connection connection = getConnection();
-        String sql = "INSERT INTO aruma_db.user VALUES (NULL,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,NULL,NULL)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, customer.getFirstName());
             st.setString(2, customer.getLastName());
-            st.setInt(3, 3);
-            st.setString(4, customer.getAddress());
-            st.setString(5, customer.getEmail());
-            st.setString(6, customer.getMobileNo());
-            st.setString(7, customer.getUsername());
-            st.setString(8, customer.getPassword());
+            st.setInt(3, customer.getUser_role_id());
+            st.setString(4, customer.getEmail());
+            st.setString(5, customer.getMobileNo());
+            st.setString(6, customer.getAddress());
+            st.setString(7, customer.getCity());
+            st.setString(8, customer.getUsername());
+            st.setString(9, customer.getPassword());
             st.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -62,17 +63,20 @@ public class RegisterDao {
 
     public boolean insertDesigner(Designer designer) {
         Connection connection=getConnection();
-        String sql="INSERT INTO aruma_db.user VALUES (NULL,?,?,?,?,?,?,?,?)";
+        String sql="INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
-            st.setString(1,designer.getFirstName());
-            st.setString(2,designer.getLastName());
-            st.setInt(3, 2);
-            st.setString(4,designer.getAddress());
-            st.setString(5,designer.getEmail());
-            st.setString(6,designer.getMobileNo());
-            st.setString(7,designer.getUsername());
-            st.setString(8,designer.getPassword());
+            st.setString(1, designer.getFirstName());
+            st.setString(2, designer.getLastName());
+            st.setInt(3, designer.getUser_role_id());
+            st.setString(4, designer.getEmail());
+            st.setString(5, designer.getMobileNo());
+            st.setString(6, designer.getAddress());
+            st.setString(7, designer.getCity());
+            st.setString(8, designer.getUsername());
+            st.setString(9, designer.getPassword());
+            st.setInt(10, designer.getServiceType());
+            st.setString(11, designer.getBio());
             st.executeUpdate();
             return true;
         } catch (SQLException e) {

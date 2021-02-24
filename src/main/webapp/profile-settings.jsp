@@ -23,7 +23,7 @@
 <div id="settings">
     <div id="form-container">
         <h2>Profile Settings</h2>
-        <form action="UpdateUser" method="post" enctype="multipart/form-data">
+        <form action="UpdateUser" method="post">
             <div id="prof-pic">
                 <img src="./assets/img/prof-pic.jpg" alt="">
             </div>

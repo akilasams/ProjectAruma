@@ -5,8 +5,12 @@
          version="4.0">
 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>home-main.jsp</welcome-file>
     </welcome-file-list>
+
+<!--    <session-config>-->
+<!--        <session-timeout>30</session-timeout> &lt;!&ndash; 30 minutes &ndash;&gt;-->
+<!--    </session-config>-->
 
     <!--<servlet>
         <servlet-name>Login</servlet-name>
@@ -28,4 +32,24 @@
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
 -->
+<!--    <security-role>-->
+<!--        <role-name>1</role-name>-->
+<!--    </security-role>-->
+
+<!--    <security-role>-->
+<!--        <role-name>2</role-name>-->
+<!--    </security-role>-->
+
+<!--    <security-role>-->
+<!--        <role-name>3</role-name>-->
+<!--    </security-role>-->
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login-failed.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+
 </web-app>
