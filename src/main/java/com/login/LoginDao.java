@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 
 //DAO - Data Access Object
 public class LoginDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
+    String url="jdbc:mysql://localhost:3306/arumadbnew?serverTimezone=UTC";
     String username="root";
-    String password="ais@123321";
-    String sql="select * from aruma_db.user where username=? and password=?";
+    String password="";
+    String sql="select * from arumadbnew.users where username=? and password=?";
 
     public boolean checkCredentials(String uname,String pass) {
 

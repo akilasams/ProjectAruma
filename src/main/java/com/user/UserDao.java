@@ -6,9 +6,9 @@ import java.util.List;
 
 public class UserDao{
 
-    String url="jdbc:mysql://localhost:3306/aruma_db";
+    String url="jdbc:mysql://localhost:3306/arumadbnew?serverTimezone=UTC";
     String username="root";
-    String password="ais@123321";
+    String password="";
     String dbDriver="com.mysql.jdbc.Driver";
 
     private void loadDriver(String dbDriver){
@@ -77,7 +77,7 @@ public class UserDao{
     public User selectUser(String username){
         User user=null;
         Connection connection=getConnection();
-        String selectByUsername_SQL="SELECT * FROM user WHERE username=?";
+        String selectByUsername_SQL="SELECT * FROM users WHERE username=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             st.setString(1,username);

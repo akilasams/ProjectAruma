@@ -9,9 +9,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class RegisterDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
+    String url="jdbc:mysql://localhost:3306/arumadbnew?serverTimezone=UTC";
     String username="root";
-    String password="ais@123321";
+    String password="";
     String dbDriver="com.mysql.jdbc.Driver";
 
     /*String INSERT_USER="INSERT INTO USER (first_name,last_name,password,username,address,email,mobile_no) VALUES (?,?,?,?,?,?,?)";
@@ -41,7 +41,7 @@ public class RegisterDao {
     //Create or Insert User
     public boolean insertCustomer(Customer customer) {
         Connection connection = getConnection();
-        String sql = "INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,NULL,NULL)";
+        String sql = "INSERT INTO USERS VALUES (NULL,?,?,?,?,?,?,?,?,?,NULL,NULL)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, customer.getFirstName());
