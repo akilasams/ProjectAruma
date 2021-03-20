@@ -3,21 +3,21 @@
 
 <div class="view-container">
     <div class="modal">
-        <a href="#" id="close"><i class="fas fa-times"></i></a>
+        <a href="<%=request.getContextPath()%>/ViewCoursesServlet" id="close"><i class="fas fa-times"></i></a>
         <div class="desc-holder">
             <div class="item-img">
                 <div class="hero-img">
-                    <img src="./assets/img/img1.jpg" alt="">
+                    <img src="assets/img/designs/img1.jpg" alt="">
                 </div>
                 <div class="more-pics">
                     <div class="mini-img">
-                        <img src="./assets/img/img6.jpg" alt="">
+                        <img src="assets/img/designs/img6.jpg" alt="">
                     </div>
                     <div class="mini-img">
-                        <img src="./assets/img/img6.jpg" alt="">
+                        <img src="assets/img/designs/img6.jpg" alt="">
                     </div>
                     <div class="mini-img">
-                        <img src="./assets/img/img6.jpg" alt="">
+                        <img src="assets/img/designs/img6.jpg" alt="">
                     </div>
                 </div>
             </div>

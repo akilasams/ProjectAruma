@@ -8,9 +8,9 @@
 %>
 --%>
 
-<%if(session.getAttribute("username")!=null){%>
-    <%@include file="cart-wishlist.jsp"%>
-<%}%>
+<c:if test="${userId != null}">
+    <jsp:include page="cart-wishlist.jsp"/>
+</c:if>
 
 
 <head>
@@ -30,22 +30,23 @@
         <c:forEach var="item" items="${storeItemList}">
             <div class="card">
                 <div class="img-holder">
-                    <img src="./assets/img/img5.jpg" alt="" class="card-img">
+                    <img src="assets/img/designs/img5.jpg" alt="" class="card-img">
                 </div>
                 <div class="details-holder">
                     <h3 style="background: none">${item.designName}</h3>
                     <p class="item-category">${item.designType}</p>
                     <p>${item.designDescription}</p>
+                    <a href="view-item.jsp">View Item</a>
                 </div>
                 <div class="item-price">
                     <h5>${item.unitPrice} LKR</h5>
                     <div class="item-price-icons">
                         <a href="#"><i class="fas fa-star"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" onclick="addToCart()"><i class="fas fa-shopping-cart"></i></a>
                     </div>
                 </div>
+<%--                <%@include file="view-item.jsp"%>--%>
             </div>
-            <%@include file="view-item.jsp"%>
         </c:forEach>
 
     </div>

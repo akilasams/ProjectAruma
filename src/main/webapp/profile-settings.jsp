@@ -1,10 +1,8 @@
 <%@include file="header-bar.jsp"%>
 
-<%
-    if(session.getAttribute("username")==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
+<c:if test="${userId == null}">
+    <c:redirect url="login.jsp"></c:redirect>
+</c:if>
 
 <head>
     <link rel="stylesheet" href="./assets/css/forms.css">
@@ -23,16 +21,16 @@
 <div id="settings">
     <div id="form-container">
         <h2>Profile Settings</h2>
-        <form action="UpdateUser" method="post">
+        <form id="user-update-form" enctype="multipart/form-data">
             <div id="prof-pic">
-                <img src="./assets/img/prof-pic.jpg" alt="">
+                <img src="assets/img/users/prof-pic.jpg" alt="">
             </div>
-            <a href="#">Change Profile Picture</a>
-            <h4 id="prof-name"><%=session.getAttribute("firstName")+" "+session.getAttribute("lastName")%></h4>
-            <label for="address">Address</label><input type="text" name="address" id="address" value=""><br>
-            <label for="email">Email</label><input type="text" name="email" id="email" value=""><br>
-            <label for="mobileNo">Mobile Number</label><input type="text" name="mobileNo" id="mobileNo" value=""><br>
-            <button type="submit" name="submit">Save</button>
+            <label for="profPic" id="prof-pic-upload">Upload a Picture</label><input type="file" name="profPic" id="profPic">
+            <h4 id="prof-name">${user.getFirstName()} ${user.getLastName()}</h4>
+            <label for="address">Address</label><input type="text" name="address" id="address" value="${user.getAddress()}"><br>
+            <label for="email">Email</label><input type="text" name="email" id="email" value="${user.getEmail()}"><br>
+            <label for="mobileNo">Mobile Number</label><input type="text" name="mobileNo" id="mobileNo" value="${user.getMobileNo()}"><br>
+            <button form="user-update-form" formaction="UpdateUserServlet" formmethod="post">Save</button>
         </form>
     </div>
 </div>

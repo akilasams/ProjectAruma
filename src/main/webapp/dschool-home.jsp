@@ -1,10 +1,8 @@
 <%@include file="header-bar.jsp"%>
 
-<%
-    if(session.getAttribute("username")==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
+<c:if test="${userId == null}">
+    <c:redirect url="login.jsp"></c:redirect>
+</c:if>
 
 <head>
     <link rel="stylesheet" href="./assets/css/tables.css">
@@ -24,7 +22,7 @@
         <c:forEach var="course" items="${courseList}">
             <div class="card">
                 <div class="img-holder">
-                    <img src="./assets/img/img5.jpg" alt="" class="card-img">
+                    <img src="assets/img/designs/img5.jpg" alt="" class="card-img">
                 </div>
                 <div class="details-holder">
                     <h4 style="background: none"><c:out value="${course.courseName}"/></h4>

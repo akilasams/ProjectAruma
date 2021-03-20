@@ -6,7 +6,7 @@
 
 <div class="about-container">
     <h1>Contact Us</h1>
-    <img src="./assets/img/Logo.png" alt="logo">
+    <img src="assets/img/logo/Logo.png" alt="logo">
     <p>If you have any concerns or questions about our services or if you need any help,<br>
         Don't hesitate to contact us through the following,<br><br></p>
 

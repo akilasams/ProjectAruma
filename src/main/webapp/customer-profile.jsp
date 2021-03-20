@@ -1,12 +1,5 @@
 <%@ include file="header-bar.jsp"%>
 
-<%
-    if(session.getAttribute("username")==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
-
-
 <head>
     <link rel="stylesheet" href="./assets/css/profile.css">
 </head>

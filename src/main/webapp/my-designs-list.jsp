@@ -1,10 +1,8 @@
 <%@include file="header-bar.jsp"%>
 
-<%
-    if(session.getAttribute("username")==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
+<c:if test="${userId == null}">
+    <c:redirect url="login.jsp"></c:redirect>
+</c:if>
 
 <head>
     <link rel="stylesheet" href="./assets/css/tables.css">
@@ -13,9 +11,9 @@
 <div class="table-wrapper">
     <mini-nav>
         <div id="prof-info">
-            <img src="./assets/img/prof-pic.jpg" id="prof-img" alt="">
-            <h3><%=session.getAttribute("firstName")%></h3>
-            <h4><%=session.getAttribute("lastName")%></h4>
+            <img src="assets/img/users/prof-pic.jpg" id="prof-img" alt="">
+            <h3>${firstName}</h3>
+            <h4>${lastName}</h4>
             <h3 id="rating">6.5/10</h3>
         </div>
     </mini-nav>

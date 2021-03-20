@@ -14,7 +14,7 @@ public class ViewAllDesignersServlet extends HttpServlet {
     private UserDao dao=new UserDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> designersList=dao.selectAllDesigners();
+        List<Designer> designersList=dao.selectAllDesigners();
         request.setAttribute("designersList",designersList);
         RequestDispatcher dispatcher=request.getRequestDispatcher("freelancers.jsp");
         dispatcher.forward(request,response);

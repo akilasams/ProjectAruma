@@ -11,6 +11,7 @@ public class User {
     private String city;
     private String username;
     private String password;
+    private String profPic;
 
     public User() {
     }
@@ -38,6 +39,14 @@ public class User {
         this.city = city;
         this.username = username;
         this.password = password;
+    }
+
+    public User(String username, String address,String email, String mobileNo, String profPic) {
+        this.username = username;
+        this.address = address;
+        this.email = email;
+        this.mobileNo = mobileNo;
+        this.profPic = profPic;
     }
 
     public int getId() {
@@ -119,4 +128,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getProfPic() { return profPic; }
+
+    public void setProfPic(String profPic) { this.profPic = profPic; }
 }

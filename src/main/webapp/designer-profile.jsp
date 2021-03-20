@@ -1,17 +1,17 @@
 <%--<%@ page import="com.course.ViewMyCoursesServlet" %>--%>
 <%@ include file="header-bar.jsp"%>
 
-<%
-    if(session.getAttribute("username")==null){
-        response.sendRedirect("login.jsp");
-    }
+<%--<c:if test="${user.getUsername() != null}">--%>
+<%--        response.sendRedirect("login.jsp");--%>
+<%--</c:if>--%>
 
-    if((int)session.getAttribute("user_role_Id")==1){
-        response.sendRedirect("admin-profile.jsp");
-    }else if((int)session.getAttribute("user_role_Id")==3) {
-        response.sendRedirect("customer-profile.jsp");
-    }
-%>
+<%--<c:if test="${user.getUser_role_id() == 1}">--%>
+<%--    response.sendRedirect("admin-profile.jsp");--%>
+<%--</c:if>--%>
+
+<%--<c:if test="${user.getUser_role_id() == 3}">--%>
+<%--    response.sendRedirect("customer-profile.jsp");--%>
+<%--</c:if>--%>
 
 <head>
     <link rel="stylesheet" href="./assets/css/profile.css">
