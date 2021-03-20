@@ -1,11 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: var(--quicksand),sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
 .view-container{
-    z-index: 1000;
-    background-color: rgba(0,0,0,0.4);
+    /*z-index: 1000;*/
+    background-color: #FFE484;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,9 +18,9 @@
     top: 0;
     left: 0;
     /*visibility: hidden;*/
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
+    /*opacity: 0;*/
+    /*pointer-events: none;*/
+    /*transition: opacity 0.2s ease;*/
 }
 
 .view-container.active{
@@ -208,7 +211,10 @@
 .buy-now{
     width: 20%;
     height: 40px;
-    margin-left: 48%;
+    font : var(--quicksand);
+    font-size: 0.8em;
+    padding: 10px;
+    margin-left: 75%;
     border-radius: 10px;
     background-color: #FF7A00;
     text-align: center;

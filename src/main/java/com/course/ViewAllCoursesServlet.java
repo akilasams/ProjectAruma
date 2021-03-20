@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/ViewCoursesServlet")
-public class ViewCoursesServlet extends HttpServlet {
+public class ViewAllCoursesServlet extends HttpServlet {
     private CourseDao dao=new CourseDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

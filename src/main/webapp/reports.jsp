@@ -1,11 +1,9 @@
 <%--<%@ page import="com.course.ViewMyCoursesServlet" %>--%>
 <%@ include file="header-bar.jsp"%>
 
-<%
-    if(session.getAttribute("username")==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
+<c:if test="${userId == null}">
+    <c:redirect url="login.jsp"></c:redirect>
+</c:if>
 
 <head>
     <link rel="stylesheet" href="./assets/css/profile.css">

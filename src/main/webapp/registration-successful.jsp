@@ -15,10 +15,10 @@
 <body>
     <div class="msg-holder">
         <div class="msg">
-            <h1>Hi, <%=session.getAttribute("name")%>!</h1>
+            <h1>Hi, ${firstName}!</h1>
             <h1>Welcome to Aruma! <i class="fas fa-heart"></i></h1>
             <hr>
-            <h2>You have been Successfully Registered as a <%=session.getAttribute("type")%></h2>
+            <h2>You have been Successfully Registered!</h2>
         </div>
         <div class="home-button">
             <a href="login.jsp">Login</a>

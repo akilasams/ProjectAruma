@@ -3,6 +3,7 @@ package com.login;
 import com.user.User;
 import com.user.UserDao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,7 @@ public class LoginServlet extends HttpServlet {
         String pass=request.getParameter("password");
 
         LoginDao dao=new LoginDao();
-        User user=new User();
+        User user=null;
         UserDao userDao=new UserDao();
 
         /*if(uname.equals("user") && pass.equals("password")){
@@ -27,26 +28,23 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("home-main-logged.jsp");
         }*/
 
+        HttpSession session=request.getSession();
+
         if(dao.checkCredentials(uname,pass)){
             /*String firstName=userDao.getUsersName(uname);*/
             user=userDao.selectUser(uname);
-            /*session.setAttribute("user",user); // CHECK LATER*/
+            session.setAttribute("userId",user.getId());
+            session.setAttribute("firstName",user.getFirstName());
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("LoginUserFilterServlet");
+            dispatcher.forward(request,response);
         } else{
             response.sendRedirect("login-failed.jsp");
         }
-
-        HttpSession session=request.getSession();
-        session.setAttribute("userId",user.getId());
-        session.setAttribute("firstName",user.getFirstName());
-        session.setAttribute("lastName",user.getLastName());
-        session.setAttribute("user_role_Id",user.getUser_role_id());
-        session.setAttribute("username",uname);
-
-        if(user.getUser_role_id()==1){
-            response.sendRedirect("admin-profile.jsp");
-        }else{
-            response.sendRedirect("home-main.jsp");
-        }
+//        session.setAttribute("user",user);
+//        session.setAttribute("email",user.getEmail());
+//        session.setAttribute("mobile",user.getMobileNo());
+//        session.setAttribute("address",user.getAddress());
     }
 
 

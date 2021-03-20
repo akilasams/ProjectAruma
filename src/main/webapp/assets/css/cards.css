@@ -86,8 +86,10 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.card-holder a{
+.card-holder > a{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    right: 10px;
+    bottom: 10px;
+    /*width: 100%;*/
+    /*height: 100%;*/
 }
