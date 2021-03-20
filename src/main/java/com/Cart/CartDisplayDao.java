@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class CartDisplayDao {
+
 	
 	private String dburl="jdbc:mysql://localhost:3306/arumadbnew?serverTimezone=UTC";
 	private String dbuname="root";
@@ -100,5 +100,4 @@ public List get_values() {
 		return list;
 	}
 	
-
 }
