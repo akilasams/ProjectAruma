@@ -1,9 +1,10 @@
-package com.read;
+package com.viewstore;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class edit_values {
-
+public class view_data {
     private Connection con;
 
     public void loadDriver(String dbdriver)
@@ -30,10 +31,10 @@ public class edit_values {
     }
 
     public static void main(String[] args) {
-        read_data obj_Read_Values=new read_data();
-        obj_Read_Values.get_values();
+        view_data obj_view_Values=new view_data();
+        obj_view_Values.get_values();
     }
-    public design_bean get_value_of_design(String design_id){
+    public List get_values(){
 
         String dbdrivers = "com.mysql.jdbc.Driver";
         loadDriver(dbdrivers);
@@ -42,32 +43,38 @@ public class edit_values {
 
         PreparedStatement ps=null;
         ResultSet rs=null;
-        design_bean obj_mem=new design_bean();
 
+        List <view_bean> list = new ArrayList<view_bean>();
 
         try {
-            String querry="select * from arumadb.design where design_id=?";
+            String querry="select * from arumadb.store_item";
             ps=connection.prepareStatement(querry);
-            ps.setString(1, design_id);
             rs=ps.executeQuery();
 
 
             while(rs.next()){
+                view_bean obj_mem=new view_bean();
 
 
 
+                System.out.println(rs.getString("stock"));
+                System.out.println(rs.getString("unit_price"));
+                System.out.println(rs.getString("additional_details"));
+                System.out.println(rs.getString("published_date"));
+                System.out.println(rs.getString("design_id"));
 
+
+                obj_mem.setStock(rs.getString("stock"));
+                obj_mem.setUnit_price(rs.getString("unit_price"));
+                obj_mem.setAdditional_details(rs.getString("additional_details"));
+                obj_mem.setPublished_date(rs.getString("published_date"));
                 obj_mem.setDesign_id(rs.getString("design_id"));
-                obj_mem.setDesign_name(rs.getString("design_name"));
-                obj_mem.setDesign_type(rs.getString("designtype_id"));
-                obj_mem.setIn_store(rs.getString("in_store"));
-                obj_mem.setDesign_description(rs.getString("design_description"));
-
-
+                list.add(obj_mem);
             }
         } catch (Exception e) {
             System.out.println(e);
         }
-        return obj_mem;
+        return list;
     }
+
 }

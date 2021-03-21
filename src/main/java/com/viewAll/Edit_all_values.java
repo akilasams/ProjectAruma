@@ -1,8 +1,8 @@
-package com.read;
+package com.viewAll;
 
 import java.sql.*;
 
-public class edit_values {
+public class Edit_all_values {
 
     private Connection con;
 
@@ -30,10 +30,10 @@ public class edit_values {
     }
 
     public static void main(String[] args) {
-        read_data obj_Read_Values=new read_data();
-        obj_Read_Values.get_values();
+        viewall_data obj_viewall_Values=new viewall_data();
+        obj_viewall_Values.get_values();
     }
-    public design_bean get_value_of_design(String design_id){
+    public viewall_bean get_values(String design_id){
 
         String dbdrivers = "com.mysql.jdbc.Driver";
         loadDriver(dbdrivers);
@@ -42,11 +42,12 @@ public class edit_values {
 
         PreparedStatement ps=null;
         ResultSet rs=null;
-        design_bean obj_mem=new design_bean();
+        viewall_bean obj_mem=new viewall_bean();
+
 
 
         try {
-            String querry="select * from arumadb.design where design_id=?";
+            String querry="select * from arumadb.design INNER JOIN arumadb.store_item ON design.design_id = store_item.design_id where design.design_id=?";
             ps=connection.prepareStatement(querry);
             ps.setString(1, design_id);
             rs=ps.executeQuery();
@@ -57,11 +58,18 @@ public class edit_values {
 
 
 
+
                 obj_mem.setDesign_id(rs.getString("design_id"));
                 obj_mem.setDesign_name(rs.getString("design_name"));
-                obj_mem.setDesign_type(rs.getString("designtype_id"));
+                obj_mem.setDesign_type(rs.getString("design_type"));
                 obj_mem.setIn_store(rs.getString("in_store"));
                 obj_mem.setDesign_description(rs.getString("design_description"));
+
+
+                obj_mem.setStock(rs.getString("stock"));
+                obj_mem.setUnit_price(rs.getString("unit_price"));
+                obj_mem.setAdditional_details(rs.getString("additional_details"));
+                obj_mem.setPublished_date(rs.getString("published_date"));
 
 
             }
@@ -70,4 +78,5 @@ public class edit_values {
         }
         return obj_mem;
     }
+
 }
