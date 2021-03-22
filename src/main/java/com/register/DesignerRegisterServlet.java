@@ -1,5 +1,6 @@
 package com.register;
 
+import com.login.SHA256;
 import com.user.Designer;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 @WebServlet("/DesignerRegisterServlet")
 public class DesignerRegisterServlet extends HttpServlet {
@@ -21,7 +23,14 @@ public class DesignerRegisterServlet extends HttpServlet {
         String address=request.getParameter("address");
         String city=request.getParameter("city");
         String username=request.getParameter("username");
-        String password=request.getParameter("password");
+
+        String password= null;
+        try {
+            password = SHA256.toSHA(request.getParameter("password"));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
         int serviceType= Integer.parseInt(request.getParameter("serviceType"));
         String bio=request.getParameter("bio");
 
