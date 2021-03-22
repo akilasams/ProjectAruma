@@ -6,9 +6,11 @@
 <%@ page import="com.read.design_bean" %>
 <%@include file="header-bar.jsp"%>
 
-<c:if test="${userId == null}">
+
+    <c:if test="${userId == null}">
     <c:redirect url="login.jsp"></c:redirect>
-</c:if>
+    </c:if>
+
 
 <head>
     <link rel="stylesheet" href="./assets/css/tables.css">
@@ -68,9 +70,9 @@
 <div class="table-wrapper">
     <mini-nav>
         <div id="prof-info">
-            <img src="assets/img/users/prof-pic.jpg" id="prof-img" alt="">
-            <h3>${firstName}</h3>
-            <h4>${lastName}</h4>
+            <img src="./assets/img/prof-pic.jpg" id="prof-img" alt="">
+            <h3><%=session.getAttribute("firstName")%></h3>
+            <h4><%=session.getAttribute("lastName")%></h4>
             <h3 id="rating">6.5/10</h3>
         </div>
 
@@ -92,7 +94,7 @@
     <table>
         <caption>All Items</caption>
         <tr>
-<%--            <th>Design ID</th>--%>
+            <%--            <th>Design ID</th>--%>
             <th>Design Name</th>
             <th>Design Type</th>
             <th>In Store</th>
@@ -108,7 +110,7 @@
 
         %>
         <tr>
-<%--            <td><%=obj_design_bean.getDesign_id()%></td>--%>
+            <%--            <td><%=obj_design_bean.getDesign_id()%></td>--%>
             <td><%=obj_design_bean.getDesign_name()%></td>
             <td><%=obj_design_bean.getDesign_type()%></td>
             <td><%=obj_design_bean.getIn_store()%></td>
@@ -116,16 +118,17 @@
             <td><div class="dropdown">
                 <button class="dropbtn"><p><i class="arrow down"></i></p></button>
                 <div class="dropdown-content">
-                    <a href="view-mydesigns.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Preview</a>
-                    <a href="edit_designs_in_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a>
-                    <a href="specifics_add_before_adding_to_store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add to store</a>
+                    <a href="preview_item.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Preview</a>
+                    <a href="edit-designs-in-design-table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a>
+                    <a href="specifics-add-before-adding-to-store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add to store</a>
+                    <a href="specifics-added.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Added Specifics</a>
                 </div>
             </div></td>
 
-<%--            <td><a href="edit_designs_in_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a></td>--%>
+            <%--            <td><a href="edit_designs_in_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a></td>--%>
 
-<%--            <td><a href="view_selected_item_from_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Item</a></td>--%>
-<%--            <td><a href="specifics_add_before_adding_to_store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add item to Store</a></td>--%>
+            <%--            <td><a href="view_selected_item_from_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Item</a></td>--%>
+            <%--            <td><a href="specifics_add_before_adding_to_store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add item to Store</a></td>--%>
         </tr>
         <%
             }

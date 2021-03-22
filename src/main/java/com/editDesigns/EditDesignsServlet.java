@@ -1,4 +1,4 @@
-package com.addDesign;
+package com.editDesigns;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,18 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/StoreRegServlet")
-public class AddDesignServlet extends HttpServlet {
+@WebServlet("/EditDesignsServlet")
+public class EditDesignsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String design_id = request.getParameter("design_id");
         String design_name = request.getParameter("design_name");
-        String designtype_id = request.getParameter("designtype_id");
-//        String in_store = request.getParameter("in_store");
+        String design_type = request.getParameter("design_type");
         String design_description = request.getParameter("design_description");
 
-        AddDesignMem member = new AddDesignMem(design_name, designtype_id,  design_description);
-        AddDesignDao rDao = new AddDesignDao();
-        String result = rDao.insert(member);
+        EditDesignsMem member = new EditDesignsMem(design_id,design_name, design_type, design_description);
+        EditDesignsDao rDao = new EditDesignsDao();
+        String result = rDao.update(member);
         response.getWriter().print(result);
         response.sendRedirect(request.getContextPath() + "/my-designs.jsp");
     }

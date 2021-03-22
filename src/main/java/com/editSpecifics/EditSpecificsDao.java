@@ -1,11 +1,11 @@
-package com.addDesign;
+package com.editSpecifics;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AddDesignDao {
+public class EditSpecificsDao {
 
     private Connection con;
 
@@ -32,26 +32,25 @@ public class AddDesignDao {
         return con;
     }
 
-
-
-    public String insert(AddDesignMem member)
+    public String Update(EditSpecificsMem member)
     {
         String dbdrivers = "com.mysql.jdbc.Driver";
         loadDriver(dbdrivers);
         Connection connection = getConnection();
         String result = "data entered successfully";
 
-
-        String sql = "insert into arumadb.design (design_name,designtype_id, design_description, user_id) values(?,?,?,(select user_id from arumadb.users where users.user_id=1))";
+        String sql = "update arumadb.store_item set stock=?, unit_price=?, additional_details=?, published_date=? where design_id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
 
 
-            ps.setString(1, member.getDesign_name());
-            ps.setString(2, member.getDesigntype_id());
-            ps.setString(3, member.getDesign_description());
+            ps.setString(1, member.getStock());
+            ps.setString(2, member.getUnit_price());
+            ps.setString(3, member.getAdditional_details());
+            ps.setString(4, member.getPublished_date());
+            ps.setString(5, member.getDesign_id());
 
-            ;
+
             ps.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -60,6 +59,4 @@ public class AddDesignDao {
 
         return result;
     }
-
 }
-
