@@ -6,9 +6,9 @@ import java.util.List;
 
 public class UserDao{
 
-    String url="jdbc:mysql://localhost:3306/arumadb?serverTimezone=UTC";
+    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
     String username="root";
-    String password="";
+    String password="ais@123321";
     String dbDriver="com.mysql.jdbc.Driver";
 
     private void loadDriver(String dbDriver){
@@ -75,7 +75,7 @@ public class UserDao{
 
     public String getUserFirstNameById(int userId){
         Connection connection = getConnection();
-        String getUserByUserId_SQL = "SELECT first_name from arumadb.users WHERE user_id=?";
+        String getUserByUserId_SQL = "SELECT first_name from user WHERE user_id=?";
 
         try {
             PreparedStatement st=connection.prepareStatement(getUserByUserId_SQL);
@@ -101,7 +101,7 @@ public class UserDao{
     public User selectUser(String username){
         User user=null;
         Connection connection=getConnection();
-        String selectByUsername_SQL="SELECT * FROM arumadb.users WHERE username=?";
+        String selectByUsername_SQL="SELECT * FROM user WHERE username=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             st.setString(1,username);
@@ -133,7 +133,7 @@ public class UserDao{
     public User selectUserByUserId(int userId){
         User user=null;
         Connection connection=getConnection();
-        String selectByUserId_SQL="SELECT * FROM arumadb.users WHERE user_id=?";
+        String selectByUserId_SQL="SELECT * FROM user WHERE user_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUserId_SQL);
             st.setInt(1, userId);
@@ -165,7 +165,7 @@ public class UserDao{
     public List<User> selectAllUsers(){
         List<User> users=new ArrayList<>();
         Connection connection=getConnection();
-        String selectByUsername_SQL="SELECT * FROM arumadb.users";
+        String selectByUsername_SQL="SELECT * FROM user";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             ResultSet rs=st.executeQuery();
@@ -196,7 +196,7 @@ public class UserDao{
     public List<Designer> selectAllDesigners(){
         List<Designer> designers=new ArrayList<>();
         Connection connection=getConnection();
-        String selectByUsername_SQL="SELECT * FROM arumadb.users WHERE user_role_id=2";
+        String selectByUsername_SQL="SELECT * FROM user WHERE user_role_id=2";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             ResultSet rs=st.executeQuery();
@@ -230,7 +230,7 @@ public class UserDao{
     public User selectDesigner(int userId){
         User user=null;
         Connection connection=getConnection();
-        String selectByUsername_SQL="SELECT * FROM arumadb.users WHERE user_id=?";
+        String selectByUsername_SQL="SELECT * FROM user WHERE user_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             st.setInt(1, userId);
@@ -263,7 +263,7 @@ public class UserDao{
     public boolean deleteUser(String username){
         boolean rowDeleted=false;
         Connection connection=getConnection();
-        String deleteUser_SQL="DELETE FROM arumadb.users WHERE username=?";
+        String deleteUser_SQL="DELETE FROM user WHERE username=?";
 
         try {
             PreparedStatement st=connection.prepareStatement(deleteUser_SQL);

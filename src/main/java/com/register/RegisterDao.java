@@ -41,7 +41,7 @@ public class RegisterDao {
     //Create or Insert User
     public boolean insertCustomer(Customer customer) {
         Connection connection = getConnection();
-        String sql = "INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,NULL,NULL)";
+        String sql = "INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,NULL,NULL,NULL)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, customer.getFirstName());
@@ -63,7 +63,7 @@ public class RegisterDao {
 
     public boolean insertDesigner(Designer designer) {
         Connection connection=getConnection();
-        String sql="INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql="INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,NULL)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, designer.getFirstName());

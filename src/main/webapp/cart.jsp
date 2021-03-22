@@ -51,7 +51,7 @@
 
 <link rel="stylesheet" href="./assets/css/cart-wishlist.css">
 
-<div class="cart-container">
+<%--<div class="cart-container">--%>
     <div class="cart">
         <h4 style="color: black">Your Cart</h4>
         <a href="#" class="close-cart"><i class="fas fa-times"></i></a>
@@ -92,6 +92,6 @@
             <button class="place-order"><a href="shipping-payment.jsp">Place Order</a></button>
         </div>
     </div>
-</div>
+<%--</div>--%>
 
 <%@include file="footer-bar.jsp"%>

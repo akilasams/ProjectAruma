@@ -29,10 +29,11 @@ public class Edit_all_values {
         return con;
     }
 
-    public static void main(String[] args) {
-        viewall_data obj_viewall_Values=new viewall_data();
-        obj_viewall_Values.get_values();
-    }
+//    public static void main(String[] args) {
+//        viewall_data obj_viewall_Values=new viewall_data();
+//        obj_viewall_Values.get_values();
+//    }
+
     public viewall_bean get_values(String design_id){
 
         String dbdrivers = "com.mysql.jdbc.Driver";

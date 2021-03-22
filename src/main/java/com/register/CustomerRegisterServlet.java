@@ -1,5 +1,6 @@
 package com.register;
 
+import com.login.SHA256;
 import com.user.Customer;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 @WebServlet("/CustomerRegisterServlet")
 public class CustomerRegisterServlet extends HttpServlet {
@@ -21,15 +23,18 @@ public class CustomerRegisterServlet extends HttpServlet {
         String address=request.getParameter("address");
         String city=request.getParameter("city");
         String username=request.getParameter("username");
-        String password=request.getParameter("password");
+
+        String password= null;
+        try {
+            password = SHA256.toHexString(SHA256.getSHA(request.getParameter("password")));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
         Customer customer=new Customer(firstName,lastName,user_role_id,email,mobileNo,address,city,username,password);
         RegisterDao dao=new RegisterDao();
 
         if(dao.insertCustomer(customer)){
-            HttpSession session=request.getSession();
-            session.setAttribute("name",firstName);
-            session.setAttribute("type","Customer");
             response.sendRedirect("registration-successful.jsp");
         }else{
             response.sendRedirect("registration-failed.jsp");

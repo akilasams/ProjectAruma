@@ -21,7 +21,7 @@ public class edit_values {
         try {
             String dburl = "jdbc:mysql://localhost:3306/arumadb?serverTimezone=UTC";
             String dbuname = "root";
-            String dbpassword = "";
+            String dbpassword = "ais@123321";
             con = DriverManager.getConnection(dburl, dbuname, dbpassword);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -29,10 +29,10 @@ public class edit_values {
         return con;
     }
 
-    public static void main(String[] args) {
-        read_data obj_Read_Values=new read_data();
-        obj_Read_Values.get_values();
-    }
+//    public static void main(String[] args) {
+//        read_data obj_Read_Values=new read_data();
+//        obj_Read_Values.get_values();
+//    }
     public design_bean get_value_of_design(String design_id){
 
         String dbdrivers = "com.mysql.jdbc.Driver";

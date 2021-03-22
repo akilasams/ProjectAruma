@@ -23,7 +23,7 @@ public class storeDao {
         try {
             String dburl = "jdbc:mysql://localhost:3306/arumadb?serverTimezone=UTC";
             String dbuname = "root";
-            String dbpassword = "";
+            String dbpassword = "ais@123321";
             con = DriverManager.getConnection(dburl, dbuname, dbpassword);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -39,7 +39,7 @@ public class storeDao {
         Connection connection = getConnection();
         String result = "data entered successfully";
 
-        String sql = "insert into arumadb.store_item values( (select design_id from arumadb.design where design_id=?),?,?,?,?)";
+        String sql = "insert into aruma_db.store_item values( (select design_id from arumadb.design where design_id=?),?,?,?,?)";
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);

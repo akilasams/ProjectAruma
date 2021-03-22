@@ -35,7 +35,7 @@
     <div class="box-3">
         <img src="assets/img/users/prof-pic.jpg" id="navbar-prof" alt="">
         <div class="prof-info">
-            <h4>Logged in as ${currentUser.getFirstName()}</h4>
+            <h4>Logged in as ${firstName}</h4>
             <a href="<%=request.getContextPath()%>/GoToProfileUserFilterServlet">Go to Profile</a>
             <a href="<%=request.getContextPath()%>/Logout">Sign Out</a>
         </div>

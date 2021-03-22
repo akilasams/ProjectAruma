@@ -24,7 +24,7 @@ public class EditSpecificsDao {
         try {
             String dburl = "jdbc:mysql://localhost:3306/arumadb?serverTimezone=UTC";
             String dbuname = "root";
-            String dbpassword = "";
+            String dbpassword = "ais@123321";
             con = DriverManager.getConnection(dburl, dbuname, dbpassword);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -39,7 +39,7 @@ public class EditSpecificsDao {
         Connection connection = getConnection();
         String result = "data entered successfully";
 
-        String sql = "update arumadb.store_item set stock=?, unit_price=?, additional_details=?, published_date=? where design_id = ?";
+        String sql = "update aruma_db.store_item set stock=?, unit_price=?, additional_details=?, published_date=? where design_id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
 
