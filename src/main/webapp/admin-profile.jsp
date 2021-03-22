@@ -1,11 +1,11 @@
 <%--<%@ page import="com.course.ViewMyCoursesServlet" %>--%>
 <%@ include file="header-bar.jsp"%>
 
-<%
-    if(session.getAttribute("username")==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
+<%--<%--%>
+<%--    if(session.getAttribute("username")==null){--%>
+<%--        response.sendRedirect("login.jsp");--%>
+<%--    }--%>
+<%--%>--%>
 
 <head>
     <link rel="stylesheet" href="./assets/css/profile.css">

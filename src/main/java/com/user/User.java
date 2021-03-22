@@ -6,35 +6,47 @@ public class User {
     private String lastName;
     private int user_role_id;
     private String email;
-    private String address;
     private String mobileNo;
+    private String address;
+    private String city;
     private String username;
     private String password;
+    private String profPic;
 
     public User() {
     }
 
-    public User(int id, String firstName, String lastName, int user_role_id, String email, String address, String mobileNo, String username, String password) {
+    public User(int id, String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.user_role_id = user_role_id;
         this.email = email;
-        this.address = address;
         this.mobileNo = mobileNo;
+        this.address = address;
+        this.city = city;
         this.username = username;
         this.password = password;
     }
 
-    public User(String firstName, String lastName, int user_role_id, String email, String address, String mobileNo, String username, String password) {
+    public User(String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.user_role_id = user_role_id;
         this.email = email;
-        this.address = address;
         this.mobileNo = mobileNo;
+        this.address = address;
+        this.city = city;
         this.username = username;
         this.password = password;
+    }
+
+    public User(String username, String address,String email, String mobileNo, String profPic) {
+        this.username = username;
+        this.address = address;
+        this.email = email;
+        this.mobileNo = mobileNo;
+        this.profPic = profPic;
     }
 
     public int getId() {
@@ -77,6 +89,14 @@ public class User {
         this.email = email;
     }
 
+    public String getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -85,12 +105,12 @@ public class User {
         this.address = address;
     }
 
-    public String getMobileNo() {
-        return mobileNo;
+    public String getCity() {
+        return city;
     }
 
-    public void setMobileNo(String mobileNo) {
-        this.mobileNo = mobileNo;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getUsername() {
@@ -108,4 +128,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getProfPic() { return profPic; }
+
+    public void setProfPic(String profPic) { this.profPic = profPic; }
 }

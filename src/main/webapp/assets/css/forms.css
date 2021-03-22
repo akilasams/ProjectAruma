@@ -131,3 +131,10 @@ form label{
     font-weight: bolder;
     font-size: 25px;
 }
+
+#prof-pic-upload{
+    margin-top: 5px;
+    text-decoration: none;
+    color: rgba(57,57,57,0.73);
+    font-size: 0.7em;
+}

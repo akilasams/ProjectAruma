@@ -2,11 +2,11 @@
     <div id="prof">
         <div id="profile">
             <div id="prof-pic">
-                <img src="./assets/img/prof-pic.jpg" alt="">
+                <img src="assets/img/users/prof-pic.jpg" alt="">
             </div>
             <div id="name">
-                <h3>First Name</h3>
-                <h4>Last Name</h4>
+                <h3>${currentUser.getFirstName()}</h3>
+                <h4>${currentUser.getLastName()}</h4>
             </div>
         </div>
     </div>

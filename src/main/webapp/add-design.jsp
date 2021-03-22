@@ -26,14 +26,15 @@
         <input type="text" name="design_name" placeholder="Enter Item Name"><br>
         <%--            <input type="text" name="design_type" placeholder="design_type"><br>--%>
         <textarea name="design_description" id="design_description" cols="30" rows="10" placeholder="Item Description"></textarea><br>
-        <select name="design_type" id="" name="category">
+        <select name="designtype_id" id="" >
             <option value="none">Select a Category</option>
-            <option value="graphicDesign">Graphic Design</option>
-            <option value="handiCraft">Handi-Craft</option>
-            <option value="fashion">Fashion</option>
-            <option value="video_audio">Video/Audio</option>
-            <option value="art">Art</option>
-            <option value="other">Other</option>
+            <option value="1">Graphic Design</option>
+            <option value="5">Handi-Craft</option>
+            <option value="2">Fashion</option>
+            <option value="4">Video/Audio</option>
+            <option value="3">Art</option>
+            <option value="6">Greeting Cards</option>
+            <option value="7">Other</option>
         </select><br>
         <label id="filename" for="filename">Upload an Image</label><br>
         <input type="file" name="filename"><br>

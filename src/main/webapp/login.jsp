@@ -5,6 +5,7 @@
   Time: 10:50 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,7 +15,7 @@
 <body>
     <div class="form-container">
         <div class="form-header">
-            <img src="./assets/img/Logo.png" alt="">
+            <img src="assets/img/logo/Logo.png" alt="">
         </div>
         <form class="form" id="login-form">
             <div class="form-control">
@@ -30,7 +31,7 @@
                 <small>Error Message</small>
             </div>
 
-            <button form="login-form" formaction="LoginServlet" formmethod="post">Login</button>
+            <button form="login-form" formaction="LoginServlet" formmethod="POST">Login</button>
             <label for=""><a href="forgot-password.jsp">Forgot Password?</a> | <a href="signup.jsp">Sign Up</a></label>
         </form>
     </div>

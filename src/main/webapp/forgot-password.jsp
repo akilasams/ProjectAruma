@@ -14,7 +14,7 @@
 <body>
     <div class="form-container">
         <div class="form-header">
-            <img src="./assets/img/Logo.png" alt="">
+            <img src="assets/img/logo/Logo.png" alt="">
         </div>
         <form class="form" id="forgot-password">
             <div class="form-control">

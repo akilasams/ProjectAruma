@@ -17,12 +17,13 @@ public class CustomerRegisterServlet extends HttpServlet {
         String lastName=request.getParameter("lastName");
         int user_role_id=3;
         String email=request.getParameter("email");
-        String address=request.getParameter("address");
         String mobileNo=request.getParameter("mobileNo");
+        String address=request.getParameter("address");
+        String city=request.getParameter("city");
         String username=request.getParameter("username");
         String password=request.getParameter("password");
 
-        Customer customer=new Customer(firstName,lastName,user_role_id,email,address,mobileNo,username,password);
+        Customer customer=new Customer(firstName,lastName,user_role_id,email,mobileNo,address,city,username,password);
         RegisterDao dao=new RegisterDao();
 
         if(dao.insertCustomer(customer)){

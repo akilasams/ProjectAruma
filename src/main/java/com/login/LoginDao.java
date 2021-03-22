@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 //DAO - Data Access Object
 public class LoginDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
+    String url="jdbc:mysql://localhost:3306/arumadb?serverTimezone=UTC";
     String username="root";
     String password="";
     String sql="select * from aruma_db.user where username=? and password=?";

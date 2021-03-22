@@ -6,7 +6,7 @@
 
 <div class="about-container">
     <h1>About Us</h1>
-    <img src="./assets/img/Logo.png" alt="logo">
+    <img src="assets/img/logo/Logo.png" alt="logo">
     <p>We are a Company that is determined to uplift the freelancing community in Sri Lanka <br> by providing you many useful
         services through our portal <i>Aruma</i><br><br></p>
 

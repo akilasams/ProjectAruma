@@ -12,11 +12,11 @@ public class AddDesignServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String design_name = request.getParameter("design_name");
-        String design_type = request.getParameter("design_type");
-        String in_store = request.getParameter("in_store");
+        String designtype_id = request.getParameter("designtype_id");
+//        String in_store = request.getParameter("in_store");
         String design_description = request.getParameter("design_description");
 
-        AddDesignMem member = new AddDesignMem(design_name, design_type, in_store,  design_description);
+        AddDesignMem member = new AddDesignMem(design_name, designtype_id,  design_description);
         AddDesignDao rDao = new AddDesignDao();
         String result = rDao.insert(member);
         response.getWriter().print(result);

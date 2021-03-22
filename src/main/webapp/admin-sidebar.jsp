@@ -2,11 +2,11 @@
     <div id="prof">
         <div id="profile">
             <div id="prof-pic">
-                <img src="./assets/img/prof-pic.jpg" alt="">
+                <img src="assets/img/users/prof-pic.jpg" alt="">
             </div>
             <div id="name">
-                <h3><%=session.getAttribute("firstName")%></h3>
-                <h4><%=session.getAttribute("lastName")%></h4>
+                <h3>${currentUser.getFirstName()}</h3>
+                <h4>${currentUser.getLastName()}</h4>
                 <h5>Admin</h5>
             </div>
         </div>

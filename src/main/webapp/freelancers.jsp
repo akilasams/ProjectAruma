@@ -7,7 +7,7 @@
     <script src="assets/js/freelancers.js"></script>
 </head>
 
-<%@include file="view-designer.jsp"%>
+<%--<%@include file="view-designer.jsp"%>--%>
 
 <div class="table-wrapper">
     <%@include file="side-nav.jsp"%>
@@ -16,11 +16,12 @@
         <c:forEach var="designer" items="${designersList}">
             <div class="card">
                 <div class="img-holder">
-                    <img src="./assets/img/people/p2.jpg" alt="" class="card-img">
+                    <img src="./assets/img/users/p2.jpg" alt="" class="card-img">
                 </div>
                 <div class="details-holder">
-                    <h4 style="background: none"><b><c:out value="${designer.firstName}"/> <c:out value="${designer.lastName}"/></b></h4>
-                    <p>Small Bio</p>
+                    <h4 style="background: none"><b>${designer.firstName} ${designer.lastName}</b></h4>
+                    <p>${designer.bio}</p>
+                    <a href="<%=request.getContextPath()%>/ViewDesignerServlet?userId=${designer.id}">Go to Profile</a>
                 </div>
             </div>
         </c:forEach>

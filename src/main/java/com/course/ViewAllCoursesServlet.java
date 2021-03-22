@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/ViewCourses")
-public class ViewCoursesServlet extends HttpServlet {
+@WebServlet("/ViewCoursesServlet")
+public class ViewAllCoursesServlet extends HttpServlet {
     private CourseDao dao=new CourseDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
