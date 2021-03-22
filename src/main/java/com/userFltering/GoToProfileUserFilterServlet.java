@@ -20,17 +20,16 @@ public class GoToProfileUserFilterServlet extends HttpServlet {
         User currentUser = dao.selectUserByUserId(userId);
         request.setAttribute("currentUser",currentUser);
 
-        RequestDispatcher toAdminProfile = request.getRequestDispatcher("admin-profile.jsp");
-        RequestDispatcher toDesignerProfile = request.getRequestDispatcher("designer-profile.jsp");
-        RequestDispatcher toCustomerProfile = request.getRequestDispatcher("customer-profile.jsp");
-
         if(currentUser.getUser_role_id() == 1){
+            RequestDispatcher toAdminProfile = request.getRequestDispatcher("admin-profile.jsp");
             toAdminProfile.forward(request,response);
         }
         if(currentUser.getUser_role_id() == 2){
+            RequestDispatcher toDesignerProfile = request.getRequestDispatcher("designer-profile.jsp");
             toDesignerProfile.forward(request,response);
         }
         if(currentUser.getUser_role_id() == 3){
+            RequestDispatcher toCustomerProfile = request.getRequestDispatcher("customer-profile.jsp");
             toCustomerProfile.forward(request,response);
         }
     }

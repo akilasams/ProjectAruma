@@ -26,7 +26,7 @@ public class CustomerRegisterServlet extends HttpServlet {
 
         String password= null;
         try {
-            password = SHA256.toSHA(request.getParameter("password"));
+            password = SHA256.toHexString(SHA256.getSHA(request.getParameter("password")));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
@@ -35,9 +35,6 @@ public class CustomerRegisterServlet extends HttpServlet {
         RegisterDao dao=new RegisterDao();
 
         if(dao.insertCustomer(customer)){
-            HttpSession session=request.getSession();
-            session.setAttribute("name",firstName);
-            session.setAttribute("type","Customer");
             response.sendRedirect("registration-successful.jsp");
         }else{
             response.sendRedirect("registration-failed.jsp");

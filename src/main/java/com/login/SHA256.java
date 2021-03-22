@@ -7,24 +7,30 @@ import java.security.NoSuchAlgorithmException;
 
 public class SHA256 {
 
-    private byte[] getSHA(String password) throws  NoSuchAlgorithmException{
+    public static byte[] getSHA(String password) throws  NoSuchAlgorithmException{
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         return md.digest(password.getBytes(StandardCharsets.UTF_8));
     }
 
-    private String toHexString(byte[] hash){
-        BigInteger number = new BigInteger(1,hash);
+    public static String toHexString(byte[] hash){
+//        BigInteger number = new BigInteger(1,hash);
+//
+//        StringBuilder hexString = new StringBuilder(number.toString(16));
+//
+//        while(hexString.length() < 32){
+//            hexString.insert(0,"0");
+//        }
+//
+//        return hexString.toString();
 
-        StringBuilder hexString = new StringBuilder(number.toString(16));
-
-        while(hexString.length() < 32){
-            hexString.insert(0,"0");
+        StringBuilder hexString = new StringBuilder(2 * hash.length);
+        for (int i = 0; i < hash.length; i++) {
+            String hex = Integer.toHexString(0xff & hash[i]);
+            if(hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
         }
         return hexString.toString();
-    }
-
-    public static String toSHA(String input) throws  NoSuchAlgorithmException{
-        SHA256 sha256 = new SHA256();
-        return sha256.toHexString(sha256.getSHA(input));
     }
 }

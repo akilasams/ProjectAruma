@@ -31,10 +31,11 @@ public class viewall_data {
         return con;
     }
 
-    public static void main(String[] args) {
-        viewall_data obj_viewall_Values=new viewall_data();
-        obj_viewall_Values.get_values();
-    }
+//    public static void main(String[] args) {
+//        viewall_data obj_viewall_Values=new viewall_data();
+//        obj_viewall_Values.get_values();
+//    }
+
     public List get_values(){
 
         String dbdrivers = "com.mysql.jdbc.Driver";

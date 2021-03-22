@@ -31,10 +31,10 @@ public class read_data {
         return con;
     }
 
-    public static void main(String[] args) {
-        read_data obj_Read_Values=new read_data();
-        obj_Read_Values.get_values();
-    }
+//    public static void main(String[] args) {
+//        read_data obj_Read_Values=new read_data();
+//        obj_Read_Values.get_values();
+//    }
     public List get_values(){
 
         String dbdrivers = "com.mysql.jdbc.Driver";

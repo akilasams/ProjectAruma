@@ -21,17 +21,16 @@ public class LoginUserFilterServlet extends HttpServlet {
         User currentUser = dao.selectUserByUserId(userId);
         request.setAttribute("currentUser",currentUser);
 
-        RequestDispatcher toAdminProfile = request.getRequestDispatcher("admin-profile.jsp");
-        RequestDispatcher toHome = request.getRequestDispatcher("home-main.jsp");
-
         if(currentUser.getUser_role_id() == 1){
+            RequestDispatcher toAdminProfile = request.getRequestDispatcher("admin-profile.jsp");
             toAdminProfile.forward(request,response);
         }else{
+            RequestDispatcher toHome = request.getRequestDispatcher("home-main.jsp");
             toHome.forward(request,response);
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        this.doPost(request,response);
     }
 }

@@ -30,10 +30,11 @@ public class view_data {
         return con;
     }
 
-    public static void main(String[] args) {
-        view_data obj_view_Values=new view_data();
-        obj_view_Values.get_values();
-    }
+//    public static void main(String[] args) {
+//        view_data obj_view_Values=new view_data();
+//        obj_view_Values.get_values();
+//    }
+
     public List get_values(){
 
         String dbdrivers = "com.mysql.jdbc.Driver";
