@@ -41,11 +41,7 @@ public class RegisterDao {
     //Create or Insert User
     public boolean insertCustomer(Customer customer) {
         Connection connection = getConnection();
-<<<<<<< HEAD
-        String sql = "INSERT INTO aruma_db.user VALUES (NULL,?,?,?,?,?,?,?,?)";
-=======
         String sql = "INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,NULL)";
->>>>>>> improved code
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, customer.getFirstName());
