@@ -1,35 +1,12 @@
 package com.user;
 
+import com.dbConnection.MyConnection;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao{
-
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-    String username="root";
-    String password="ais@123321";
-    String dbDriver="com.mysql.jdbc.Driver";
-
-    private void loadDriver(String dbDriver){
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Connection getConnection(){
-        Connection connection=null;
-        try{
-            loadDriver(dbDriver);
-            connection = DriverManager.getConnection(url,username,password);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
     /*public List<Course> getCourseList(ResultSet rs){
         List<Course> courseList=new ArrayList<>();
         try {
@@ -74,7 +51,7 @@ public class UserDao{
     }*/
 
     public String getUserFirstNameById(int userId){
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
         String getUserByUserId_SQL = "SELECT first_name from user WHERE user_id=?";
 
         try {
@@ -100,7 +77,7 @@ public class UserDao{
     //Select User by Username
     public User selectUser(String username){
         User user=null;
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectByUsername_SQL="SELECT * FROM user WHERE username=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
@@ -132,7 +109,7 @@ public class UserDao{
     //Select User by UserId
     public User selectUserByUserId(int userId){
         User user=null;
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectByUserId_SQL="SELECT * FROM user WHERE user_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUserId_SQL);
@@ -164,7 +141,7 @@ public class UserDao{
     //Select All Users
     public List<User> selectAllUsers(){
         List<User> users=new ArrayList<>();
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectByUsername_SQL="SELECT * FROM user";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
@@ -182,6 +159,7 @@ public class UserDao{
                     String mobNo = rs.getString("mobile_no");
                     String address = rs.getString("address");
                     String city = rs.getString("city");
+                    String username = rs.getString("username");
                     String password = rs.getString("password");
                     users.add(new User(user_id, firstName, lastName, roleId,email, mobNo,address, city, username, password));
                 } while (rs.next());
@@ -195,7 +173,7 @@ public class UserDao{
     //Select All Designer
     public List<Designer> selectAllDesigners(){
         List<Designer> designers=new ArrayList<>();
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectByUsername_SQL="SELECT * FROM user WHERE user_role_id=2";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
@@ -229,7 +207,7 @@ public class UserDao{
     //Select Designer
     public User selectDesigner(int userId){
         User user=null;
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectByUsername_SQL="SELECT * FROM user WHERE user_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
@@ -248,6 +226,7 @@ public class UserDao{
                     String mobNo = rs.getString("mobile_no");
                     String address = rs.getString("address");
                     String city = rs.getString("city");
+                    String username = rs.getString("username");
                     String password = rs.getString("password");
                     user = new User(user_id, firstName, lastName, roleId,email, mobNo,address, city, username, password);
                 } while (rs.next());
@@ -262,7 +241,7 @@ public class UserDao{
     //Delete User
     public boolean deleteUser(String username){
         boolean rowDeleted=false;
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String deleteUser_SQL="DELETE FROM user WHERE username=?";
 
         try {
@@ -276,22 +255,22 @@ public class UserDao{
     }
 
     //Update User
-//    public boolean updateUser(User user){
-//        boolean rowUpdated=false;
-//        Connection connection=getConnection();
-//        String updateUser_SQL="UPDATE arumadb.users SET address=?,email=?,mobile_no=?,profpic=? WHERE username=?";
-//
-//        try {
-//            PreparedStatement st=connection.prepareStatement(updateUser_SQL);
-//            st.setString(1,user.getAddress());
-//            st.setString(2,user.getEmail());
-//            st.setString(3,user.getMobileNo());
-//            st.setString(4,user.getProfPic());
-//            st.setString(5,user.getUsername());
-//            rowUpdated = st.executeUpdate()>0;
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//        return rowUpdated;
-//    }
+    public boolean updateUser(User user){
+        boolean rowUpdated=false;
+        Connection connection = MyConnection.getConnection();
+        String updateUser_SQL="UPDATE arumadb.users SET address=?,email=?,mobile_no=?,profpic=? WHERE username=?";
+
+        try {
+            PreparedStatement st=connection.prepareStatement(updateUser_SQL);
+            st.setString(1,user.getAddress());
+            st.setString(2,user.getEmail());
+            st.setString(3,user.getMobileNo());
+            st.setString(4,user.getProfPic());
+            st.setString(5,user.getUsername());
+            rowUpdated = st.executeUpdate()>0;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return rowUpdated;
+    }
 }

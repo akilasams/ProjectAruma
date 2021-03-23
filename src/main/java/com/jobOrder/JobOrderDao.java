@@ -1,37 +1,13 @@
 package com.jobOrder;
 
+import com.dbConnection.MyConnection;
 import com.user.User;
 
 import java.sql.*;
 
 public class JobOrderDao {
-
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-    String username="root";
-    String password="ais@123321";
-    String dbDriver="com.mysql.jdbc.Driver";
-
-    private void loadDriver(String dbDriver){
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Connection getConnection(){
-        Connection connection=null;
-        try{
-            loadDriver(dbDriver);
-            connection = DriverManager.getConnection(url,username,password);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
     public boolean insertJobOrder(JobOrder jobOrder){
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
         String insertJobOrder_SQL = "INSERT INTO job_order VALUES(DEFAULT,?,?,0,0,NOW(),?,?,?)";
 
         try {
@@ -50,7 +26,7 @@ public class JobOrderDao {
     }
 
     public boolean setOrderAsAccepted(int jobOrderId){
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
         String setOrderAsAccepted_SQL = "UPDATE job_order SET accepted=1 WHERE job_order_id=?";
 
         try {
@@ -64,7 +40,7 @@ public class JobOrderDao {
     }
 
     public boolean setOrderAsConfirmed(int jobOrderId){ //by Customer
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
         String setOrderAsConfirmed_SQL = "UPDATE job_order SET confirmed=1 WHERE job_order_id=?";
 
         try {

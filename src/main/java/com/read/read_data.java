@@ -1,35 +1,12 @@
 package com.read;
 
+import com.dbConnection.MyConnection;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class read_data {
-
-    private Connection con;
-
-    public void loadDriver(String dbdriver)
-    {
-        try {
-            Class.forName(dbdriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-    }
-    public Connection getConnection() {
-
-        Connection con = null;
-        try {
-            String dburl = "jdbc:mysql://localhost:3306/arumadb?serverTimezone=UTC";
-            String dbuname = "root";
-            String dbpassword = "";
-            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return con;
-    }
 
 //    public static void main(String[] args) {
 //        read_data obj_Read_Values=new read_data();
@@ -37,9 +14,7 @@ public class read_data {
 //    }
     public List get_values(){
 
-        String dbdrivers = "com.mysql.jdbc.Driver";
-        loadDriver(dbdrivers);
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
         String result = "data entered successfully";
 
         PreparedStatement ps=null;

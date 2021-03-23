@@ -1,5 +1,6 @@
 package com.register;
 
+import com.dbConnection.MyConnection;
 import com.user.Customer;
 import com.user.Designer;
 
@@ -9,38 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class RegisterDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-    String username="root";
-    String password="ais@123321";
-    String dbDriver="com.mysql.jdbc.Driver";
-
-    /*String INSERT_USER="INSERT INTO USER (first_name,last_name,password,username,address,email,mobile_no) VALUES (?,?,?,?,?,?,?)";
-    String SELECT_ALL_USERS="SELECT * FROM users";
-    String SELECT_USER_BY_ID="SELECT id,first_name,last_name,password,username,address,email,mobile_no FROM user WHERE id=?";
-    String DELETE_USER="DELETE FROM users WHERE id=?";*/
-
-    private void loadDriver(String dbDriver){
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Connection getConnection(){
-        Connection connection=null;
-        try{
-            loadDriver(dbDriver);
-            connection = DriverManager.getConnection(url,username,password);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
     //Create or Insert User
     public boolean insertCustomer(Customer customer) {
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
         String sql = "INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,NULL,NULL,NULL)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
@@ -62,7 +34,7 @@ public class RegisterDao {
     }
 
     public boolean insertDesigner(Designer designer) {
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String sql="INSERT INTO USER VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,NULL)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);

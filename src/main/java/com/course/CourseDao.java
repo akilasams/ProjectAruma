@@ -1,37 +1,15 @@
 package com.course;
 
+import com.dbConnection.MyConnection;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CourseDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-    String username="root";
-    String password="ais@123321";
-    String dbDriver="com.mysql.jdbc.Driver";
-
-    private void loadDriver(String dbDriver){
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Connection getConnection(){
-        Connection connection=null;
-        try{
-            loadDriver(dbDriver);
-            connection = DriverManager.getConnection(url,username,password);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
     //Insert New Course
     public boolean insertCourse(Course course){
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String insertCourse_SQL="INSERT INTO aruma_db.course VALUES (NULL,?,?,?,?,?)";
 
         try {
@@ -76,7 +54,7 @@ public class CourseDao {
     //Select My Courses
     public List<Course> selectMyCourses(int user_id){
         List<Course> myCourses=new ArrayList<>();
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectMyCourses_SQL="SELECT * FROM aruma_db.course WHERE user_id=?";
 
         try {
@@ -108,7 +86,7 @@ public class CourseDao {
     //Select All Courses
     public List<Course> selectAllCourses(){
         List<Course> courses=new ArrayList<>();
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectAllCourses_SQL="SELECT * FROM aruma_db.course";
 
         try {
@@ -140,7 +118,7 @@ public class CourseDao {
     //Select Course by Id
     public Course selectCourse(int courseId){
         Course course=null;
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectBycourseId_SQL="SELECT * FROM aruma_db.course WHERE course_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectBycourseId_SQL);

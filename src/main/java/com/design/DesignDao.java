@@ -1,5 +1,6 @@
 package com.design;
 
+import com.dbConnection.MyConnection;
 import com.user.User;
 
 import java.sql.*;
@@ -7,33 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DesignDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-    String username="root";
-    String password="ais@123321";
-    String dbDriver="com.mysql.jdbc.Driver";
-
-    private void loadDriver(String dbDriver){
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Connection getConnection(){
-        Connection connection=null;
-        try{
-            loadDriver(dbDriver);
-            connection = DriverManager.getConnection(url,username,password);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return connection;
-    }
 
     public List<Design> selectMyDesigns(int UserId){
         List<Design> myDesigns=new ArrayList<>();
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String sql="SELECT * FROM design WHERE userId=?";
         try {
             PreparedStatement st=connection.prepareStatement(sql);

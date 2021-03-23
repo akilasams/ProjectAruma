@@ -1,35 +1,13 @@
 package com.login;
 
+import com.dbConnection.MyConnection;
+
 import java.sql.*;
 
 //DAO - Data Access Object
 public class LoginDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-    String username="root";
-    String password="ais@123321";
-    String dbDriver="com.mysql.jdbc.Driver";
-
-    private void loadDriver(String dbDriver){
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Connection getConnection(){
-        Connection connection=null;
-        try{
-            loadDriver(dbDriver);
-            connection = DriverManager.getConnection(url,username,password);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
     public boolean checkCredentials(String uname,String pass) {
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
         String sql = "SELECT password FROM user WHERE username=?";
         try {
             PreparedStatement st=connection.prepareStatement(sql);
