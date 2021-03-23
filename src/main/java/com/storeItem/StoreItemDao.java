@@ -1,5 +1,6 @@
 package com.storeItem;
 
+import com.dbConnection.MyConnection;
 import com.design.Design;
 import com.user.User;
 
@@ -8,33 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StoreItemDao {
-    String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-    String username="root";
-    String password="ais@123321";
-    String dbDriver="com.mysql.jdbc.Driver";
-
-    private void loadDriver(String dbDriver){
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Connection getConnection(){
-        Connection connection=null;
-        try{
-            loadDriver(dbDriver);
-            connection = DriverManager.getConnection(url,username,password);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return connection;
-    }
 
     public List<StoreItem> selectAllItems(){
         List<StoreItem> allItems=new ArrayList<>();
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectAllItems_SQL="call GetAllStoreItems";
         try {
             CallableStatement st= connection.prepareCall(selectAllItems_SQL);
@@ -66,7 +44,7 @@ public class StoreItemDao {
 
     public StoreItem selectStoreItembyId(int itemId){
         StoreItem storeItem=null;
-        Connection connection=getConnection();
+        Connection connection = MyConnection.getConnection();
         String selectByDesignId_SQL="call GetItemById(?)";
         try {
             CallableStatement st=connection.prepareCall(selectByDesignId_SQL);
