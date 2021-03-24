@@ -126,7 +126,13 @@
                 <div class="dropdown-content">
                     <a href="specifics_Edit.jsp?design_id=<%=obj_view_bean.getDesign_id()%>">Edit</a>
                     <a href="specifics_Delete.jsp?design_id=<%=obj_view_bean.getDesign_id()%>">Delete</a>
-                    <a href="items_in_store.jsp">Publish Item</a>
+<%--                    <a href="store-home.jsp">Publish Item</a>--%>
+                    <a><form action="ViewAllItemsServlet" method="post">
+
+                        <button type="submit" value="submit">Publish Item</button>
+                    </form></a>
+
+<%--                    <a><input type="submit" value="ViewAllItemsServlet" onclick="form.action='ViewAllItemsServlet';"></a>--%>
 
                 </div>
             </div></td>

@@ -26,7 +26,7 @@
     <form action="EditDesignsServlet" method="post">
         <input type="hidden" name="design_id" value="<%=design_id%>" placeholder="Stock"><br>
         <input type="text" name="design_name" value="<%=obj_design_bean.getDesign_name()%>" placeholder="Enter Design Type"><br>
-        <input type="text" name="design_type" value="<%=obj_design_bean.getDesign_type()%>" placeholder="Enter Design Type"><br>
+        <input type="text" name="design_type" value="<%=obj_design_bean.getDesigntype_id()%>" placeholder="Enter Design Type"><br>
         <input type="text" name="design_description" value="<%=obj_design_bean.getDesign_description()%>" style="height: 70px" placeholder="Write Something About the Course"></textarea><br>
 
         <button type="submit" name="submit">Update My Design</button>

@@ -10,10 +10,12 @@
 
 <%@include file="header-bar.jsp"%>
 
-<%if(session.getAttribute("username")!=null){%>
-<%@include file="cart-wishlist.jsp"%>
-<%}%>
-
+<%--<%if(session.getAttribute("username")!=null){%>--%>
+<%--<%@include file="cart-wishlist.jsp"%>--%>
+<%--<%}%>--%>
+<c:if test="${userId != null}">
+    <jsp:include page="cart-wishlist.jsp"/>
+</c:if>
 
 <head>
 
@@ -42,13 +44,13 @@
         %>
         <div class="card">
             <div class="img-holder">
-                <img src="./assets/img/img7.jpg" alt="" class="card-img">
+                <img src="./assets/img/designs/img7.jpg" alt="" class="card-img">
             </div>
             <div class="details-holder">
 
 
                 <h3 style="background: none"><%=obj_viewall_bean.getDesign_name()%></h3>
-                <p class="item-category"><%=obj_viewall_bean.getDesign_type()%></p>
+                <p class="item-category"><%=obj_viewall_bean.getDesigntype_id()%></p>
                 <p><%=obj_viewall_bean.getDesign_description()%></p>
             </div>
             <div class="item-price">

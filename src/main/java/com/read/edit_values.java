@@ -6,6 +6,33 @@ import java.sql.*;
 
 public class edit_values {
 
+
+//    private Connection con;
+//
+//    public void loadDriver(String dbdriver)
+//    {
+//        try {
+//            Class.forName(dbdriver);
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+//    public Connection getConnection() {
+//
+//        Connection con = null;
+//        try {
+//            String dburl = "jdbc:mysql://localhost:3306/arumadb?serverTimezone=UTC";
+//            String dbuname = "root";
+//            String dbpassword = "";
+//            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+//        return con;
+//    }
+
+
 //    public static void main(String[] args) {
 //        read_data obj_Read_Values=new read_data();
 //        obj_Read_Values.get_values();
@@ -20,7 +47,7 @@ public class edit_values {
 
 
         try {
-            String querry="select * from arumadb.design where design_id=?";
+            String querry="select * from aruma_db.design where design_id=?";
             ps=connection.prepareStatement(querry);
             ps.setString(1, design_id);
             rs=ps.executeQuery();
@@ -33,7 +60,7 @@ public class edit_values {
 
                 obj_mem.setDesign_id(rs.getString("design_id"));
                 obj_mem.setDesign_name(rs.getString("design_name"));
-                obj_mem.setDesign_type(rs.getString("designtype_id"));
+                obj_mem.setDesigntype_id(rs.getString("designtype_id"));
                 obj_mem.setIn_store(rs.getString("in_store"));
                 obj_mem.setDesign_description(rs.getString("design_description"));
 

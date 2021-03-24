@@ -78,7 +78,7 @@ public class UserDao{
     public User selectUser(String username){
         User user=null;
         Connection connection = MyConnection.getConnection();
-        String selectByUsername_SQL="SELECT * FROM user WHERE username=?";
+        String selectByUsername_SQL="SELECT * FROM aruma_db.users WHERE username=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             st.setString(1,username);
@@ -110,7 +110,7 @@ public class UserDao{
     public User selectUserByUserId(int userId){
         User user=null;
         Connection connection = MyConnection.getConnection();
-        String selectByUserId_SQL="SELECT * FROM user WHERE user_id=?";
+        String selectByUserId_SQL="SELECT * FROM aruma_db.users WHERE user_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUserId_SQL);
             st.setInt(1, userId);
