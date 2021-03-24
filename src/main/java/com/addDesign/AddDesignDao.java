@@ -41,7 +41,7 @@ public class AddDesignDao {
     public String insert(AddDesignMem member)
     {
         Connection connection = MyConnection.getConnection();
-        String result = "data entered successfully";
+        String result = "data entered successfull";
 
 
         String sql = "insert into aruma_db.design (design_name,designtype_id, design_description, user_id) values(?,?,?,(select user_id from aruma_db.users where users.user_id=1))";
