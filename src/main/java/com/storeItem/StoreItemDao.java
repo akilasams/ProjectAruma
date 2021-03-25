@@ -1,8 +1,6 @@
 package com.storeItem;
 
 import com.dbConnection.MyConnection;
-import com.design.Design;
-import com.user.User;
 
 import java.sql.*;
 import java.util.ArrayList;

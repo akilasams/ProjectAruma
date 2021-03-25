@@ -17,7 +17,7 @@
             <li><a href="reqs-and-msgs.jsp">Request & Messages</a></li>
             <li><a href="reviews.jsp">Reviews</a></li>
             <li><a href="reports.jsp">Reports</a></li>
-            <li><a href="profile-settings.jsp">Settings</a></li>
+            <li><a href="<%=request.getContextPath()%>/GoToProfileSettingsUserServlet">Settings</a></li>
         </ul>
         <div id="buttons">
             <div class="btn-prof"><a href="add-design.jsp">Add User</a></div>

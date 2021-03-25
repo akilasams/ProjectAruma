@@ -10,7 +10,7 @@ public class LoginDao {
         Connection connection = MyConnection.getConnection();
         String sql = "SELECT password FROM aruma_db.users WHERE username=?";
         try {
-            PreparedStatement st=connection.prepareStatement(sql);
+            PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1,uname); //1st ? = uname
             ResultSet rs=st.executeQuery();
             if(rs.next()){ //If theres a record such that uname = DB uname & pass = DB pass (If result set exists)

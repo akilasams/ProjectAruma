@@ -7,12 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<<<<<<< HEAD
 <%--<%--%>
 <%--    if(session.getAttribute("username")==null){--%>
 <%--        response.sendRedirect("login.jsp");--%>
 <%--    }--%>
 <%--%>--%>
 
+=======
+>>>>>>> payment form finalized
 <c:if test="${userId == null}">
     <c:redirect url="login.jsp"></c:redirect>
 </c:if>

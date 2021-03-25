@@ -16,7 +16,7 @@
             <li><a href="designer-reqs-and-msgs.jsp">Job Requests & Messages</a></li>
             <li><a href="my-designs.jsp">My Designs</a></li>
             <li><a href="<%=request.getContextPath()%>/ViewMyCoursesServlet">My Courses</a></li>
-            <li><a href="profile-settings.jsp">Settings</a></li>
+            <li><a href="<%=request.getContextPath()%>/GoToProfileSettingsUserServlet"">Settings</a></li>
         </ul>
         <div id="buttons">
             <div class="btn-prof"><a href="add-design.jsp">Add New Design</a></div>
