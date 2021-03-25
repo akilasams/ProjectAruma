@@ -8,10 +8,10 @@ import java.util.List;
 
 public class read_data {
 
-    public static void main(String[] args) {
-        read_data obj_Read_Values=new read_data();
-        obj_Read_Values.get_values();
-    }
+//    public static void main(String[] args) {
+//        read_data obj_Read_Values=new read_data();
+//        obj_Read_Values.get_values();
+//    }
 
 //    private Connection con;
 //
