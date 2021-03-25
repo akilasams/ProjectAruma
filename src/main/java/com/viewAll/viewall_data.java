@@ -21,7 +21,7 @@ public class viewall_data {
 
         Connection con = null;
         try {
-            String dburl = "jdbc:mysql://localhost:3306/arumadb?serverTimezone=UTC";
+            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
             String dbuname = "root";
             String dbpassword = "";
             con = DriverManager.getConnection(dburl, dbuname, dbpassword);
@@ -49,7 +49,7 @@ public class viewall_data {
         List <viewall_bean> list = new ArrayList<viewall_bean>();
 
         try {
-            String querry="select * from arumadb.design INNER JOIN arumadb.store_item ON design.design_id = store_item.design_id";
+            String querry="select * from aruma_db.design INNER JOIN aruma_db.store_item ON design.design_id = store_item.design_id";
             ps=connection.prepareStatement(querry);
             rs=ps.executeQuery();
 
@@ -59,7 +59,7 @@ public class viewall_data {
 
                 System.out.println(rs.getString("design_id"));
                 System.out.println(rs.getString("design_name"));
-                System.out.println(rs.getString("design_type"));
+                System.out.println(rs.getString("designtype_id"));
                 System.out.println(rs.getString("in_store"));
                 System.out.println(rs.getString("design_description"));
 
@@ -71,7 +71,7 @@ public class viewall_data {
 
                 obj_mem.setDesign_id(rs.getString("design_id"));
                 obj_mem.setDesign_name(rs.getString("design_name"));
-                obj_mem.setDesign_type(rs.getString("design_type"));
+                obj_mem.setDesigntype_id(rs.getString("designtype_id"));
                 obj_mem.setIn_store(rs.getString("in_store"));
                 obj_mem.setDesign_description(rs.getString("design_description"));
 

@@ -1,4 +1,5 @@
 <%@ page import="java.util.Date" %>
+<%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -13,6 +14,7 @@
 <%
     String design_id = (String) request.getParameter("design_id");
     Date date = new Date();
+    LocalDate myObj = LocalDate.now();
 
 
 %>
@@ -25,7 +27,7 @@
         <input type="text" name="stock" placeholder="Stock"   ><br>
         <input type="text" name="unit_price"  placeholder="Unit Price" ><br>
         <textarea name="additional_details" placeholder="Additional Details" cols="30" rows="10" placeholder="Write Something About the Course" ></textarea><br>
-        <input type="hidden" name="published_date" value="<%=date.toString()%>" placeholder="Published Date" ><br>
+        <input type="hidden" name="published_date" value="<%=myObj%>" placeholder="Published Date" ><br>
 
 
         <button type="submit" name="submit">Add Specifics to My Designs</button>

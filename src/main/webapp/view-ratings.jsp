@@ -2,14 +2,14 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="com.read.read_data" %>
-<%@ page import="com.read.design_bean" %>
+<%@ page import="com.viewRatingsReviews.viewReviewData" %>
+<%@ page import="com.viewRatingsReviews.viewRateReview" %>
 <%@include file="header-bar.jsp"%>
 
 
-    <c:if test="${userId == null}">
-    <c:redirect url="login.jsp"></c:redirect>
-    </c:if>
+<%--<c:if test="${userId == null}">--%>
+<%--    <c:redirect url="login.jsp"></c:redirect>--%>
+<%--</c:if>--%>
 
 
 <head>
@@ -70,7 +70,7 @@
 <div class="table-wrapper">
     <mini-nav>
         <div id="prof-info">
-            <img src="./assets/img/users/prof-pic.jpg" id="prof-img" alt="">
+            <img src="./assets/img/prof-pic.jpg" id="prof-img" alt="">
             <h3><%=session.getAttribute("firstName")%></h3>
             <h4><%=session.getAttribute("lastName")%></h4>
             <h3 id="rating">6.5/10</h3>
@@ -87,43 +87,43 @@
 
     <hr>
     <%
-        read_data obj_read_data = new read_data();
-        List<design_bean> list = obj_read_data.get_values();
-        Iterator<design_bean> it_list = list.iterator();
+        viewReviewData obj_read_data = new viewReviewData();
+        List<viewRateReview> list = obj_read_data.get_values();
+        Iterator<viewRateReview> it_list = list.iterator();
     %>
     <table>
-        <caption>All Items</caption>
+        <caption>All Reviews</caption>
         <tr>
             <%--            <th>Design ID</th>--%>
-            <th>Design Name</th>
-            <th>Design Type</th>
-            <th>In Store</th>
-            <th>Description</th>
-            <th>Action</th>
+            <th>rating</th>
+            <th>Review</th>
+<%--            <th>In Store</th>--%>
+<%--            <th>Description</th>--%>
+<%--            <th>Action</th>--%>
 
         </tr>
 
         <%
             while (it_list.hasNext()) {
-                design_bean obj_design_bean = new design_bean();
+                viewRateReview obj_design_bean = new viewRateReview();
                 obj_design_bean = it_list.next();
 
         %>
         <tr>
             <%--            <td><%=obj_design_bean.getDesign_id()%></td>--%>
-            <td><%=obj_design_bean.getDesign_name()%></td>
-            <td><%=obj_design_bean.getDesigntype_id()%></td>
-            <td><%=obj_design_bean.getIn_store()%></td>
-            <td><%=obj_design_bean.getDesign_description()%></td>
-            <td><div class="dropdown">
-                <button class="dropbtn"><p><i class="arrow down"></i></p></button>
-                <div class="dropdown-content">
-                    <a href="preview_item.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Preview</a>
-                    <a href="edit-designs-in-design-table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a>
-                    <a href="specifics-add-before-adding-to-store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add to store</a>
-                    <a href="specifics-added.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Added Specifics</a>
-                </div>
-            </div></td>
+            <td><%=obj_design_bean.getRating()%></td>
+            <td><%=obj_design_bean.getReview()%></td>
+<%--            <td><%=obj_design_bean.getIn_store()%></td>--%>
+<%--            <td><%=obj_design_bean.getDesign_description()%></td>--%>
+<%--            <td><div class="dropdown">--%>
+<%--                <button class="dropbtn"><p><i class="arrow down"></i></p></button>--%>
+<%--                <div class="dropdown-content">--%>
+<%--                    <a href="preview_item.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Preview</a>--%>
+<%--                    <a href="edit-designs-in-design-table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a>--%>
+<%--                    <a href="specifics-add-before-adding-to-store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add to store</a>--%>
+<%--                    <a href="specifics-added.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Added Specifics</a>--%>
+<%--                </div>--%>
+<%--            </div></td>--%>
 
             <%--            <td><a href="edit_designs_in_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a></td>--%>
 

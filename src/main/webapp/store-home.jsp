@@ -1,3 +1,7 @@
+<%@ page import="com.viewAll.viewall_bean" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.viewAll.viewall_data" %>
 <%@include file="header-bar.jsp"%>
 
 <%--
@@ -22,10 +26,23 @@
     <script src="assets/js/ajax.js"></script>
 </head>
 
+<%
+    viewall_data obj_viewall_data = new viewall_data();
+    List<viewall_bean> list = obj_viewall_data.get_values();
+    Iterator<viewall_bean> it_list = list.iterator();
+%>
+
 <div class="table-wrapper">
     <%@include file="side-nav.jsp"%>
 
     <div class="card-holder">
+
+        <%
+            while (it_list.hasNext()) {
+                viewall_bean obj_viewall_bean = new viewall_bean();
+                obj_viewall_bean = it_list.next();
+
+        %>
 
         <c:forEach var="item" items="${storeItemList}">
             <div class="card">
@@ -36,7 +53,7 @@
                     <h3 style="background: none">${item.designName}</h3>
                     <p class="item-category">${item.designType}</p>
                     <p>${item.designDescription}</p>
-                    <a href="view-item.jsp">View Item</a>
+                    <a href="view-item.jsp?design_id=<%=obj_viewall_bean.getDesign_id()%>">View Item</a>
                 </div>
                 <div class="item-price">
                     <h5>${item.unitPrice} LKR</h5>
@@ -48,7 +65,9 @@
 <%--                <%@include file="view-item.jsp"%>--%>
             </div>
         </c:forEach>
-
+        <%
+            }
+        %>
     </div>
 </div>
 

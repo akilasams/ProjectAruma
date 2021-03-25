@@ -13,7 +13,7 @@ public class StoreItemDao {
     public List<StoreItem> selectAllItems(){
         List<StoreItem> allItems=new ArrayList<>();
         Connection connection = MyConnection.getConnection();
-        String selectAllItems_SQL="call GetAllStoreItems";
+        String selectAllItems_SQL="{call GetAllStoreItems()}";
         try {
             CallableStatement st= connection.prepareCall(selectAllItems_SQL);
             ResultSet rs=st.executeQuery();
@@ -45,7 +45,7 @@ public class StoreItemDao {
     public StoreItem selectStoreItembyId(int itemId){
         StoreItem storeItem=null;
         Connection connection = MyConnection.getConnection();
-        String selectByDesignId_SQL="call GetItemById(?)";
+        String selectByDesignId_SQL="{call GetItemById(?)}";
         try {
             CallableStatement st=connection.prepareCall(selectByDesignId_SQL);
             st.setInt(1, itemId);

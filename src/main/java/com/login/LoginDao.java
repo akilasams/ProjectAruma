@@ -8,7 +8,7 @@ import java.sql.*;
 public class LoginDao {
     public boolean checkCredentials(String uname,String pass) {
         Connection connection = MyConnection.getConnection();
-        String sql = "SELECT password FROM user WHERE username=?";
+        String sql = "SELECT password FROM aruma_db.users WHERE username=?";
         try {
             PreparedStatement st=connection.prepareStatement(sql);
             st.setString(1,uname); //1st ? = uname

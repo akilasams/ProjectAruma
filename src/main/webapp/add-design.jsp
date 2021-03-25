@@ -7,11 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%
-    if(session.getAttribute("username")==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
+<%--<%--%>
+<%--    if(session.getAttribute("username")==null){--%>
+<%--        response.sendRedirect("login.jsp");--%>
+<%--    }--%>
+<%--%>--%>
+
+<c:if test="${userId == null}">
+    <c:redirect url="login.jsp"></c:redirect>
+</c:if>
 
 <html>
 <head>
@@ -22,7 +26,7 @@
 <body>
 <div id="form-container">
     <h2>Add New Item</h2>
-    <form action="StoreRegServlet" method="post"z>
+    <form action="StoreRegServlet" method="post">
         <input type="text" name="design_name" placeholder="Enter Item Name"><br>
         <%--            <input type="text" name="design_type" placeholder="design_type"><br>--%>
         <textarea name="design_description" id="design_description" cols="30" rows="10" placeholder="Item Description"></textarea><br>

@@ -1,10 +1,11 @@
-package com.viewstore;
+package com.viewRatingsReviews;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class view_data {
+public class viewReviewData {
+
     private Connection con;
 
     public void loadDriver(String dbdriver)
@@ -30,11 +31,10 @@ public class view_data {
         return con;
     }
 
-//    public static void main(String[] args) {
-//        view_data obj_view_Values=new view_data();
-//        obj_view_Values.get_values();
-//    }
-
+        public static void main(String[] args) {
+        viewReviewData obj_view_Values=new viewReviewData();
+        obj_view_Values.get_values();
+    }
     public List get_values(){
 
         String dbdrivers = "com.mysql.jdbc.Driver";
@@ -45,31 +45,26 @@ public class view_data {
         PreparedStatement ps=null;
         ResultSet rs=null;
 
-        List <view_bean> list = new ArrayList<view_bean>();
+        List <viewRateReview> list = new ArrayList<viewRateReview>();
 
         try {
-            String querry="select * from aruma_db.store_item";
+            String querry="select * from aruma_db.user_ratingreview";
             ps=connection.prepareStatement(querry);
             rs=ps.executeQuery();
 
 
             while(rs.next()){
-                view_bean obj_mem=new view_bean();
+                viewRateReview obj_mem=new viewRateReview();
 
 
 
-                System.out.println(rs.getString("stock"));
-                System.out.println(rs.getString("unit_price"));
-                System.out.println(rs.getString("additional_details"));
-                System.out.println(rs.getString("published_date"));
-                System.out.println(rs.getString("design_id"));
+                System.out.println(rs.getString("rating"));
+                System.out.println(rs.getString("review"));
 
 
-                obj_mem.setStock(rs.getString("stock"));
-                obj_mem.setUnit_price(rs.getString("unit_price"));
-                obj_mem.setAdditional_details(rs.getString("additional_details"));
-                obj_mem.setPublished_date(rs.getString("published_date"));
-                obj_mem.setDesign_id(rs.getString("design_id"));
+
+                obj_mem.setRating(rs.getString("rating"));
+                obj_mem.setReview(rs.getString("review"));
                 list.add(obj_mem);
             }
         } catch (Exception e) {

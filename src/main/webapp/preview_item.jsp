@@ -1,4 +1,7 @@
 <%@include file="header-bar.jsp"%>
+<%@ page import="com.read.design_bean" %>
+<%@ page import="com.read.edit_values" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 
@@ -15,6 +18,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body style="background-color: bisque">
+<%
+    String design_id = (String) request.getParameter("design_id");
+
+    edit_values obj_edit_values = new edit_values();
+    design_bean obj_design_bean = obj_edit_values.get_value_of_design(design_id);
+
+
+%>
 
 <div class = "card-wrapper">
     <div class = "card">
@@ -22,38 +33,38 @@
         <div class = "product-imgs">
             <div class = "img-display">
                 <div class = "img-showcase">
-                    <img src = "assets/img/img4.png" alt = "img4">
-                    <img src = "assets/img/img5.jpg" alt = "img5">
-                    <img src = "assets/img/img4.png" alt = "img6">
-                    <img src = "assets/img/img5.jpg" alt = "img7">
+                    <img src = "assets/img/designs/img4.png" alt = "img4">
+                    <img src = "assets/img/designs/img5.jpg" alt = "img5">
+                    <img src = "assets/img/designs/img4.png" alt = "img6">
+                    <img src = "assets/img/designs/img5.jpg" alt = "img7">
                 </div>
             </div>
             <div class = "img-select">
                 <div class = "img-item">
                     <a href = "#" data-id = "1">
-                        <img src = "assets/img/img4.png" height="95px"  alt = "img4">
+                        <img src = "assets/img/designs/img4.png" height="95px"  alt = "img4">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "2">
-                        <img src = "assets/img/img5.jpg" height="95px" alt = "img5">
+                        <img src = "assets/img/designs/img5.jpg" height="95px" alt = "img5">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "3">
-                        <img src = "assets/img/img4.png" height="95px" alt = "img6">
+                        <img src = "assets/img/designs/img4.png" height="95px" alt = "img6">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "4">
-                        <img src = "assets/img/img5.jpg" height="95px" alt = "img7">
+                        <img src = "assets/img/designs/img5.jpg" height="95px" alt = "img7">
                     </a>
                 </div>
             </div>
         </div>
         <!-- card right -->
         <div class = "product-content">
-            <h2 class = "product-title">Design #1</h2>
+            <h2 class = "product-title"><%=obj_design_bean.getDesign_name()%></h2>
             <%--            <a href = "#" class = "product-link">visit nike store</a>--%>
             <div class = "product-rating">
                 <i class = "fas fa-star"></i>
@@ -71,13 +82,13 @@
 
             <div class = "product-detail">
                 <h2>About The Item </h2>
-                <p>Description #1</p>
+                <p><%=obj_design_bean.getDesign_description()%></p>
                 <p>Description #2</p>
                 <ul>
-                    <li>Name: <span>Design #1</span></li>
-                    <li>Available: <span>in stock</span></li>
+                    <li>Name: <span><%=obj_design_bean.getDesign_name()%></span></li>
+                    <li>Available: <span><%=obj_design_bean.getIn_store()%></span></li>
                     <li>Category: <span>Flier Design</span></li>
-                    <li>Published Date: <span>2021/03/20</span></li>
+<%--                    <li>Published Date: <span>2021/03/20</span></li>--%>
                 </ul>
             </div>
 

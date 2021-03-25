@@ -9,12 +9,40 @@ import java.sql.SQLException;
 
 public class storeDao {
 
+//    private Connection con;
+//
+//    public void loadDriver(String dbdriver)
+//    {
+//        try {
+//            Class.forName(dbdriver);
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+//    public Connection getConnection() {
+//
+//        Connection con = null;
+//        try {
+//            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
+//            String dbuname = "root";
+//            String dbpassword = "";
+//            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+//        return con;
+//    }
+
+
+
     public String insert(storeMem member)
     {
         Connection connection = MyConnection.getConnection();
         String result = "data entered successfully";
 
-        String sql = "insert into aruma_db.store_item values( (select design_id from arumadb.design where design_id=?),?,?,?,?)";
+        String sql = "insert into aruma_db.store_item values( (select design_id from aruma_db.design where design_id=?),?,?,?,?)";
+
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);

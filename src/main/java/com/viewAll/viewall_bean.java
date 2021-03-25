@@ -3,7 +3,7 @@ package com.viewAll;
 public class viewall_bean {
     private String design_id;
     private String design_name;
-    private String design_type;
+    private String designtype_id;
     private String in_store;
     private String design_description;
     private String stock;
@@ -11,11 +11,11 @@ public class viewall_bean {
     private String additional_details;
     private String published_date;
 
-    public viewall_bean(String design_id, String design_name, String design_type, String in_store, String design_description, String stock, String unit_price, String additional_details, String published_date) {
+    public viewall_bean(String design_id, String design_name, String designtype_id, String in_store, String design_description, String stock, String unit_price, String additional_details, String published_date) {
         super();
         this.design_id = design_id;
         this.design_name = design_name;
-        this.design_type = design_type;
+        this.designtype_id = designtype_id;
         this.in_store = in_store;
         this.design_description = design_description;
 
@@ -45,12 +45,12 @@ public class viewall_bean {
         this.design_name = design_name;
     }
 
-    public String getDesign_type() {
-        return design_type;
+    public String getDesigntype_id() {
+        return designtype_id;
     }
 
-    public void setDesign_type(String design_type) {
-        this.design_type = design_type;
+    public void setDesigntype_id(String designtype_id) {
+        this.designtype_id = designtype_id;
     }
 
     public String getIn_store() {
