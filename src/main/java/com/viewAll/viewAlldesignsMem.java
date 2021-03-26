@@ -1,6 +1,6 @@
 package com.viewAll;
 
-public class viewall_bean {
+public class viewAlldesignsMem {
     private String design_id;
     private String design_name;
     private String designtype_id;
@@ -11,7 +11,7 @@ public class viewall_bean {
     private String additional_details;
     private String published_date;
 
-    public viewall_bean(String design_id, String design_name, String designtype_id, String in_store, String design_description, String stock, String unit_price, String additional_details, String published_date) {
+    public viewAlldesignsMem(String design_id, String design_name, String designtype_id, String in_store, String design_description, String stock, String unit_price, String additional_details, String published_date) {
         super();
         this.design_id = design_id;
         this.design_name = design_name;
@@ -25,7 +25,7 @@ public class viewall_bean {
         this.published_date = published_date;
     }
 
-    public viewall_bean() {
+    public viewAlldesignsMem() {
         super();
     }
 

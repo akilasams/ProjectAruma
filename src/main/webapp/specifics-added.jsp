@@ -1,10 +1,10 @@
 <%@include file="header-bar.jsp"%>
-<%@ page import="com.read.read_data" %>
-<%@ page import="com.read.design_bean" %>
+<%@ page import="com.read.designReadDao" %>
+<%@ page import="com.read.designReadMem" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="com.viewstore.view_bean" %>
-<%@ page import="com.viewstore.view_data" %>
+<%@ page import="com.viewstore.viewSpecificsMem" %>
+<%@ page import="com.viewstore.viewSpecificsDao" %>
 <%--<%--%>
 <%--    if(session.getAttribute("username")==null){--%>
 <%--        response.sendRedirect("login.jsp");--%>
@@ -71,7 +71,9 @@
     </style>
 
 </head>
-
+<%
+    String design_id = (String) request.getParameter("design_id");
+%>
 <div class="table-wrapper">
     <mini-nav>
         <ul id="mini-nav">
@@ -85,9 +87,9 @@
 
     <hr>
     <%
-        view_data obj_view_data = new view_data();
-        List<view_bean> list = obj_view_data.get_values();
-        Iterator<view_bean> it_list = list.iterator();
+        viewSpecificsDao obj_view_specificsDao = new viewSpecificsDao();
+        List<viewSpecificsMem> list = obj_view_specificsDao.get_values(design_id);
+        Iterator<viewSpecificsMem> it_list = list.iterator();
     %>
     <table>
         <caption>All Specifics</caption>
@@ -104,28 +106,28 @@
 
         <%
             while (it_list.hasNext()) {
-                view_bean obj_view_bean = new view_bean();
-                obj_view_bean = it_list.next();
+                viewSpecificsMem obj_view_specificsMem = new viewSpecificsMem();
+                obj_view_specificsMem = it_list.next();
 
         %>
 
 
         <tr>
-            <%--            <td><%=obj_view_bean.getGoto_store_id()%></td>--%>
-            <td><%=obj_view_bean.getStock()%></td>
-            <td><%=obj_view_bean.getUnit_price()%></td>
-            <td><%=obj_view_bean.getAdditional_details()%></td>
-            <td><%=obj_view_bean.getPublished_date()%></td>
-            <td><%=obj_view_bean.getDesign_id()%></td>
-            <%--            <td><a href="specifics_Edit.jsp?design_id=<%=obj_view_bean.getDesign_id()%>">Edit</a></td>--%>
-            <%--            <td><a href="specifics_Delete.jsp?design_id=<%=obj_view_bean.getDesign_id()%>">Delete</a></td>--%>
+            <%--            <td><%=obj_view_specificsMem.getGoto_store_id()%></td>--%>
+            <td><%=obj_view_specificsMem.getStock()%></td>
+            <td><%=obj_view_specificsMem.getUnit_price()%></td>
+            <td><%=obj_view_specificsMem.getAdditional_details()%></td>
+            <td><%=obj_view_specificsMem.getPublished_date()%></td>
+            <td><%=obj_view_specificsMem.getDesign_id()%></td>
+            <%--            <td><a href="specifics_Edit.jsp?design_id=<%=obj_view_specificsMem.getDesign_id()%>">Edit</a></td>--%>
+            <%--            <td><a href="specifics_Delete.jsp?design_id=<%=obj_view_specificsMem.getDesign_id()%>">Delete</a></td>--%>
 
             <%--            <td><a href="items_in_store.jsp">Publish Item</a></td>--%>
             <td><div class="dropdown">
                 <button class="dropbtn"><p><i class="arrow down"></i></p></button>
                 <div class="dropdown-content">
-                    <a href="specifics_Edit.jsp?design_id=<%=obj_view_bean.getDesign_id()%>">Edit</a>
-                    <a href="specifics_Delete.jsp?design_id=<%=obj_view_bean.getDesign_id()%>">Delete</a>
+                    <a href="specifics_Edit.jsp?design_id=<%=obj_view_specificsMem.getDesign_id()%>">Edit</a>
+                    <a href="specifics_Delete.jsp?design_id=<%=obj_view_specificsMem.getDesign_id()%>">Delete</a>
 <%--                    <a href="store-home.jsp">Publish Item</a>--%>
                     <a><form action="ViewAllItemsServlet" method="post">
 

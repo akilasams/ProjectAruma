@@ -4,47 +4,18 @@ import com.dbConnection.MyConnection;
 
 import java.sql.*;
 
-public class Edit_all_values {
+public class editDesignsStore {
 
 
-//    public static void main(String[] args) {
-//        viewall_data obj_viewall_Values=new viewall_data();
-//        obj_viewall_Values.get_values();
-//    }
-
-//    private Connection con;
-//
-//    public void loadDriver(String dbdriver)
-//    {
-//        try {
-//            Class.forName(dbdriver);
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-//    public Connection getConnection() {
-//
-//        Connection con = null;
-//        try {
-//            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-//            String dbuname = "root";
-//            String dbpassword = "";
-//            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//        return con;
-//    }
 
 
-    public viewall_bean get_values(String design_id){
+    public viewAlldesignsMem get_values(String design_id){
         Connection connection = MyConnection.getConnection();
         String result = "data entered successfully";
 
         PreparedStatement ps=null;
         ResultSet rs=null;
-        viewall_bean obj_mem=new viewall_bean();
+        viewAlldesignsMem obj_mem=new viewAlldesignsMem();
 
 
 
