@@ -23,7 +23,7 @@
         <h2>Profile Settings</h2>
         <form id="payment-form">
             <input type="hidden" name="merchant_id" value="1216946">    <!-- Replace your Merchant ID -->
-            <input type="hidden" name="return_url" value="http://sample.com/return">
+            <input type="hidden" name="return_url" value="/PaymentServlet">
             <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
             <input type="hidden" name="notify_url" value="http://sample.com/notify">
 
@@ -42,7 +42,7 @@
             <label for="order_id">Order ID</label><input type="text" name="order_id" id="order_id" value="1"><br>
             <label for="items">Items</label><input type="text" name="items" id="items" value="2"><br>
             <label for="currency">Currency</label><input type="text" name="currency" id="currency" value="LKR"><br>
-            <label for="amount">Amount</label><input readonly type="text" name="amount" id="amount" value="10000"><br>
+            <label for="amount">Amount</label><input type="text" name="amount" id="amount" value="10000"><br>
 
             <button form="payment-form" formaction="https://sandbox.payhere.lk/pay/checkout" formmethod="post">Checkout</button>
         </form>

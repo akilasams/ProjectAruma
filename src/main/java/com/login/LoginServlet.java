@@ -29,15 +29,14 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("username",uname);
             response.sendRedirect("home-main-logged.jsp");
         }*/
-
         HttpSession session = request.getSession();
+
         if(dao.checkCredentials(uname,pass)){
             /*String firstName=userDao.getUsersName(uname);*/
             user = userDao.selectUser(uname);
-
             session.setAttribute("userId",user.getId());
+            session.setAttribute("firstName",user.getFirstName());
             session.setAttribute("currentUser",user);
-
             RequestDispatcher dispatcher = request.getRequestDispatcher("LoginUserFilterServlet");
             dispatcher.forward(request,response);
 

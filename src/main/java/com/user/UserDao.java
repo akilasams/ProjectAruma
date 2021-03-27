@@ -112,11 +112,14 @@ public class UserDao{
                     String city = rs.getString("city");
                     String password = rs.getString("password");
 
-                    Blob profPicBlob = rs.getBlob("prof_pic");
-                    int blobLength = (int) profPicBlob.length();
-                    byte[] profPicBlobByteArray = profPicBlob.getBytes(1,blobLength);
-
-                    user = new User(userId, firstName, lastName, roleId,email, mobNo,address, city, username, password,  profPicBlobByteArray);
+                    if(rs.getBlob("prof_pic") == null){
+                        user = new User(userId, firstName, lastName, roleId,email, mobNo,address, city, username, password);
+                    }else{
+                        Blob profPicBlob = rs.getBlob("prof_pic");
+                        int blobLength = (int) profPicBlob.length();
+                        byte[] profPicBlobByteArray = profPicBlob.getBytes(1,blobLength);
+                        user = new User(userId, firstName, lastName, roleId,email, mobNo,address, city, username, password,  profPicBlobByteArray);
+                    }
                 } while (rs.next());
             }
         } catch (SQLException throwables) {
@@ -172,11 +175,14 @@ public class UserDao{
                     String username = rs.getString("username");
                     String password = rs.getString("password");
 
-                    Blob profPicBlob = rs.getBlob("prof_pic");
-                    int blobLength = (int) profPicBlob.length();
-                    byte[] profPicBlobByteArray = profPicBlob.getBytes(1,blobLength);
-
-                    user = new User(userId, firstName, lastName, roleId,email, mobNo,address, city, username, password,profPicBlobByteArray);
+                    if(rs.getBlob("prof_pic") == null){
+                        user = new User(userId, firstName, lastName, roleId,email, mobNo,address, city, username, password);
+                    }else{
+                        Blob profPicBlob = rs.getBlob("prof_pic");
+                        int blobLength = (int) profPicBlob.length();
+                        byte[] profPicBlobByteArray = profPicBlob.getBytes(1,blobLength);
+                        user = new User(userId, firstName, lastName, roleId,email, mobNo,address, city, username, password,  profPicBlobByteArray);
+                    }
                 } while (rs.next());
             }
         } catch (SQLException throwables) {

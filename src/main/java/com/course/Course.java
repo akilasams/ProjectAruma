@@ -1,39 +1,40 @@
 package com.course;
 
+import java.util.List;
+
 public class Course {
     private int courseId;
     private String courseName;
     private String courseDescription;
-    private int isFree;
     private String courseFee;
     private int userId;
-    //private String courseContentPath;
+    private List<String> courseFiles;
 
-    public Course(int courseId, String courseName, String courseDescription, int isFree, String courseFee, int userId) {
+    public Course() {
+    }
+
+    public Course(String courseName, String courseDescription, String courseFee, int userId, List<String> courseFiles) {
+        this.courseName = courseName;
+        this.courseDescription = courseDescription;
+        this.courseFee = courseFee;
+        this.userId = userId;
+        this.courseFiles = courseFiles;
+    }
+
+    public Course(int courseId, String courseName, String courseDescription, String courseFee, int userId) {
         this.courseId = courseId;
         this.courseName = courseName;
         this.courseDescription = courseDescription;
-        this.isFree = isFree;
         this.courseFee = courseFee;
         this.userId = userId;
     }
 
-    public Course(String courseName, String courseDescription, int isFree, String courseFee, int userId) {
+    public Course(String courseName, String courseDescription, String courseFee, int userId) {
         this.courseName = courseName;
         this.courseDescription = courseDescription;
-        this.isFree = isFree;
         this.courseFee = courseFee;
         this.userId = userId;
     }
-
-    /*public Course(String courseName, String courseDescription, boolean isFree, String courseFee, int userId, String courseContentPath) {
-        this.courseName = courseName;
-        this.courseDescription = courseDescription;
-        this.isFree = isFree;
-        this.courseFee = courseFee;
-        this.userId = userId;
-        this.courseContentPath = courseContentPath;
-    }*/
 
     public int getCourseId() {
         return courseId;
@@ -59,14 +60,6 @@ public class Course {
         this.courseDescription = courseDescription;
     }
 
-    public int getIsFree() {
-        return isFree;
-    }
-
-    public void setFree(int free) {
-        isFree = free;
-    }
-
     public String getCourseFee() {
         return courseFee;
     }
@@ -83,11 +76,11 @@ public class Course {
         this.userId = userId;
     }
 
-    /*public String getCourseContentPath() {
-        return courseContentPath;
+    public List<String> getCourseFiles() {
+        return courseFiles;
     }
 
-    public void setCourseContentPath(String courseContentPath) {
-        this.courseContentPath = courseContentPath;
-    }*/
+    public void setCourseFiles(List<String> courseFiles) {
+        this.courseFiles = courseFiles;
+    }
 }

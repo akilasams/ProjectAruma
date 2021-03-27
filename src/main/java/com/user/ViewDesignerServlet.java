@@ -12,9 +12,7 @@ import java.io.IOException;
 @WebServlet("/ViewDesignerServlet")
 public class ViewDesignerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session=request.getSession();
-        User user=(User) session.getAttribute("user");
-        int userId=user.getId();
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

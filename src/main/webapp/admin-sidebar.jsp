@@ -20,7 +20,7 @@
             <li><a href="<%=request.getContextPath()%>/GoToProfileSettingsUserServlet">Settings</a></li>
         </ul>
         <div id="buttons">
-            <div class="btn-prof"><a href="add-design.jsp">Add User</a></div>
+            <div class="btn-prof"><a href="add-new-user.jsp">Add User</a></div>
         </div>
     </div>
 </div>
