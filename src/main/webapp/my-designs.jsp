@@ -2,8 +2,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="com.read.read_data" %>
-<%@ page import="com.read.design_bean" %>
+<%@ page import="com.read.designReadDao" %>
+<%@ page import="com.read.designReadMem" %>
+<%@ page import="com.read.designReadMem" %>
 <%@include file="header-bar.jsp"%>
 
 
@@ -87,9 +88,9 @@
 
     <hr>
     <%
-        read_data obj_read_data = new read_data();
-        List<design_bean> list = obj_read_data.get_values();
-        Iterator<design_bean> it_list = list.iterator();
+        designReadDao obj_designReadDao = new designReadDao();
+        List<designReadMem> list = obj_designReadDao.get_values();
+        Iterator<designReadMem> it_list = list.iterator();
     %>
     <table>
         <caption>All Items</caption>
@@ -105,30 +106,31 @@
 
         <%
             while (it_list.hasNext()) {
-                design_bean obj_design_bean = new design_bean();
-                obj_design_bean = it_list.next();
+                designReadMem obj_design_readDao = new designReadMem();
+                obj_design_readDao = it_list.next();
 
         %>
         <tr>
-            <%--            <td><%=obj_design_bean.getDesign_id()%></td>--%>
-            <td><%=obj_design_bean.getDesign_name()%></td>
-            <td><%=obj_design_bean.getDesigntype_id()%></td>
-            <td><%=obj_design_bean.getIn_store()%></td>
-            <td><%=obj_design_bean.getDesign_description()%></td>
+            <%--            <td><%=obj_design_readDao.getDesign_id()%></td>--%>
+            <td><%=obj_design_readDao.getDesign_name()%></td>
+            <td><%=obj_design_readDao.getDesigntype_id()%></td>
+            <td><%=obj_design_readDao.getIn_store()%></td>
+            <td><%=obj_design_readDao.getDesign_description()%></td>
             <td><div class="dropdown">
                 <button class="dropbtn"><p><i class="arrow down"></i></p></button>
                 <div class="dropdown-content">
-                    <a href="preview_item.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Preview</a>
-                    <a href="edit-designs-in-design-table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a>
-                    <a href="specifics-add-before-adding-to-store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add to store</a>
-                    <a href="specifics-added.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Added Specifics</a>
+                    <a href="preview_item.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>">Preview</a>
+                    <a href="edit-designs-in-design-table.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>">Edit</a>
+                    <a href="specifics-add-before-adding-to-store.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>">Add to store</a>
+                    <a href="specifics-added.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>">View Added Specifics</a>
+<%--                    <a href="viewServlet?design_id=design_id">View Added Specifics</a>--%>
                 </div>
             </div></td>
 
-            <%--            <td><a href="edit_designs_in_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a></td>--%>
+            <%--            <td><a href="edit_designs_in_design_table.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>">Edit</a></td>--%>
 
-            <%--            <td><a href="view_selected_item_from_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Item</a></td>--%>
-            <%--            <td><a href="specifics_add_before_adding_to_store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add item to Store</a></td>--%>
+            <%--            <td><a href="view_selected_item_from_design_table.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>">View Item</a></td>--%>
+            <%--            <td><a href="specifics_add_before_adding_to_store.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>">Add item to Store</a></td>--%>
         </tr>
         <%
             }

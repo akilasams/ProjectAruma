@@ -25,10 +25,6 @@
             border: none;
         }
 
-        /*.dropdown {*/
-        /*    position: relative;*/
-        /*    display: inline-block;*/
-        /*}*/
 
         .dropdown-content {
             display: none;
@@ -65,12 +61,11 @@
         }
 
     </style>
-
 </head>
 <div class="table-wrapper">
     <mini-nav>
         <div id="prof-info">
-            <img src="./assets/img/prof-pic.jpg" id="prof-img" alt="">
+            <img src="./assets/img/users/prof-pic.jpg" id="prof-img" alt="">
             <h3><%=session.getAttribute("firstName")%></h3>
             <h4><%=session.getAttribute("lastName")%></h4>
             <h3 id="rating">6.5/10</h3>
@@ -86,55 +81,34 @@
 
 
     <hr>
+
     <%
-        viewReviewData obj_read_data = new viewReviewData();
-        List<viewRateReview> list = obj_read_data.get_values();
+        String design_idd = (String) request.getParameter("design_id");
+        viewReviewData obj_designReadDao = new viewReviewData();
+        List<viewRateReview> list = obj_designReadDao.get_values(design_idd);
         Iterator<viewRateReview> it_list = list.iterator();
     %>
+
     <table>
         <caption>All Reviews</caption>
         <tr>
-            <%--            <th>Design ID</th>--%>
             <th>rating</th>
             <th>Review</th>
-<%--            <th>In Store</th>--%>
-<%--            <th>Description</th>--%>
-<%--            <th>Action</th>--%>
-
         </tr>
 
         <%
             while (it_list.hasNext()) {
-                viewRateReview obj_design_bean = new viewRateReview();
-                obj_design_bean = it_list.next();
-
+                viewRateReview obj_design_readDao = new viewRateReview();
+                obj_design_readDao = it_list.next();
         %>
         <tr>
-            <%--            <td><%=obj_design_bean.getDesign_id()%></td>--%>
-            <td><%=obj_design_bean.getRating()%></td>
-            <td><%=obj_design_bean.getReview()%></td>
-<%--            <td><%=obj_design_bean.getIn_store()%></td>--%>
-<%--            <td><%=obj_design_bean.getDesign_description()%></td>--%>
-<%--            <td><div class="dropdown">--%>
-<%--                <button class="dropbtn"><p><i class="arrow down"></i></p></button>--%>
-<%--                <div class="dropdown-content">--%>
-<%--                    <a href="preview_item.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Preview</a>--%>
-<%--                    <a href="edit-designs-in-design-table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a>--%>
-<%--                    <a href="specifics-add-before-adding-to-store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add to store</a>--%>
-<%--                    <a href="specifics-added.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Added Specifics</a>--%>
-<%--                </div>--%>
-<%--            </div></td>--%>
-
-            <%--            <td><a href="edit_designs_in_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Edit</a></td>--%>
-
-            <%--            <td><a href="view_selected_item_from_design_table.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">View Item</a></td>--%>
-            <%--            <td><a href="specifics_add_before_adding_to_store.jsp?design_id=<%=obj_design_bean.getDesign_id()%>">Add item to Store</a></td>--%>
+            <td><i class = "fas fa-star"></i><%=obj_design_readDao.getRating()%></td>
+            <td><%=obj_design_readDao.getReview()%></td>
         </tr>
         <%
             }
         %>
     </table>
-
 
 </div>
 

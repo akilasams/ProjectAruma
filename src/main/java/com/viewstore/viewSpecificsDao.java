@@ -1,60 +1,39 @@
 package com.viewstore;
 
+import com.dbConnection.MyConnection;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class view_data {
-    private Connection con;
+public class viewSpecificsDao {
 
-    public void loadDriver(String dbdriver)
-    {
-        try {
-            Class.forName(dbdriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-    }
-    public Connection getConnection() {
-
-        Connection con = null;
-        try {
-            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-            String dbuname = "root";
-            String dbpassword = "";
-            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return con;
-    }
 
 //    public static void main(String[] args) {
 //        view_data obj_view_Values=new view_data();
 //        obj_view_Values.get_values();
 //    }
 
-    public List get_values(){
+    public List get_values(String design_ids){
 
-        String dbdrivers = "com.mysql.jdbc.Driver";
-        loadDriver(dbdrivers);
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
         String result = "data entered successfully";
 
         PreparedStatement ps=null;
         ResultSet rs=null;
 
-        List <view_bean> list = new ArrayList<view_bean>();
+        List <viewSpecificsMem> list = new ArrayList<viewSpecificsMem>();
 
         try {
-            String querry="select * from aruma_db.store_item";
+            String querry="select * from aruma_db.store_item where design_id = ?";
             ps=connection.prepareStatement(querry);
+            ps.setString(1, design_ids);
             rs=ps.executeQuery();
 
 
+
             while(rs.next()){
-                view_bean obj_mem=new view_bean();
+                viewSpecificsMem obj_mem=new viewSpecificsMem();
 
 
 

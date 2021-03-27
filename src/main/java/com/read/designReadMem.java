@@ -1,13 +1,13 @@
 package com.read;
 
-public class design_bean {
+public class designReadMem {
     private String design_id;
     private String design_name;
     private String designtype_id;
     private String in_store;
     private String design_description;
 
-    public design_bean(String design_id, String design_name, String designtype_id, String in_store, String design_description) {
+    public designReadMem(String design_id, String design_name, String designtype_id, String in_store, String design_description) {
         super();
         this.design_id = design_id;
         this.design_name = design_name;
@@ -16,7 +16,7 @@ public class design_bean {
         this.design_description = design_description;
     }
 
-    public design_bean() {
+    public designReadMem() {
         super();
     }
 

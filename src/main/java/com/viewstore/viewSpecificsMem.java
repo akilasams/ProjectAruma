@@ -1,6 +1,6 @@
 package com.viewstore;
 
-public class view_bean {
+public class viewSpecificsMem {
 
     private String stock;
     private String unit_price;
@@ -8,7 +8,7 @@ public class view_bean {
     private String published_date;
     private String design_id;
 
-    public view_bean( String stock, String unit_price, String additional_details, String published_date, String design_id) {
+    public viewSpecificsMem(String stock, String unit_price, String additional_details, String published_date, String design_id) {
         super();
 
         this.stock = stock;
@@ -18,7 +18,7 @@ public class view_bean {
         this.design_id = design_id;
     }
 
-    public view_bean() {
+    public viewSpecificsMem() {
         super();
     }
 
