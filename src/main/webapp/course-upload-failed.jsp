@@ -15,7 +15,7 @@
 <body>
     <div class="msg-holder">
         <div class="msg">
-            <h1>Sorry, Upload Failed! <i class="fas fa-heart"></i></h1>
+            <h1>Sorry, Upload Failed! <i class="fas fa-heart-broken"></i></h1>
         </div>
         <div class="home-button">
             <a href="home-main.jsp">Go to Home</a>
