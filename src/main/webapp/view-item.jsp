@@ -1,9 +1,12 @@
 
 
 <%@include file="header-bar.jsp"%>
-<%@ page import="com.viewAll.viewall_bean" %>
-<%@ page import="com.viewAll.Edit_all_values" %>
+<%@ page import="com.viewAll.viewAlldesignsDao" %>
+<%@ page import="com.viewAll.editDesignsStore" %>
+<%@ page import="com.viewAll.viewAlldesignsMem" %>
+<%@ page import="java.sql.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -36,10 +39,11 @@
 </head>
 <body style="background-color: bisque">
 <%
-    String design_id = (String) request.getParameter("design_id");
+    String design_idd = (String) request.getParameter("design_id");
 
-    Edit_all_values obj_edit_values = new Edit_all_values();
-    viewall_bean obj_design_bean = obj_edit_values.get_values(design_id);
+    editDesignsStore obj_edit_valuesDao = new editDesignsStore();
+    viewAlldesignsMem obj_design_readDao = obj_edit_valuesDao.get_values(design_idd);
+
 
 
 %>
@@ -80,33 +84,57 @@
             </div>
 
         </div>
+
+
         <!-- card right -->
         <div class = "product-content">
-            <h2 class = "product-title"><%=obj_design_bean.getDesign_name()%></h2>
+            <h2 class = "product-title"><%=obj_design_readDao.getDesign_name()%></h2>
             <%--            <a href = "#" class = "product-link">visit nike store</a>--%>
             <div class = "product-rating">
                 <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star-half-alt"></i>
-                <span>4.7(21)</span>
+
+                <span>
+                    <%
+
+                    try
+                    {
+                        Class.forName("com.mysql.jdbc.Driver").newInstance();
+                        Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC","root","");
+                        PreparedStatement ps=null;
+                        ResultSet rs=null;
+                        String strQuery = "SELECT AVG(rating) FROM aruma_db.item_ratingreview where design_id=?";
+                        ps=con.prepareStatement(strQuery);
+                        ps.setString(1, design_idd);
+                        rs=ps.executeQuery();
+                        String Countrun="";
+                        while(rs.next()){
+                            Countrun = rs.getString(1);
+                            out.println(Countrun);
+                        }
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
+                %>
+                <a href="view-ratings.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>">View All reviews</a>
+                </span>
             </div>
 
             <div class = "product-price">
-<%--                <p class = "last-price">Old Price: <span>RS.1000</span></p>--%>
-                <p class = "new-price">New Price: <span><%=obj_design_bean.getUnit_price()%></span></p>
+                <p class = "new-price">New Price: <span><%=obj_design_readDao.getUnit_price()%></span></p>
             </div>
 
             <div class = "product-detail">
+
                 <h2>About The Item </h2>
-                <p><%=obj_design_bean.getDesign_description()%></p>
-                <p><%=obj_design_bean.getAdditional_details()%></p>
+                <p><%=obj_design_readDao.getDesign_description()%></p>
+                <p><%=obj_design_readDao.getAdditional_details()%></p>
                 <ul>
-                    <li>Name: <span><%=obj_design_bean.getDesign_name()%></span></li>
-                    <li>Available: <span><%=obj_design_bean.getStock()%></span></li>
+                    <li>Name: <span><%=obj_design_readDao.getDesign_name()%></span></li>
+                    <li>Available: <span><%=obj_design_readDao.getStock()%></span></li>
+<%--                    <li>Category: <span>Flier Design</span></li>--%>
                     <li>Category: <span>Flier Design</span></li>
-                    <%--                    <li>Published Date: <span>2021/03/20</span></li>--%>
+
                 </ul>
             </div>
 
@@ -115,9 +143,13 @@
                 <button type = "button" class = "btn">
                     Add to Cart <i class = "fas fa-shopping-cart"></i>
                 </button>
-                <%--                <button type = "button" class = "btn">Compare</button>--%>
+
+                <input type = "number" min = "0" value = "1">
+                <button type = "button" class = "btn">
+                    Buy Now
+                </button>
             </div>
-            <a href="rate-item.jsp?design_id=<%=obj_design_bean.getDesign_id()%>"class="button">Rate This Item</a>
+            <a href="rate-item.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>"class="button">Rate This Item</a>
             <div class = "social-links">
                 <p>Share At: </p>
                 <a href = "#">
@@ -145,4 +177,5 @@
 </body>
 </html>
 
-<%--<%@include file="footer-bar.jsp"%>--%>
+
+

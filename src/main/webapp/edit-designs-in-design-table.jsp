@@ -1,6 +1,8 @@
 
-<%@ page import="com.read.design_bean" %>
-<%@ page import="com.read.edit_values" %>
+<%@ page import="com.read.designReadMem" %>
+<%@ page import="com.read.editValuesDao" %>
+<%@ page import="com.read.designReadMem" %>
+<%@ page import="com.read.editValuesDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -15,8 +17,8 @@
 <%
     String design_id = (String) request.getParameter("design_id");
 
-    edit_values obj_edit_values = new edit_values();
-    design_bean obj_design_bean = obj_edit_values.get_value_of_design(design_id);
+    editValuesDao obj_edit_valuesDao = new editValuesDao();
+    designReadMem obj_design_readDao = obj_edit_valuesDao.get_value_of_design(design_id);
 
 
 %>
@@ -25,9 +27,9 @@
     <h2>Update Design</h2>
     <form action="EditDesignsServlet" method="post">
         <input type="hidden" name="design_id" value="<%=design_id%>" placeholder="Stock"><br>
-        <input type="text" name="design_name" value="<%=obj_design_bean.getDesign_name()%>" placeholder="Enter Design Type"><br>
-        <input type="text" name="design_type" value="<%=obj_design_bean.getDesigntype_id()%>" placeholder="Enter Design Type"><br>
-        <input type="text" name="design_description" value="<%=obj_design_bean.getDesign_description()%>" style="height: 70px" placeholder="Write Something About the Course"></textarea><br>
+        <input type="text" name="design_name" value="<%=obj_design_readDao.getDesign_name()%>" placeholder="Enter Design Type"><br>
+        <input type="text" name="design_type" value="<%=obj_design_readDao.getDesigntype_id()%>" placeholder="Enter Design Type"><br>
+        <input type="text" name="design_description" value="<%=obj_design_readDao.getDesign_description()%>" style="height: 70px" placeholder="Write Something About the Course"></textarea><br>
 
         <button type="submit" name="submit">Update My Design</button>
     </form>

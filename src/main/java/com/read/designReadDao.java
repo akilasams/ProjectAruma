@@ -6,40 +6,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class read_data {
+public class designReadDao {
 
 //    public static void main(String[] args) {
-//        read_data obj_Read_Values=new read_data();
-//        obj_Read_Values.get_values();
-//    }
-
-//    private Connection con;
-//
-//    public void loadDriver(String dbdriver)
-//    {
-//        try {
-//            Class.forName(dbdriver);
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-//    public Connection getConnection() {
-//
-//        Connection con = null;
-//        try {
-//            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-//            String dbuname = "root";
-//            String dbpassword = "";
-//            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//        return con;
-//    }
-
-//    public static void main(String[] args) {
-//        read_data obj_Read_Values=new read_data();
+//        designReadDao obj_Read_Values=new designReadDao();
 //        obj_Read_Values.get_values();
 //    }
 
@@ -51,7 +21,7 @@ public class read_data {
         PreparedStatement ps=null;
         ResultSet rs=null;
 
-        List <design_bean> list = new ArrayList<design_bean>();
+        List <designReadMem> list = new ArrayList<designReadMem>();
 
         try {
             String querry="select * from aruma_db.design";
@@ -60,8 +30,7 @@ public class read_data {
 
 
             while(rs.next()){
-                design_bean obj_mem=new design_bean();
-
+                designReadMem obj_mem=new designReadMem();
 
                 System.out.println(rs.getString("design_id"));
                 System.out.println(rs.getString("design_name"));

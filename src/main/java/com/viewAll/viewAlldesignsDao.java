@@ -1,35 +1,37 @@
 package com.viewAll;
 
+import com.dbConnection.MyConnection;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class viewall_data {
+public class viewAlldesignsDao {
 
-    private Connection con;
-
-    public void loadDriver(String dbdriver)
-    {
-        try {
-            Class.forName(dbdriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-    }
-    public Connection getConnection() {
-
-        Connection con = null;
-        try {
-            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-            String dbuname = "root";
-            String dbpassword = "";
-            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return con;
-    }
+//    private Connection con;
+//
+//    public void loadDriver(String dbdriver)
+//    {
+//        try {
+//            Class.forName(dbdriver);
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+//    public Connection getConnection() {
+//
+//        Connection con = null;
+//        try {
+//            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
+//            String dbuname = "root";
+//            String dbpassword = "";
+//            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+//        return con;
+//    }
 
 //    public static void main(String[] args) {
 //        viewall_data obj_viewall_Values=new viewall_data();
@@ -37,16 +39,16 @@ public class viewall_data {
 //    }
 
     public List get_values(){
-
-        String dbdrivers = "com.mysql.jdbc.Driver";
-        loadDriver(dbdrivers);
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
+//        String dbdrivers = "com.mysql.jdbc.Driver";
+//        loadDriver(dbdrivers);
+//        Connection connection = getConnection();
         String result = "data entered successfully";
 
         PreparedStatement ps=null;
         ResultSet rs=null;
 
-        List <viewall_bean> list = new ArrayList<viewall_bean>();
+        List <viewAlldesignsMem> list = new ArrayList<viewAlldesignsMem>();
 
         try {
             String querry="select * from aruma_db.design INNER JOIN aruma_db.store_item ON design.design_id = store_item.design_id";
@@ -55,7 +57,7 @@ public class viewall_data {
 
 
             while(rs.next()){
-                viewall_bean obj_mem=new viewall_bean();
+                viewAlldesignsMem obj_mem=new viewAlldesignsMem();
 
                 System.out.println(rs.getString("design_id"));
                 System.out.println(rs.getString("design_name"));

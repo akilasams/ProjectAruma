@@ -1,53 +1,30 @@
 package com.addRating;
 
+import com.dbConnection.MyConnection;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class addRatingsDao {
-    private Connection con;
-
-    public void loadDriver(String dbdriver)
-    {
-        try {
-            Class.forName(dbdriver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-    }
-    public Connection getConnection() {
-
-        Connection con = null;
-        try {
-            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-            String dbuname = "root";
-            String dbpassword = "";
-            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return con;
-    }
-
 
 
     public String insert(addRatingMem member)
     {
-        String dbdrivers = "com.mysql.jdbc.Driver";
-        loadDriver(dbdrivers);
-        Connection connection = getConnection();
+        Connection connection = MyConnection.getConnection();
+
         String result = "data entered successfully";
 
 
-        String sql = "insert into aruma_db.user_ratingreview (user_id, rating, review, design_id) values(1, ?, ?, 1)";
+        String sql = "insert into aruma_db.item_ratingreview (design_id, rating, review ) values( ?, ?, ?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
 
 
-            ps.setString(1, member.getRate());
-            ps.setString(2, member.getReview());
+            ps.setString(1, member.getDesign_id());
+            ps.setString(2, member.getRate());
+            ps.setString(3, member.getReview());
 
             ps.executeUpdate();
         } catch (SQLException throwables) {

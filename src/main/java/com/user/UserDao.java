@@ -57,7 +57,7 @@ public class UserDao{
 
     public String getUserFirstNameById(int userId){
         Connection connection = MyConnection.getConnection();
-        String getUserByUserId_SQL = "SELECT first_name FROM aruma_db.user WHERE user_id=?";
+        String getUserByUserId_SQL = "SELECT first_name from aruma_db.user WHERE user_id=?";
 
         try {
             PreparedStatement st=connection.prepareStatement(getUserByUserId_SQL);
