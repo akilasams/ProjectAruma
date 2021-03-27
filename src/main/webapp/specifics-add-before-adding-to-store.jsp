@@ -1,5 +1,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.time.LocalDate" %>
+
+<%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -14,6 +16,7 @@
 <%
     String design_id = (String) request.getParameter("design_id");
     Date date = new Date();
+
     LocalDate myObj = LocalDate.now();
 
 

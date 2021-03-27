@@ -4,39 +4,18 @@ import com.dbConnection.MyConnection;
 
 import java.sql.*;
 
-public class Edit_values {
-
-//    public static void main(String[] args) {
-//        view_data obj_view_Values=new view_data();
-//        obj_view_Values.get_values();
-//    }
+public class editSpecifics {
 
 
-//        Connection con = null;
-//        try {
-//            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-//            String dbuname = "root";
-//            String dbpassword = "";
-//            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//        return con;
-//    }
 
-//    public static void main(String[] args) {
-//        view_data obj_view_Values=new view_data();
-//        obj_view_Values.get_values();
-//    }
-
-    public view_bean get_values_of_store_items(String design_id){
+    public viewSpecificsMem get_values_of_store_items(String design_id){
 
         Connection connection = MyConnection.getConnection();
         String result = "data entered successfully";
 
         PreparedStatement ps=null;
         ResultSet rs=null;
-        view_bean obj_mem=new view_bean();
+        viewSpecificsMem obj_mem=new viewSpecificsMem();
 
 
         try {

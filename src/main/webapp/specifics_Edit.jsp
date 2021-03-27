@@ -1,10 +1,11 @@
 
 
-<%@ page import="com.viewstore.Edit_values" %>
-<%@ page import="com.viewstore.view_bean" %>
-<%@ page import="com.read.design_bean" %>
-<%@ page import="com.read.edit_values" %>
+<%@ page import="com.viewstore.editSpecifics" %>
+<%@ page import="com.viewstore.viewSpecificsMem" %>
+<%@ page import="com.read.designReadMem" %>
+<%@ page import="com.read.editValuesDao" %>
 <%@ page import="java.util.Date" %>
+<%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -19,9 +20,9 @@
 <%
     String design_id = (String) request.getParameter("design_id");
 
-    Edit_values obj_Edit_values = new Edit_values();
-    view_bean obj_view_bean = obj_Edit_values.get_values_of_store_items(design_id);
-    Date date = new Date();
+    editSpecifics obj_editSpecifics = new editSpecifics();
+    viewSpecificsMem obj_view_specificsMem = obj_editSpecifics.get_values_of_store_items(design_id);
+    LocalDate myObj = LocalDate.now();
 
 %>
 
@@ -29,10 +30,10 @@
     <h2>Update Specifics</h2>
     <form action="EditSpecificsServlet" method="post">
         <input type="hidden" name="design_id" value="<%=design_id%>" placeholder="design_id"><br>
-        <input type="text" name="stock" value="<%=obj_view_bean.getStock()%>" placeholder="Stock"><br>
-        <input type="text" name="unit_price" value="<%=obj_view_bean.getUnit_price()%>"  placeholder="Unit Price"><br>
-        <input type="text" name="additional_details" value="<%=obj_view_bean.getAdditional_details()%>" placeholder="Additional Details" style="height: 70px" ><br>
-        <input type="hidden" name="published_date" value="<%=date.toString()%>"  placeholder="Published date"><br>
+        <input type="text" name="stock" value="<%=obj_view_specificsMem.getStock()%>" placeholder="Stock"><br>
+        <input type="text" name="unit_price" value="<%=obj_view_specificsMem.getUnit_price()%>" placeholder="Unit Price"><br>
+        <input type="text" name="additional_details" value="<%=obj_view_specificsMem.getAdditional_details()%>" placeholder="Additional Details" style="height: 70px" ><br>
+        <input type="hidden" name="published_date" value="<%=myObj%>"  placeholder="Published date"><br>
         <button type="submit" name="submit">Update Specifics</button>
     </form>
 </div>

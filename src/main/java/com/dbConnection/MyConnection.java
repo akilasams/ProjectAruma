@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class MyConnection {
     static String url="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
     static String username="root";
-    static String password="";
+    static String password="ais@123321";
     static String dbDriver="com.mysql.jdbc.Driver";
 
     private static void loadDriver(String dbDriver){

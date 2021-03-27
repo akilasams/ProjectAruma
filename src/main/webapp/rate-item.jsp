@@ -37,43 +37,40 @@
             background-color: coral;
         }
 
-        /*btns {*/
-        /*    border-radius: 5px;*/
-        /*    background-color: #f2f2f2;*/
-        /*    padding: 20px;*/
-        /*}*/
     </style>
 </head>
 <body>
+<%
+    String design_id = (String) request.getParameter("design_id");
+%>
 <form action="addRatings" method="post">
+    <input type="hidden" name="design_id" value="<%=design_id%>" placeholder="#" ><br>
+    <div class="backgrnd" >
+        <div class="center">
+            <div class="stars">
 
-<div class="backgrnd" >
-    <div class="center">
-        <div class="stars">
+                <input type="radio" id="five" name="rate" value="5">
+                <label for="five"></label>
 
-            <input type="radio" id="five" name="rate" value="5">
-            <label for="five"></label>
+                <input type="radio" id="four" name="rate" value="4">
+                <label for="four"></label>
 
-            <input type="radio" id="four" name="rate" value="4">
-            <label for="four"></label>
+                <input type="radio" id="three" name="rate" value="3">
+                <label for="three"></label>
 
-            <input type="radio" id="three" name="rate" value="3">
-            <label for="three"></label>
+                <input type="radio" id="two" name="rate" value="2">
+                <label for="two"></label>
 
-            <input type="radio" id="two" name="rate" value="2">
-            <label for="two"></label>
+                <input type="radio" id="one" name="rate" value="1">
+                <label for="one"></label>
+            </div>
 
-            <input type="radio" id="one" name="rate" value="1">
-            <label for="one"></label>
-
-
-        </div>
-        <div class="btns" >
-            <input type="text" name="review" placeholder="add review ">
-            <input type="submit" value="submit">
+            <div class="btns" >
+                <input type="text" name="review" placeholder="add review ">
+                <input type="submit" value="submit">
+            </div>
         </div>
     </div>
-</div>
 </form>
 
 </body>

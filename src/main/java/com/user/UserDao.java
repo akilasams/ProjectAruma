@@ -52,7 +52,7 @@ public class UserDao{
 
     public String getUserFirstNameById(int userId){
         Connection connection = MyConnection.getConnection();
-        String getUserByUserId_SQL = "SELECT first_name from user WHERE user_id=?";
+        String getUserByUserId_SQL = "SELECT first_name from aruma_db.user WHERE user_id=?";
 
         try {
             PreparedStatement st=connection.prepareStatement(getUserByUserId_SQL);
@@ -78,7 +78,7 @@ public class UserDao{
     public User selectUser(String username){
         User user=null;
         Connection connection = MyConnection.getConnection();
-        String selectByUsername_SQL="SELECT * FROM aruma_db.users WHERE username=?";
+        String selectByUsername_SQL="SELECT * FROM aruma_db.user WHERE username=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             st.setString(1,username);
@@ -110,7 +110,7 @@ public class UserDao{
     public User selectUserByUserId(int userId){
         User user=null;
         Connection connection = MyConnection.getConnection();
-        String selectByUserId_SQL="SELECT * FROM aruma_db.users WHERE user_id=?";
+        String selectByUserId_SQL="SELECT * FROM aruma_db.user WHERE user_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUserId_SQL);
             st.setInt(1, userId);
@@ -142,7 +142,7 @@ public class UserDao{
     public List<User> selectAllUsers(){
         List<User> users=new ArrayList<>();
         Connection connection = MyConnection.getConnection();
-        String selectByUsername_SQL="SELECT * FROM user";
+        String selectByUsername_SQL="SELECT * FROM aruma_db.user";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             ResultSet rs=st.executeQuery();
@@ -174,7 +174,7 @@ public class UserDao{
     public List<Designer> selectAllDesigners(){
         List<Designer> designers=new ArrayList<>();
         Connection connection = MyConnection.getConnection();
-        String selectByUsername_SQL="SELECT * FROM user WHERE user_role_id=2";
+        String selectByUsername_SQL="SELECT * FROM aruma_db.user WHERE user_role_id=2";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             ResultSet rs=st.executeQuery();
@@ -208,7 +208,7 @@ public class UserDao{
     public User selectDesigner(int userId){
         User user=null;
         Connection connection = MyConnection.getConnection();
-        String selectByUsername_SQL="SELECT * FROM user WHERE user_id=?";
+        String selectByUsername_SQL="SELECT * FROM aruma_db.user WHERE user_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(selectByUsername_SQL);
             st.setInt(1, userId);
@@ -242,7 +242,7 @@ public class UserDao{
     public boolean deleteUser(String username){
         boolean rowDeleted=false;
         Connection connection = MyConnection.getConnection();
-        String deleteUser_SQL="DELETE FROM user WHERE username=?";
+        String deleteUser_SQL="DELETE FROM aruma_db.user WHERE username=?";
 
         try {
             PreparedStatement st=connection.prepareStatement(deleteUser_SQL);
@@ -258,7 +258,7 @@ public class UserDao{
     public boolean updateUser(User user){
         boolean rowUpdated=false;
         Connection connection = MyConnection.getConnection();
-        String updateUser_SQL="UPDATE arumadb.users SET address=?,email=?,mobile_no=?,profpic=? WHERE username=?";
+        String updateUser_SQL="UPDATE aruma_db.user SET address=?,email=?,mobile_no=? WHERE username=?";
 
         try {
             PreparedStatement st=connection.prepareStatement(updateUser_SQL);
@@ -266,7 +266,7 @@ public class UserDao{
             st.setString(2,user.getEmail());
             st.setString(3,user.getMobileNo());
             st.setString(4,user.getProfPic());
-            st.setString(5,user.getUsername());
+//            st.setString(5,user.getUsername());
             rowUpdated = st.executeUpdate()>0;
         } catch (SQLException throwables) {
             throwables.printStackTrace();

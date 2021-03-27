@@ -12,31 +12,6 @@ import java.sql.SQLException;
 public class EditDesignsDao {
 
 
-//    private Connection con;
-//
-//    public void loadDriver(String dbdriver)
-//    {
-//        try {
-//            Class.forName(dbdriver);
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-//    public Connection getConnection() {
-//
-//        Connection con = null;
-//        try {
-//            String dburl = "jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-//            String dbuname = "root";
-//            String dbpassword = "";
-//            con = DriverManager.getConnection(dburl, dbuname, dbpassword);
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//        return con;
-//    }
-
     public String update(EditDesignsMem member)
     {
         Connection connection = MyConnection.getConnection();

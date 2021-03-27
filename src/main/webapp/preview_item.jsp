@@ -1,6 +1,11 @@
 <%@include file="header-bar.jsp"%>
-<%@ page import="com.read.design_bean" %>
-<%@ page import="com.read.edit_values" %>
+<%@ page import="com.read.designReadMem" %>
+<%@ page import="com.read.editValuesDao" %>
+<%@ page import="com.read.editValuesDao" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -21,8 +26,8 @@
 <%
     String design_id = (String) request.getParameter("design_id");
 
-    edit_values obj_edit_values = new edit_values();
-    design_bean obj_design_bean = obj_edit_values.get_value_of_design(design_id);
+    editValuesDao obj_edit_valuesDao = new editValuesDao();
+    designReadMem obj_design_readDao = obj_edit_valuesDao.get_value_of_design(design_id);
 
 
 %>
@@ -64,15 +69,33 @@
         </div>
         <!-- card right -->
         <div class = "product-content">
-            <h2 class = "product-title"><%=obj_design_bean.getDesign_name()%></h2>
+            <h2 class = "product-title"><%=obj_design_readDao.getDesign_name()%></h2>
             <%--            <a href = "#" class = "product-link">visit nike store</a>--%>
             <div class = "product-rating">
                 <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star-half-alt"></i>
-                <span>4.7(21)</span>
+
+                <span> <%
+
+                    try
+                    {
+                        Class.forName("com.mysql.jdbc.Driver").newInstance();
+                        Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC","root","");
+                        PreparedStatement ps=null;
+                        ResultSet rs=null;
+                        String strQuery = "SELECT AVG(rating) FROM aruma_db.item_ratingreview where design_id=?";
+                        ps=con.prepareStatement(strQuery);
+                        ps.setString(1, design_id);
+                        rs=ps.executeQuery();
+                        String Countrun="";
+                        while(rs.next()){
+                            Countrun = rs.getString(1);
+                            out.println(Countrun);
+                        }
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
+                %></span>
             </div>
 
             <div class = "product-price">
@@ -82,11 +105,11 @@
 
             <div class = "product-detail">
                 <h2>About The Item </h2>
-                <p><%=obj_design_bean.getDesign_description()%></p>
+                <p><%=obj_design_readDao.getDesign_description()%></p>
                 <p>Description #2</p>
                 <ul>
-                    <li>Name: <span><%=obj_design_bean.getDesign_name()%></span></li>
-                    <li>Available: <span><%=obj_design_bean.getIn_store()%></span></li>
+                    <li>Name: <span><%=obj_design_readDao.getDesign_name()%></span></li>
+                    <li>Available: <span><%=obj_design_readDao.getIn_store()%></span></li>
                     <li>Category: <span>Flier Design</span></li>
 <%--                    <li>Published Date: <span>2021/03/20</span></li>--%>
                 </ul>

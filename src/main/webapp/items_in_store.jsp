@@ -1,12 +1,13 @@
 
-<%@ page import="com.viewAll.viewall_data" %>
-<%@ page import="com.viewAll.viewall_bean" %>
+<%@ page import="com.viewAll.viewAlldesignsDao" %>
+<%@ page import="com.viewAll.viewAlldesignsMem" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.viewAll.viewall_data" %>
-<%@ page import="com.viewAll.viewall_bean" %>
+<%@ page import="com.viewAll.viewAlldesignsDao" %>
+<%@ page import="com.viewAll.viewAlldesignsMem" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="com.viewAll.viewAlldesignsMem" %>
 
 <%@include file="header-bar.jsp"%>
 
@@ -26,9 +27,9 @@
 </head>
 <hr>
 <%
-    viewall_data obj_viewall_data = new viewall_data();
-    List<viewall_bean> list = obj_viewall_data.get_values();
-    Iterator<viewall_bean> it_list = list.iterator();
+    viewAlldesignsDao obj_viewAlldesignsDao = new viewAlldesignsDao();
+    List<viewAlldesignsMem> list = obj_viewAlldesignsDao.get_values();
+    Iterator<viewAlldesignsMem> it_list = list.iterator();
 %>
 
 
@@ -38,8 +39,8 @@
     <div class="card-holder">
         <%
             while (it_list.hasNext()) {
-                viewall_bean obj_viewall_bean = new viewall_bean();
-                obj_viewall_bean = it_list.next();
+                viewAlldesignsMem obj_viewAlldesignsMem = new viewAlldesignsMem();
+                obj_viewAlldesignsMem = it_list.next();
 
         %>
         <div class="card">
@@ -49,13 +50,13 @@
             <div class="details-holder">
 
 
-                <h3 style="background: none"><%=obj_viewall_bean.getDesign_name()%></h3>
-                <p class="item-category"><%=obj_viewall_bean.getDesigntype_id()%></p>
-                <p><%=obj_viewall_bean.getDesign_description()%></p>
+                <h3 style="background: none"><%=obj_viewAlldesignsMem.getDesign_name()%></h3>
+                <p class="item-category"><%=obj_viewAlldesignsMem.getDesigntype_id()%></p>
+                <p><%=obj_viewAlldesignsMem.getDesign_description()%></p>
             </div>
             <div class="item-price">
-                <a style="position: absolute; right: 90px; font-size: 20px" href="more_details.jsp?design_id=<%=obj_viewall_bean.getDesign_id()%>">View More</a>
-                <h5>Rs. <%=obj_viewall_bean.getUnit_price()%></h5>
+                <a style="position: absolute; right: 90px; font-size: 20px" href="more_details.jsp?design_id=<%=obj_viewAlldesignsMem.getDesign_id()%>">View More</a>
+                <h5>Rs. <%=obj_viewAlldesignsMem.getUnit_price()%></h5>
 
             </div>
 

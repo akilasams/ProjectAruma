@@ -6,13 +6,15 @@ public class AddDesignMem {
     private String designtype_id;
     //    private String in_store;
     private String design_description;
+    private int user_id;
 
-    public AddDesignMem(String design_name, String designtype_id, String design_description) {
+    public AddDesignMem(String design_name, String designtype_id, String design_description, int user_id) {
         super();
         this.design_name = design_name;
         this.designtype_id = designtype_id;
 //        this.in_store = in_store;
         this.design_description = design_description;
+        this.user_id = user_id;
     }
 
     public AddDesignMem() {
@@ -47,5 +49,13 @@ public class AddDesignMem {
 
     public void setDesign_description(String design_description) {
         this.design_description = design_description;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }
