@@ -11,10 +11,7 @@ public class User {
     private String city;
     private String username;
     private String password;
-    private String profPic;
-
-    public User() {
-    }
+    private byte[] profPic;
 
     public User(int id, String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password) {
         this.id = id;
@@ -29,6 +26,33 @@ public class User {
         this.password = password;
     }
 
+    public User(int id, String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password, byte[] profPic) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.user_role_id = user_role_id;
+        this.email = email;
+        this.mobileNo = mobileNo;
+        this.address = address;
+        this.city = city;
+        this.username = username;
+        this.password = password;
+        this.profPic = profPic;
+    }
+
+    public User(String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password, byte[] profPic) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.user_role_id = user_role_id;
+        this.email = email;
+        this.mobileNo = mobileNo;
+        this.address = address;
+        this.city = city;
+        this.username = username;
+        this.password = password;
+        this.profPic = profPic;
+    }
+
     public User(String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,8 +65,8 @@ public class User {
         this.password = password;
     }
 
-    public User(String username, String address,String email, String mobileNo, String profPic) {
-        this.username = username;
+    public User(int id, String address, String email, String mobileNo, byte[] profPic) {
+        this.id = id;
         this.address = address;
         this.email = email;
         this.mobileNo = mobileNo;
@@ -129,7 +153,7 @@ public class User {
         this.password = password;
     }
 
-    public String getProfPic() { return profPic; }
+    public byte[] getProfPic() { return profPic; }
 
-    public void setProfPic(String profPic) { this.profPic = profPic; }
+    public void setProfPic(byte[] profPic) { this.profPic = profPic; }
 }

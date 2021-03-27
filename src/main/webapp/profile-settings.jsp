@@ -26,12 +26,13 @@
                 <img src="assets/img/users/prof-pic.jpg" alt="">
             </div>
             <label for="profPic" id="prof-pic-upload">Upload a Picture</label><input type="file" name="profPic" id="profPic">
-            <h4 id="prof-name">${user.getFirstName()} ${user.getLastName()}</h4>
-            <label for="address">Address</label><input type="text" name="address" id="address" value="${user.getAddress()}"><br>
-            <label for="email">Email</label><input type="text" name="email" id="email" value="${user.getEmail()}"><br>
-            <label for="mobileNo">Mobile Number</label><input type="text" name="mobileNo" id="mobileNo" value="${user.getMobileNo()}"><br>
+            <h4 id="prof-name">${currentUser.getFirstName()} ${currentUser.getLastName()}</h4>
+            <label for="address">Address</label><input type="text" name="address" id="address" value="${currentUser.getAddress()}"><br>
+            <label for="email">Email</label><input type="text" name="email" id="email" value="${currentUser.getEmail()}"><br>
+            <label for="mobileNo">Mobile Number</label><input type="text" name="mobileNo" id="mobileNo" value="${currentUser.getMobileNo()}"><br>
             <button form="user-update-form" formaction="UpdateUserServlet" formmethod="post">Save</button>
         </form>
     </div>
 </div>
+
 <%@include file="footer-bar.jsp"%>

@@ -4,8 +4,24 @@ public class Designer extends User{
     private int serviceType;
     private String bio;
 
+    public Designer(int id, String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password) {
+        super(id, firstName, lastName, user_role_id, email, mobileNo, address, city, username, password);
+    }
+
     public Designer(int id, String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password, int serviceType, String bio) {
         super(id, firstName, lastName, user_role_id, email, mobileNo, address, city, username, password);
+        this.serviceType = serviceType;
+        this.bio = bio;
+    }
+
+    public Designer(int id, String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password, byte[] profPic, int serviceType, String bio) {
+        super(id, firstName, lastName, user_role_id, email, mobileNo, address, city, username, password, profPic);
+        this.serviceType = serviceType;
+        this.bio = bio;
+    }
+
+    public Designer(String firstName, String lastName, int user_role_id, String email, String mobileNo, String address, String city, String username, String password, byte[] profPic, int serviceType, String bio) {
+        super(firstName, lastName, user_role_id, email, mobileNo, address, city, username, password, profPic);
         this.serviceType = serviceType;
         this.bio = bio;
     }
@@ -15,6 +31,7 @@ public class Designer extends User{
         this.serviceType = serviceType;
         this.bio = bio;
     }
+
 
     public int getServiceType() {
         return serviceType;

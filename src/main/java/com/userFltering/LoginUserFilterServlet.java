@@ -15,11 +15,13 @@ import java.io.IOException;
 @WebServlet("/LoginUserFilterServlet")
 public class LoginUserFilterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int userId = (int) request.getSession(false).getAttribute("userId");
 
-        UserDao dao = new UserDao();
-        User currentUser = dao.selectUserByUserId(userId);
-        request.setAttribute("currentUser",currentUser);
+//        int userId = (int) request.getSession(false).getAttribute("userId");
+
+//        UserDao dao = new UserDao();
+//        User currentUser = dao.selectUserByUserId(userId);
+        
+        User currentUser = (User) request.getSession(false).getAttribute("currentUser");
 
         if(currentUser.getUser_role_id() == 1){
             RequestDispatcher toAdminProfile = request.getRequestDispatcher("admin-profile.jsp");

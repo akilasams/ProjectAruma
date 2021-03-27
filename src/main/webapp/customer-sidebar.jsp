@@ -15,7 +15,7 @@
             <li><a href="user-reqs-and-msgs.jsp">Requests & Messages</a></li>
             <li><a href="cart.jsp">My Cart</a></li>
             <li><a href="my-courses.jsp">My Courses</a></li>
-            <li><a href="profile-settings.jsp">Settings</a></li>
+            <li><a href="<%=request.getContextPath()%>/GoToProfileSettingsUserServlet"">Settings</a></li>
         </ul>
     </div>
 </div>

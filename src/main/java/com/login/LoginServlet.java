@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -27,17 +29,17 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("username",uname);
             response.sendRedirect("home-main-logged.jsp");
         }*/
-
-        HttpSession session=request.getSession();
+        HttpSession session = request.getSession();
 
         if(dao.checkCredentials(uname,pass)){
             /*String firstName=userDao.getUsersName(uname);*/
-            user=userDao.selectUser(uname);
+            user = userDao.selectUser(uname);
             session.setAttribute("userId",user.getId());
             session.setAttribute("firstName",user.getFirstName());
-
+            session.setAttribute("currentUser",user);
             RequestDispatcher dispatcher = request.getRequestDispatcher("LoginUserFilterServlet");
             dispatcher.forward(request,response);
+
         } else{
             response.sendRedirect("login-failed.jsp");
         }
@@ -48,7 +50,7 @@ public class LoginServlet extends HttpServlet {
     }
 
 
-    /*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }*/
+    }
 }

@@ -24,12 +24,9 @@
         <form action="InsertCourse" method="post">
             <input type="text" name="courseName" placeholder="Enter Course Name"><br>
             <textarea name="courseDesc" id="" cols="30" rows="10" placeholder="Write Something About the Course"></textarea><br>
-            <div id="check">
-            Make this Course Available for Free : <input type="checkbox" id="isFree" name="isFree" value="1"><br>
-            </div>
             <input type="text" id="courseFee" name="courseFee" placeholder="Enter Course Fee"><br>
             <label id="filename" for="filename">Upload Content</label><br>
-            <input type="file" name="filename"><br>
+            <input type="file" name="files" multiple="multiple"><br>
             <button type="submit" name="submit">Add to My Courses</button>
         </form>
     </div>

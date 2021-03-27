@@ -1,47 +1,42 @@
 package com.user;
 
+import org.apache.commons.io.IOUtils;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.*;
 
 @WebServlet("/UpdateUserServlet")
+@MultipartConfig(maxFileSize=1024*1024*5) //5MB
 public class UpdateUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session=request.getSession();
 
-        User currentUser = (User) session.getAttribute("user");
-        String username=currentUser.getUsername();
+        int userId = (int) session.getAttribute("userId");
+
         String address=request.getParameter("address");
         String email=request.getParameter("email");
         String mobileNo=request.getParameter("mobileNo");
 
-        Part profPic = request.getPart("profPic");
-        String profPicName = profPic.getSubmittedFileName();
+        // obtains the upload file part in this multipart request
+        Part profPicFilePart = request.getPart("profPic");
 
-        User user = new User(username,address,email,mobileNo,profPicName);
-        UserDao dao=new UserDao();
+        InputStream profPic = profPicFilePart.getInputStream();
+        byte[] profPicAsByteArray = IOUtils.toByteArray(profPic);
+
+        User user = new User(userId,address,email,mobileNo, profPicAsByteArray);
+        UserDao dao = new UserDao();
 
         if(dao.updateUser(user)){
-            //Upload Path
-            String profPicPath=request.getContextPath()+"\\main\\webapp\\assets\\img\\users\\"+profPicName;
-            System.out.println(profPicName);
-
-            //Upload
-            FileOutputStream fos = new FileOutputStream(profPicPath);
-            InputStream is = profPic.getInputStream();
-
-            //Read Data
-            byte[] data = new byte[is.available()];
-            is.read(data);
-
-            //Writing Data
-            fos.write(data);
-            fos.close();
-
-            response.sendRedirect("designer-profile.jsp");
+            session.setAttribute("profPic",profPic);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("home-main.jsp");
+            dispatcher.forward(request,response);
         }else{
-            response.sendRedirect("home-main.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+            dispatcher.forward(request,response);
         }
     }
 

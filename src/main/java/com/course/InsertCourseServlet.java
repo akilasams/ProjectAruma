@@ -1,65 +1,56 @@
 package com.course;
 
+import com.helpers.UploadFileHelper;
+
+import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @WebServlet("/InsertCourse")
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 10, // 10 MB
+        maxFileSize = 1024 * 1024 * 50, // 50 MB
+        maxRequestSize = 1024 * 1024 * 100 // 100 MB
+)
 public class InsertCourseServlet extends HttpServlet {
-    private CourseDao dao=new CourseDao();
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*this.doGet(request,response);*/
         HttpSession session=request.getSession();
+
         int userId= (Integer) session.getAttribute("userId");
         String courseName=request.getParameter("courseName");
         String courseDescription=request.getParameter("courseDesc");
-        int isFree;
-        String courseFee;
-        if(request.getParameter("isFree")!=null){
-            isFree=Integer.parseInt(request.getParameter("isFree"));
-            courseFee=null;
-        }else{
-            isFree=0;
-            courseFee=request.getParameter("courseFee");
-        }
+        String courseFee = request.getParameter("courseFee");
 
-        Course course=new Course(courseName,courseDescription,isFree,courseFee,userId);
+        Course course=new Course(courseName,courseDescription,courseFee,userId);
         CourseDao dao=new CourseDao();
 
-        if(dao.insertCourse(course)){
-            RequestDispatcher rd=request.getRequestDispatcher("/ViewCourses");
-            rd.forward(request,response);
+        if (dao.insertCourse(course)) {
+            int lastCourseId = dao.getLastCourseId();
+            final String UPLOAD_DIR = "assets/courseContent";
+            List<String> fileList = UploadFileHelper.uploadFile(UPLOAD_DIR,request);
+
+            if(dao.insertContent(lastCourseId,fileList)) {
+                RequestDispatcher dispatcher = request.getRequestDispatcher("ViewMyCoursesServlet");
+                dispatcher.forward(request,response);
+            }else {
+                response.sendRedirect("course-upload-failed.jsp");
+            }
         }else{
-            response.getWriter().print("Failed");
+            response.sendRedirect("course-upload-failed.jsp");
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*String action=request.getServletPath();
 
-        switch (action){
-            //Insert New Course
-            case "/newCourse":
-                insertCourse(request,response);
-                break;
-            //Edit Course
-            case "/edit":
-                break;
-            case "/delete":
-                break;
-            case "/update":
-                break;
-            default:
-                break;
-        }*/
     }
 
     /*private void insertCourse(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{

@@ -31,11 +31,22 @@
         <img src="assets/img/logo/Logo.png" alt="logo">
     </div>
 
-    <c:if test="${currentUser.getUsername() != null}">
+    <c:if test="${currentUser.getUsername() != null && currentUser.getProfPic() == null}">
+        <div class="box-3">
+<%--            <img src="${profPic}" id="navbar-prof" alt="">--%>
+            <div class="prof-info">
+                <h4>Logged in as ${firstName}</h4>
+                <a href="<%=request.getContextPath()%>/GoToProfileUserFilterServlet">Go to Profile</a>
+                <a href="<%=request.getContextPath()%>/Logout">Sign Out</a>
+            </div>
+        </div>
+    </c:if>
+
+    <c:if test="${currentUser.getUsername() != null && currentUser.getProfPic() != null}">
     <div class="box-3">
-        <img src="assets/img/users/prof-pic.jpg" id="navbar-prof" alt="">
+        <img src="${currentUser.getProfPic()}" id="navbar-prof" alt="">
         <div class="prof-info">
-            <h4>Logged in as ${firstName}</h4>
+            <h4>Logged in as ${currentUser.getFirstName()}</h4>
             <a href="<%=request.getContextPath()%>/GoToProfileUserFilterServlet">Go to Profile</a>
             <a href="<%=request.getContextPath()%>/Logout">Sign Out</a>
         </div>
@@ -45,11 +56,8 @@
     <c:if test="${currentUser.getUsername() == null}">
     <div class="box-3">
         <div class="prof-info">
-            <a href="index.jsp">
-                </br>
-                Join</br>
-                Aruma
-            </a>
+            <a href="index.jsp">Login</a>
+            <a href="signup.jsp">Join Aruma</a>
         </div>
     </div>
     </c:if>
