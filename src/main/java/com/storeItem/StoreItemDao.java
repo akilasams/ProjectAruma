@@ -1,6 +1,7 @@
 package com.storeItem;
 
 import com.dbConnection.MyConnection;
+import com.design.Design;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -73,5 +74,37 @@ public class StoreItemDao {
         return storeItem;
     }
 
+    public List<StoreItem> searchDesigns(List<Integer> designsList){
+        List<StoreItem> designs=new ArrayList<>();
+        Connection connection = MyConnection.getConnection();
+        String searchDesigns_SQL="{call GetItemById(?)}";
+
+        try {
+            PreparedStatement st = connection.prepareStatement(searchDesigns_SQL);
+            for(int designId : designsList){
+                st.setInt(1,designId);
+                //System.out.println(designId);
+                ResultSet rs = st.executeQuery();
+                if(rs.next() == false){
+                    return null;
+                }else {
+                    String designName=rs.getString("design_name");
+                    String designDescription=rs.getString("design_description");
+                    int userId=rs.getInt("user_id");
+                    String firstName=rs.getString("first_name");
+                    String lastName=rs.getString("last_name");
+                    int stock=rs.getInt("stock");
+                    String designType=rs.getString("type_name");
+                    double unitPrice=rs.getDouble("unit_price");
+                    String additionalDetails=rs.getString("additional_details");
+                    String publishedDate=rs.getString("published_date");
+                    designs.add(new StoreItem(designId, designName,designDescription,userId,firstName,lastName,stock,designType, unitPrice, additionalDetails,publishedDate));
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return designs;
+    }
 
 }

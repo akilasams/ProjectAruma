@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
             user = userDao.selectUser(uname);
             session.setAttribute("userId",user.getId());
             session.setAttribute("firstName",user.getFirstName());
+            session.setAttribute("lastName",user.getLastName());
             session.setAttribute("currentUser",user);
             RequestDispatcher dispatcher = request.getRequestDispatcher("LoginUserFilterServlet");
             dispatcher.forward(request,response);

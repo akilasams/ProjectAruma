@@ -11,9 +11,9 @@
         Don't hesitate to contact us through the following,<br><br></p>
 
     <ul class="services">
-        <li>Phone : XXXXXXXXXX</li>
-        <li>Email : XXXXXXXXX@XXXXX.com</li>
-        <li>Address : No. XX,XXXXXXXXXX,XXXXXXXXX,XXXXXXXX</li>
+        <li>Phone : 09122XXXXX</li>
+        <li>Email : arumagr5@gmail.com</li>
+        <li>Address : No. XX,Galle Rd,Colombo 6</li>
     </ul>
     <p><br> Our team is waiting to help you!</p>
 </div>

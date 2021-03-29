@@ -11,7 +11,7 @@ public class CourseDao {
     //Insert New Course
     public boolean insertCourse(Course course) {
         Connection connection = MyConnection.getConnection();
-        String insertCourse_SQL = "INSERT INTO aruma_db.course VALUES (DEFAULT,?,?,?,?,?)";
+        String insertCourse_SQL = "INSERT INTO aruma_db.course VALUES(DEFAULT,?,?,?,?,?)";
 
         try {
             PreparedStatement st = connection.prepareStatement(insertCourse_SQL);

@@ -74,7 +74,10 @@
             <li><a href="about.jsp">About</a></li>
             <li><a href="contact-us.jsp">Contact Us</a></li>
         </ul>
-        <input type="text" placeholder="What Do You Want?" id="search">
+        <form class="search-form" action="SearchServlet" method="GET">
+            <input type="text" placeholder="Search.." name="keyword">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
     </div>
 </nav>
 
