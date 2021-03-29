@@ -21,12 +21,12 @@
     <%@include file="designer-sidebar.jsp"%>
 
     <div id="gallery">
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
     </div>
 </div>
 

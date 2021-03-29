@@ -10,7 +10,7 @@
 <head>
     <link rel="stylesheet" href="./assets/css/msg_page.css">
     <script src="https://kit.fontawesome.com/007dc48e77.js" crossorigin="anonymous"></script>
-    <title>Registration Failed</title>
+    <title>Login Failed</title>
 </head>
 <body>
     <div class="msg-holder">

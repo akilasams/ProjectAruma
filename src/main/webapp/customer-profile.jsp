@@ -8,14 +8,12 @@
     <%@include file="customer-sidebar.jsp"%>
 
     <div id="gallery">
-        <div class="place-holder">
-            <img src="" alt=""><br>
-        </div>
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
-        <div class="place-holder"></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
+        <div class="place-holder"><img src="assets/img/designs/img3.jpg" class="item-img" alt=""></div>
     </div>
 
 </div>
