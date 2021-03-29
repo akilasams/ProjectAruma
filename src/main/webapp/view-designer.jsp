@@ -9,31 +9,31 @@
                 <div class="gallery-prof-pic">
                     <img src="./assets/img/users/p2.jpg" alt="">
                 </div>
-<%--                <div class="gallery-pics">--%>
-<%--                    <div class="mini-img">--%>
-<%--                        <img src="assets/img/designs/img6.jpg" alt="">--%>
-<%--                    </div>--%>
-<%--                    <div class="mini-img">--%>
-<%--                        <img src="assets/img/designs/img6.jpg" alt="">--%>
-<%--                    </div>--%>
-<%--                    <div class="mini-img">--%>
-<%--                        <img src="assets/img/designs/img6.jpg" alt="">--%>
-<%--                    </div>--%>
-<%--                    <div class="mini-img">--%>
-<%--                        <img src="assets/img/designs/img6.jpg" alt="">--%>
-<%--                    </div>--%>
-<%--                    <div class="mini-img">--%>
-<%--                        <img src="assets/img/designs/img6.jpg" alt="">--%>
-<%--                    </div>--%>
-<%--                    <div class="mini-img">--%>
-<%--                        <img src="assets/img/designs/img6.jpg" alt="">--%>
-<%--                    </div>--%>
-<%--                </div>--%>
+                <div class="gallery-pics">
+                    <div class="mini-img">
+                        <img src="assets/img/designs/img6.jpg" alt="">
+                    </div>
+                    <div class="mini-img">
+                        <img src="assets/img/designs/img6.jpg" alt="">
+                    </div>
+                    <div class="mini-img">
+                        <img src="assets/img/designs/img6.jpg" alt="">
+                    </div>
+                    <div class="mini-img">
+                        <img src="assets/img/designs/img6.jpg" alt="">
+                    </div>
+                    <div class="mini-img">
+                        <img src="assets/img/designs/img6.jpg" alt="">
+                    </div>
+                    <div class="mini-img">
+                        <img src="assets/img/designs/img6.jpg" alt="">
+                    </div>
+                </div>
             </div>
 
             <div class="item-details">
                 <h2>${designer.getFirstName()} ${designer.getLastName()} <span>6/10</span></h2>
-<%--                <p>${designer.getBio()}</p>--%>
+                <p>${designer.getBio()}</p>
                 <h4>Top Reviews</h4>
                 <div class="top-reviews">
                     <div class="review">
