@@ -10,15 +10,15 @@
 <head>
     <link rel="stylesheet" href="./assets/css/msg_page.css">
     <script src="https://kit.fontawesome.com/007dc48e77.js" crossorigin="anonymous"></script>
-    <title>Upload Failed</title>
+    <title>Error</title>
 </head>
 <body>
     <div class="msg-holder">
         <div class="msg">
-            <h1>Sorry, Upload Failed! <i class="fas fa-heart-broken"></i></h1>
+            <h1>Something Happend <br><i class="fas fa-heart-broken"></i></h1>
         </div>
         <div class="home-button">
-            <a href="home-main.jsp">Go to Home</a>
+            <a href="home-main.jsp">Home</a>
         </div>
     </div>
 </body>

@@ -34,19 +34,18 @@ public class InsertCourseServlet extends HttpServlet {
         CourseDao dao=new CourseDao();
 
         if (dao.insertCourse(course)) {
-            int lastCourseId = dao.getLastCourseId();
-            final String UPLOAD_DIR = "assets/courseContent";
-            List<String> fileList = UploadFileHelper.uploadFile(UPLOAD_DIR,request);
-
-            if(dao.insertContent(lastCourseId,fileList)) {
+//            int lastCourseId = dao.getLastCourseId();
+//            final String UPLOAD_DIR = "assets/courseContent";
+//            List<String> fileList = UploadFileHelper.uploadFile(UPLOAD_DIR,request);
+//
+//            if(dao.insertContent(lastCourseId,fileList)) {
+//                RequestDispatcher dispatcher = request.getRequestDispatcher("ViewMyCoursesServlet");
+//                dispatcher.forward(request,response);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("ViewMyCoursesServlet");
                 dispatcher.forward(request,response);
             }else {
                 response.sendRedirect("course-upload-failed.jsp");
             }
-        }else{
-            response.sendRedirect("course-upload-failed.jsp");
-        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -29,9 +29,9 @@ public class viewReviewData {
 
             while(rs.next()){
                 viewRateReview obj_mem=new viewRateReview();
-                System.out.println(rs.getString("design_id"));
-                System.out.println(rs.getString("rating"));
-                System.out.println(rs.getString("review"));
+                //System.out.println(rs.getString("design_id"));
+                //System.out.println(rs.getString("rating"));
+                //System.out.println(rs.getString("review"));
 
                 obj_mem.setRating(rs.getString("design_id"));
                 obj_mem.setRating(rs.getString("rating"));

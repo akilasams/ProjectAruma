@@ -32,11 +32,11 @@ public class designReadDao {
             while(rs.next()){
                 designReadMem obj_mem=new designReadMem();
 
-                System.out.println(rs.getString("design_id"));
-                System.out.println(rs.getString("design_name"));
-                System.out.println(rs.getString("designtype_id"));
-                System.out.println(rs.getString("in_store"));
-                System.out.println(rs.getString("design_description"));
+                //System.out.println(rs.getString("design_id"));
+                //System.out.println(rs.getString("design_name"));
+                //System.out.println(rs.getString("designtype_id"));
+                //System.out.println(rs.getString("in_store"));
+                //System.out.println(rs.getString("design_description"));
 
                 obj_mem.setDesign_id(rs.getString("design_id"));
                 obj_mem.setDesign_name(rs.getString("design_name"));

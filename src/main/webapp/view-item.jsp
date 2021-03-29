@@ -10,9 +10,9 @@
 <!DOCTYPE html>
 <html>
 
-<%--<c:if test="${userId == null}">--%>
-<%--    <c:redirect url="login.jsp"></c:redirect>--%>
-<%--</c:if>--%>
+<c:if test="${userId == null}">
+    <c:redirect url="login.jsp"></c:redirect>
+</c:if>
 
 <head>
     <style>
@@ -36,6 +36,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./assets/css/preview_item.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 </head>
 <body style="background-color: bisque">
 <%
@@ -43,9 +44,6 @@
 
     editDesignsStore obj_edit_valuesDao = new editDesignsStore();
     viewAlldesignsMem obj_design_readDao = obj_edit_valuesDao.get_values(design_idd);
-
-
-
 %>
 
 <div class = "card-wrapper">
@@ -144,12 +142,14 @@
                     Add to Cart <i class = "fas fa-shopping-cart"></i>
                 </button>
 
-                <input type = "number" min = "0" value = "1">
-                <button type = "button" class = "btn">
-                    Buy Now
-                </button>
+                <form id="buy-now">
+                    <input type="hidden" name="designId" value="<%=obj_design_readDao.getDesign_id()%>">
+                    <input type="hidden" name="unitPrice" value="<%=obj_design_readDao.getUnit_price()%>">
+                    <input type = "number" min = "0" value = "1" name="quantity">
+                </form>
+                <button type = "submit" class = "btn" form="buy-now" formmethod="POST" formaction="BuyNowServlet">Buy Now</button>
             </div>
-            <a href="rate-item.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>"class="button">Rate This Item</a>
+            <a href="rate-item.jsp?design_id=<%=obj_design_readDao.getDesign_id()%>" class="button">Rate This Item</a>
             <div class = "social-links">
                 <p>Share At: </p>
                 <a href = "#">
