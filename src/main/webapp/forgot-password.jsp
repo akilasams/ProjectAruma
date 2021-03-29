@@ -12,19 +12,19 @@
     <link rel="stylesheet" href="assets/css/login-forms.css">
 </head>
 <body>
-    <div class="form-container">
-        <div class="form-header">
-            <img src="assets/img/logo/Logo.png" alt="">
-        </div>
-        <form class="form" id="forgot-password">
-            <div class="form-control">
-                <input type="email" name="forgot-email" placeholder="Enter Your Email" required>
-                <%--<i class="fas fa-check"></i>
-                <i class="fas fa-times"></i>--%>
-                <small>Error Message</small>
-            </div>
-            <button form="forgot-password" onclick="" formaction="" formmethod="post">Send Email</button>
-        </form>
+<div class="form-container">
+    <div class="form-header">
+        <img src="assets/img/logo/Logo.png" alt="">
     </div>
+    <form class="form" id="forgot-password">
+        <div class="form-control">
+            <input type="email" name="forgot-email" placeholder="Enter Your Email" required>
+            <%--<i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>--%>
+            <small>Error Message</small>
+        </div>
+        <button form="forgot-password" formaction="verifyUserServlet" formmethod="post">Send Email</button>
+    </form>
+</div>
 </body>
 </html>
