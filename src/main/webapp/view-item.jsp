@@ -10,9 +10,9 @@
 <!DOCTYPE html>
 <html>
 
-<c:if test="${userId == null}">
-    <c:redirect url="login.jsp"></c:redirect>
-</c:if>
+<%--<c:if test="${userId == null}">--%>
+<%--    <c:redirect url="login.jsp"></c:redirect>--%>
+<%--</c:if>--%>
 
 <head>
     <style>

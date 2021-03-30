@@ -1,8 +1,6 @@
 package com.search;
 
 import com.dbConnection.MyConnection;
-import com.design.Design;
-import com.design.DesignDao;
 import com.storeItem.StoreItem;
 import com.storeItem.StoreItemDao;
 

@@ -21,7 +21,7 @@
 <div id="settings">
     <div id="form-container">
         <h2>Profile Settings</h2>
-        <form id="user-update-form" enctype="multipart/form-data">
+        <form id="user-form" enctype="multipart/form-data">
             <div id="prof-pic">
                 <img src="assets/img/users/prof-pic.jpg" alt="">
             </div>
@@ -30,7 +30,7 @@
             <label for="address">Address</label><input type="text" name="address" id="address" value="${currentUser.getAddress()}"><br>
             <label for="email">Email</label><input type="text" name="email" id="email" value="${currentUser.getEmail()}"><br>
             <label for="mobileNo">Mobile Number</label><input type="text" name="mobileNo" id="mobileNo" value="${currentUser.getMobileNo()}"><br>
-            <button form="user-update-form" formaction="UpdateUserServlet" formmethod="post">Save</button>
+            <button form="user-form" formaction="UpdateUserServlet" formmethod="post">Save</button>
         </form>
     </div>
 </div>

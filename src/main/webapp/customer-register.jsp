@@ -36,7 +36,7 @@
         </div>
 
         <div class="form-control">
-            <input type="text" name="email" id="email" placeholder="Email" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
             <i class="fas fa-check"></i>
             <i class="fas fa-times"></i>
             <small>Error Message</small>
