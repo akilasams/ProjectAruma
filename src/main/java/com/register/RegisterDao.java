@@ -13,7 +13,7 @@ public class RegisterDao {
     //Create or Insert User
     public boolean insertCustomer(Customer customer) {
         Connection connection = MyConnection.getConnection();
-        String sql = "INSERT INTO aruma_db.users VALUES (NULL,?,?,?,?,?,?,?,?,?,NULL,NULL,NULL)";
+        String sql = "INSERT INTO aruma_db.user VALUES (NULL,?,?,?,?,?,?,?,?,?,NULL,NULL,NULL)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, customer.getFirstName());
@@ -35,7 +35,7 @@ public class RegisterDao {
 
     public boolean insertDesigner(Designer designer) {
         Connection connection = MyConnection.getConnection();
-        String sql="INSERT INTO aruma_db.users VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,NULL)";
+        String sql="INSERT INTO aruma_db.user VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,NULL)";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, designer.getFirstName());
