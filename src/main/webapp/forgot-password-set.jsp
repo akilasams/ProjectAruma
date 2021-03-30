@@ -7,6 +7,7 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Forgot Password Set</title>
@@ -23,16 +24,13 @@
 
         <div class="form-control">
 
-            <input type="text" name="email" placeholder="email" required>
+    <input type="text" name="email" id="email" value="<%=request.getParameter("forgot-email")%>"/>
         </div>
 
         <div class="form-control">
 
-
             <input type="password" class="password" name="NewPassword" placeholder="New Password" required>
-            <%--<i class="fas fa-check"></i>
-            <i class="fas fa-times"></i>--%>
-<%--            <small>Error Message</small>--%>
+
         </div>
         <div class="form-control">
             <input type="password" class="confirmPassword" name="ReTypePassword" placeholder="Re Enter New Password" required>
@@ -42,29 +40,12 @@
         </div>
 
 <%--        <input type="submit" >--%>
-        <button form="login-form" type="submit">Login</button>
+        <button form="login-form" type="submit">Reset Password</button>
 
     </form>
 
     <script>
 
-        // document.querySelector('.button').onclick = function (){
-        //     var password = document.querySelector('.password').value,
-        //         confirmPassword = document.querySelector('.confirmPassword').value;
-        //
-        //     if(password==""){
-        //         alert("field cannot be empty");
-        //         return false;
-        //     }
-        //     else if (password!=confirmPassword){
-        //         alert("password didnt match try again");
-        //         return false;
-        //     }
-        //     else if (password==confirmPassword){
-        //         alert("successfullty changed your password");
-        //         document.forgotPasswordForm.submit();
-        //     }
-        // }
 
         function validateForm(event)
         {

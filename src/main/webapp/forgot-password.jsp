@@ -16,14 +16,16 @@
     <div class="form-header">
         <img src="assets/img/logo/Logo.png" alt="">
     </div>
-    <form class="form" id="forgot-password">
+    <form class="form" name="forgot-password" id="forgot-password" action="forgot-password-set.jsp" method ="get">
         <div class="form-control">
             <input type="email" name="forgot-email" placeholder="Enter Your Email" required>
             <%--<i class="fas fa-check"></i>
             <i class="fas fa-times"></i>--%>
             <small>Error Message</small>
         </div>
-        <button form="forgot-password" formaction="verifyUserServlet" formmethod="post">Send Email</button>
+<%--        <input type="submit" value="go">--%>
+        <button form="forgot-password" type="submit">Send Email</button>
+
     </form>
 </div>
 </body>
