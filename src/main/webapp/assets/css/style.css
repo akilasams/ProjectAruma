@@ -32,13 +32,15 @@ form.search-form input[type=text] {
 /* Style the submit button */
 form.search-form button {
     float: left;
+    height: 30px;
     width: 20%;
+    max-width: 20%;
+    max-height: 40px;
     padding: 10px;
     background: #FF7A00;
     color: white;
     font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
+    border: none;
     cursor: pointer;
 }
 

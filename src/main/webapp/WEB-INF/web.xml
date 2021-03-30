@@ -52,8 +52,8 @@
         </form-login-config>
     </login-config>
 
-<!--    <error-page>-->
-<!--        <location>/error-page.jsp</location>-->
-<!--    </error-page>-->
+    <error-page>
+        <location>/error-page.jsp</location>
+    </error-page>
 
 </web-app>

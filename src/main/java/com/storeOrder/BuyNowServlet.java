@@ -44,6 +44,7 @@ public class BuyNowServlet extends HttpServlet {
 //            RequestDispatcher dispatcher = request.getRequestDispatcher("order-failed.jsp");
 //            dispatcher.forward(request,response);
 //        }
+
         int itemId = Integer.parseInt(request.getParameter("designId"));
         double unitPrice = Double.parseDouble(request.getParameter("unitPrice"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));

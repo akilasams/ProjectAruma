@@ -14,7 +14,7 @@ public class forgotPasswordDao {
         Connection connection = MyConnection.getConnection();
         String result = "data entered successfully";
         
-        String sql = "update aruma_db.users set password=? where user_id = (select user_id from aruma_db.users where email = ?)";
+        String sql = "update aruma_db.user set password=? where user_id = (select user_id from aruma_db.user where email = ?)";
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);

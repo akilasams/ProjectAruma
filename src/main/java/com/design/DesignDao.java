@@ -12,7 +12,7 @@ public class DesignDao {
     public List<Design> selectMyDesigns(int UserId){
         List<Design> myDesigns=new ArrayList<>();
         Connection connection = MyConnection.getConnection();
-        String sql="SELECT * FROM design WHERE userId=?";
+        String sql="SELECT * FROM design WHERE user_id=?";
         try {
             PreparedStatement st=connection.prepareStatement(sql);
             ResultSet rs=st.executeQuery();

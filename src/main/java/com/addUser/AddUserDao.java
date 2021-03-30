@@ -10,39 +10,16 @@ import java.util.List;
 import java.sql.Connection;
 
 //import com.sun.jdi.connect.spi.Connection;
+import com.dbConnection.MyConnection;
 import com.viewRatingsReviews.viewRateReview;
 
 
 public class AddUserDao {
-    private String dburl="jdbc:mysql://localhost:3306/aruma_db?serverTimezone=UTC";
-    private String dbusername="root";
-    private String dbpassword="";
-    private String dbdriver="com.mysql.jdbc.Driver";
 
-    public void loadDriver(String dbDriver) {
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-
-    public Connection getConnection()
-    {
-        Connection con=null;
-        try {
-            con=DriverManager.getConnection(dburl,dbusername,dbpassword);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return con;
-    }
     public String insert(AddUser user) {
-        loadDriver (dbdriver);
-        Connection con=getConnection();
+        Connection con= MyConnection.getConnection();
         String result="Data entered successfully";
-        String sql="insert into aruma_db.users (first_name,last_name,user_role_id,email,mobile_no,address,city,username,password,category_id,bio,prof_pic) values(?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql="insert into aruma_db.user (first_name,last_name,user_role_id,email,mobile_no,address,city,username,password,category_id,bio,prof_pic) values(?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setString(1, user.getFirst_name());
@@ -64,10 +41,10 @@ public class AddUserDao {
         return result;
     }
 
-    public static void main(String[] args) {
-        AddUserDao obj_Read_Values=new AddUserDao();
-        obj_Read_Values.get_values();
-    }
+//    public static void main(String[] args) {
+//        AddUserDao obj_Read_Values=new AddUserDao();
+//        obj_Read_Values.get_values();
+//    }
 
 //	public List get_values() {
 //		// TODO Auto-generated method stub
@@ -76,8 +53,7 @@ public class AddUserDao {
 
 
     public List get_values() {
-        loadDriver(dbdriver);
-        Connection con=getConnection();
+        Connection con=MyConnection.getConnection();
 
         String result = "data enterd succesfully";
 
@@ -87,7 +63,7 @@ public class AddUserDao {
 
         try {
 
-            String sql="SELECT user_id, first_name, last_name, user_role_id, email, mobile_no, address, city, username, password FROM aruma_db.users where user_role_id=2 ";
+            String sql="SELECT user_id, first_name, last_name, user_role_id, email, mobile_no, address, city, username, password FROM aruma_db.user where user_role_id=2 ";
             ps=con.prepareStatement(sql);
 
 
@@ -141,8 +117,7 @@ public class AddUserDao {
     }
 
     public List get_values_ratings(){
-        loadDriver(dbdriver);
-        Connection con=getConnection();
+        Connection con=MyConnection.getConnection();
 
         String result = "data enterd succesfully";
 
@@ -152,7 +127,7 @@ public class AddUserDao {
 
         try {
 
-            String sql="SELECT * from aruma_db.user_ratingreview inner join aruma_db.users u on u.user_id = user_ratingreview.user_id where user_role_id=2";
+            String sql="SELECT * from aruma_db.user_ratingreview inner join aruma_db.user u on u.user_id = user_ratingreview.user_id where user_role_id=2";
             ps=con.prepareStatement(sql);
 
 
@@ -188,8 +163,7 @@ public class AddUserDao {
 
 
     public List get_values_reviews(String user_id){
-        loadDriver(dbdriver);
-        Connection con=getConnection();
+        Connection con=MyConnection.getConnection();
 
         String result = "data enterd succesfully";
 
@@ -199,7 +173,7 @@ public class AddUserDao {
 
         try {
 
-            String sql="SELECT user_ratingreview.review from aruma_db.user_ratingreview inner join aruma_db.users u on u.user_id = user_ratingreview.user_id where u.user_id = ?";
+            String sql="SELECT user_ratingreview.review from aruma_db.user_ratingreview inner join aruma_db.user u on u.user_id = user_ratingreview.user_id where u.user_id = ?";
             ps=con.prepareStatement(sql);
             ps.setString(1,user_id);
 
@@ -236,15 +210,13 @@ public class AddUserDao {
 
 
     public String updateuser(AddUser adduser) {
-
-        loadDriver(dbdriver);
-        Connection con=getConnection();
+        Connection con=MyConnection.getConnection();
 
         String result = "data enterd succesfully";
 
 
 
-        String sql="update aruma_db.users set first_name=?, last_name=?, user_role_id=?, email=?, mobile_no=?, address=?, city=?, username=?, password=? where user_id=?";
+        String sql="update aruma_db.user set first_name=?, last_name=?, user_role_id=?, email=?, mobile_no=?, address=?, city=?, username=?, password=? where user_id=?";
         try {
             PreparedStatement ps=con.prepareStatement(sql);
 
@@ -276,20 +248,19 @@ public class AddUserDao {
     @SuppressWarnings("null")
     public String deleteUser(AddUser adduser) throws SQLException {
 
-        loadDriver(dbdriver);
-        Connection con=getConnection();
+        Connection con=MyConnection.getConnection();
 
         String result = "data enterd succesfully";
 
 
-        String sql ="delete from aruma_db.users where user_id=?";
+        String sql ="delete from aruma_db.user where user_id=?";
         //String sql="delete from user where first_name=?, last_name=?, user_role_id=?, email=?, mobile_no=?, address=?, city=?, username=?, password=?, category_id=?, bio=?, prof_pic=? user_id=?";
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             PreparedStatement st = null;
             String user_id = null;
             st.setString(1, user_id);
-            Object connection = DriverManager.getConnection(dburl, dbusername, dbpassword);
+            Connection connection = MyConnection.getConnection();
             Statement statement = ((Connection) connection).createStatement();
             //String sql ="delete from aruma_db.user where user_id=?";
             //String Query ="delete from user where user_id=?";
