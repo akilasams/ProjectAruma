@@ -53,7 +53,7 @@ public class CourseDao {
 
     public int getLastCourseId(){
         Connection connection = MyConnection.getConnection();
-        String selectLastCourseId_SQL = "SELECT MAX(course_id) AS last_course_id FROM course";
+        String selectLastCourseId_SQL = "SELECT MAX(course_id) AS last_course_id FROM aruma_db.course";
 
         try {
             PreparedStatement st = connection.prepareStatement(selectLastCourseId_SQL);

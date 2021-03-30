@@ -24,7 +24,7 @@
 
         <div class="form-control">
 
-    <input type="text" name="email" id="email" value="<%=request.getParameter("forgot-email")%>"/>
+    <input type="hidden" name="email" id="email" value="<%=request.getParameter("forgot-email")%>"/>
         </div>
 
         <div class="form-control">

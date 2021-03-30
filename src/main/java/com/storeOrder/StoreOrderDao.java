@@ -13,7 +13,7 @@ public class StoreOrderDao {
 
     public boolean insertOrder(StoreOrder order){
         Connection connection = MyConnection.getConnection();
-        String insertOrder_SQL = "INSERT INTO store_order values (DEFAULT,?,NOW(),NULL)";
+        String insertOrder_SQL = "INSERT INTO aruma_db.store_order values (DEFAULT,?,NOW(),NULL)";
 
         try {
             PreparedStatement st = connection.prepareStatement(insertOrder_SQL);
@@ -36,7 +36,7 @@ public class StoreOrderDao {
 
     public boolean insertOrderItems(int orderId, List<StoreOrderItem> itemsList){
         Connection connection = MyConnection.getConnection();
-        String insertOrderItems_SQL = "INSERT INTO order_item VALUES(?,?,?,?)";
+        String insertOrderItems_SQL = "INSERT INTO aruma_db.order_item VALUES(?,?,?,?)";
 
         try {
             PreparedStatement st = connection.prepareStatement(insertOrderItems_SQL);
@@ -56,7 +56,7 @@ public class StoreOrderDao {
 
     public static int getLastOrderId(){
         Connection connection = MyConnection.getConnection();
-        String selectLastOrderId_SQL = "SELECT MAX(order_id) AS last_order_id FROM store_order";
+        String selectLastOrderId_SQL = "SELECT MAX(order_id) AS last_order_id FROM aruma_db.store_order";
 
         try {
             PreparedStatement st = connection.prepareStatement(selectLastOrderId_SQL);
@@ -78,7 +78,7 @@ public class StoreOrderDao {
 
     public StoreOrder getOrderDetails(int orderId){
         StoreOrder storeOrder = null;
-        String getOrderDetails_SQL = "SELECT * FROM store_order WHERE order_id = ?";
+        String getOrderDetails_SQL = "SELECT * FROM aruma_db.store_order WHERE order_id = ?";
 
         Connection connection = MyConnection.getConnection();
         try {
@@ -104,7 +104,7 @@ public class StoreOrderDao {
 
     public boolean buyNow(InstantPurchase instantPurchase){
         Connection connection = MyConnection.getConnection();
-        String enterOrderInto_store_order_SQL = "INSERT INTO store_order VALUES(DEFAULT,?,NOW(),?)";
+        String enterOrderInto_store_order_SQL = "INSERT INTO aruma_db.store_order VALUES(DEFAULT,?,NOW(),?)";
 
         try {
             PreparedStatement st1 = connection.prepareStatement(enterOrderInto_store_order_SQL);
@@ -112,7 +112,7 @@ public class StoreOrderDao {
             st1.setDouble(2,instantPurchase.getUnitPrice());
             if(st1.executeUpdate()>0? true : false){
                 int orderId = StoreOrderDao.getLastOrderId();
-                String enterInto_order_item_SQL = "INSERT INTO order_item VALUES(?,?,?,?)";
+                String enterInto_order_item_SQL = "INSERT INTO aruma_db.order_item VALUES(?,?,?,?)";
                 PreparedStatement st2 = connection.prepareStatement(enterInto_order_item_SQL);
                 st2.setInt(1,orderId);
                 st2.setInt(2,instantPurchase.getItemId());
