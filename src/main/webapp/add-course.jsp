@@ -21,7 +21,7 @@
 <body>
     <div id="form-container">
         <h2>Add New Course</h2>
-        <form action="InsertCourse" method="post">
+        <form id="user-form" action="InsertCourse" method="post">
             <input type="text" name="courseName" placeholder="Enter Course Name"><br>
             <textarea name="courseDesc" id="" cols="30" rows="10" placeholder="Write Something About the Course"></textarea><br>
             <input type="text" id="courseFee" name="courseFee" placeholder="Enter Course Fee"><br>
