@@ -20,7 +20,7 @@
 <body>
     <div id="form-container">
         <h2>Add Item to Store</h2>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form id="user-form" action="" method="post" enctype="multipart/form-data">
             <input type="text" name="designName" placeholder="Selling Name"><br>
             <input type="text" name="designName" placeholder="Quantity"><br>
             <input type="text" name="designName" placeholder="Price"><br>
