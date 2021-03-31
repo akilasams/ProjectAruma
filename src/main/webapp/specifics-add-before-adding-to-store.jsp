@@ -24,7 +24,7 @@
 
 <div id="form-container">
     <h2>Add Specifics for selected design</h2>
-    <form action="storeServlet" method="post">
+    <form id="user-form" action="storeServlet" method="post">
 
         <input type="hidden" name="design_id" value="<%=design_id%>" placeholder="Stock" ><br>
         <input type="text" name="stock" placeholder="Stock"   ><br>
