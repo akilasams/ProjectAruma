@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+
+body{
+	
+ background-color: #FFE484;
+ 
+}
+
+
+.box{
+
+  background-color:#FFA500;
+  height: 210px;
+  width: 290px;
+  border-radius: 12px;
+  margin: 10px 10px 0px 10px;
+  margin-left: 13.5cm;
+  text-align: center;
+  
+
+}
+
+button{
+  background-color:#A9A9A9; 
+  border-radius: 10px;
+  width: 60px;
+  height: 35px;
+
+}

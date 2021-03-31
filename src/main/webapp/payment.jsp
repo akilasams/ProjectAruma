@@ -21,7 +21,7 @@
 <div id="settings">
     <div id="form-container">
         <h2>Profile Settings</h2>
-        <form id="payment-form">
+        <form id="user-form">
             <input type="hidden" name="merchant_id" value="1216946">    <!-- Replace your Merchant ID -->
             <input type="hidden" name="return_url" value="http://localhost:8080/ProjectAruma_war/PaymentServlet">
             <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
@@ -44,7 +44,7 @@
             <label for="currency">Currency</label><input type="text" name="currency" id="currency" value="LKR"><br>
             <label for="amount">Amount</label><input type="text" name="amount" id="amount" value="${order.getTotal()}"><br>
 
-            <button form="payment-form" formaction="https://sandbox.payhere.lk/pay/checkout" formmethod="post">Checkout</button>
+            <button form="user-form" formaction="https://sandbox.payhere.lk/pay/checkout" formmethod="post">Checkout</button>
         </form>
     </div>
 </div>

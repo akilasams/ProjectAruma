@@ -52,31 +52,31 @@
         <div class = "product-imgs">
             <div class = "img-display">
                 <div class = "img-showcase">
-                    <img src = "assets/img/designs/img4.png" alt = "img4">
-                    <img src = "assets/img/designs/img5.jpg" alt = "img5">
-                    <img src = "assets/img/designs/img4.png" alt = "img6">
-                    <img src = "assets/img/designs/img5.jpg" alt = "img7">
+                    <img src = "assets/img/designs/tshirt.jpg" alt = "img4">
+                    <img src = "assets/img/designs/tshirt3.jpg" alt = "img5">
+                    <img src = "assets/img/designs/tshirt4.jpg" alt = "img6">
+                    <img src = "assets/img/designs/tshirt.jpg" alt = "img7">
                 </div>
             </div>
             <div class = "img-select">
                 <div class = "img-item">
                     <a href = "#" data-id = "1">
-                        <img src = "assets/img/designs/img4.png" height="95px"  alt = "img4">
+                        <img src = "assets/img/designs/tshirt.jpg" height="95px"  alt = "img4">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "2">
-                        <img src = "assets/img/designs/img5.jpg" height="95px" alt = "img5">
+                        <img src = "assets/img/designs/tshirt3.jpg" height="95px" alt = "img5">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "3">
-                        <img src = "assets/img/designs/img4.png" height="95px" alt = "img6">
+                        <img src = "assets/img/designs/tshirt4.jpg" height="95px" alt = "img6">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "4">
-                        <img src = "assets/img/designs/img5.jpg" height="95px" alt = "img7">
+                        <img src = "assets/img/designs/tshirt.jpg" height="95px" alt = "img7">
                     </a>
                 </div>
             </div>
